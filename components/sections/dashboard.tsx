@@ -39,7 +39,7 @@ const incomeData = [
 ];
 
 const skillData = [
-  { category: "Technical", count: 0, color: "#f59e0b" },
+  { category: "Technical", count: 0, color: "#cd7f32" },
   { category: "Creative", count: 0, color: "#10b981" },
   { category: "Research", count: 0, color: "#3b82f6" },
   { category: "Personal", count: 0, color: "#8b5cf6" },
@@ -49,7 +49,7 @@ export function Dashboard() {
   const dailyProgress = (dashboardData.income.todayEarned / dashboardData.income.dailyTarget) * 100;
 
   return (
-    <section id="dashboard" className="py-24 sm:py-32 bg-slate-950/50">
+    <section id="dashboard" className="py-24 sm:py-32 bg-shadow-grey/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -59,7 +59,7 @@ export function Dashboard() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-amber-500/10 text-amber-400 text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-bronze/10 text-bronze text-sm font-medium mb-4">
             Live Metrics
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-100 mb-6">
@@ -79,7 +79,7 @@ export function Dashboard() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8"
         >
-          <Card className="bg-slate-900/50 border-slate-800">
+          <Card className="bg-ebony/50 border-ebony">
             <CardContent className="p-4">
               <div className="flex items-center justify-between">
                 <div>
@@ -102,7 +102,7 @@ export function Dashboard() {
             </CardContent>
           </Card>
 
-          <Card className="bg-slate-900/50 border-slate-800">
+          <Card className="bg-ebony/50 border-ebony">
             <CardContent className="p-4">
               <div className="flex items-center justify-between">
                 <div>
@@ -111,8 +111,8 @@ export function Dashboard() {
                     {dashboardData.evolution.totalSkillsLearned}
                   </p>
                 </div>
-                <div className="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center">
-                  <Zap className="w-5 h-5 text-amber-400" />
+                <div className="w-10 h-10 rounded-lg bg-bronze/10 flex items-center justify-center">
+                  <Zap className="w-5 h-5 text-bronze" />
                 </div>
               </div>
               <p className="text-xs text-slate-500 mt-3">
@@ -121,7 +121,7 @@ export function Dashboard() {
             </CardContent>
           </Card>
 
-          <Card className="bg-slate-900/50 border-slate-800">
+          <Card className="bg-ebony/50 border-ebony">
             <CardContent className="p-4">
               <div className="flex items-center justify-between">
                 <div>
@@ -140,7 +140,7 @@ export function Dashboard() {
             </CardContent>
           </Card>
 
-          <Card className="bg-slate-900/50 border-slate-800">
+          <Card className="bg-ebony/50 border-ebony">
             <CardContent className="p-4">
               <div className="flex items-center justify-between">
                 <div>
@@ -168,26 +168,26 @@ export function Dashboard() {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <Tabs defaultValue="income" className="w-full">
-            <TabsList className="grid w-full grid-cols-3 bg-slate-900/50 border border-slate-800 mb-8">
-              <TabsTrigger value="income" className="data-[state=active]:bg-amber-500/10 data-[state=active]:text-amber-400">
+            <TabsList className="grid w-full grid-cols-3 bg-ebony/50 border border-ebony mb-8">
+              <TabsTrigger value="income" className="data-[state=active]:bg-bronze/10 data-[state=active]:text-bronze">
                 <TrendingUp className="w-4 h-4 mr-2" />
                 Income
               </TabsTrigger>
-              <TabsTrigger value="skills" className="data-[state=active]:bg-amber-500/10 data-[state=active]:text-amber-400">
+              <TabsTrigger value="skills" className="data-[state=active]:bg-bronze/10 data-[state=active]:text-bronze">
                 <Award className="w-4 h-4 mr-2" />
                 Skills
               </TabsTrigger>
-              <TabsTrigger value="evolution" className="data-[state=active]:bg-amber-500/10 data-[state=active]:text-amber-400">
+              <TabsTrigger value="evolution" className="data-[state=active]:bg-bronze/10 data-[state=active]:text-bronze">
                 <Calendar className="w-4 h-4 mr-2" />
                 Learning Plan
               </TabsTrigger>
             </TabsList>
 
             <TabsContent value="income">
-              <Card className="bg-slate-900/50 border-slate-800">
+              <Card className="bg-ebony/50 border-ebony">
                 <CardHeader>
                   <CardTitle className="text-slate-100 flex items-center gap-2">
-                    <TrendingUp className="w-5 h-5 text-amber-400" />
+                    <TrendingUp className="w-5 h-5 text-bronze" />
                     Income Tracking
                   </CardTitle>
                 </CardHeader>
@@ -209,18 +209,18 @@ export function Dashboard() {
                           itemStyle={{ color: '#f8fafc' }}
                           cursor={{ fill: '#0f172a' }}
                         />
-                        <Bar dataKey="earned" fill="#f59e0b" radius={[4, 4, 0, 0]} />
+                        <Bar dataKey="earned" fill="#cd7f32" radius={[4, 4, 0, 0]} />
                         <Bar dataKey="target" fill="#1e293b" radius={[4, 4, 0, 0]} />
                       </BarChart>
                     </ResponsiveContainer>
                   </div>
                   <div className="flex justify-center gap-6 mt-4">
                     <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 rounded bg-amber-500" />
+                      <div className="w-3 h-3 rounded bg-bronze" />
                       <span className="text-sm text-slate-400">Earned</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 rounded bg-slate-800" />
+                      <div className="w-3 h-3 rounded bg-ebony" />
                       <span className="text-sm text-slate-400">Target</span>
                     </div>
                   </div>
@@ -229,10 +229,10 @@ export function Dashboard() {
             </TabsContent>
 
             <TabsContent value="skills">
-              <Card className="bg-slate-900/50 border-slate-800">
+              <Card className="bg-ebony/50 border-ebony">
                 <CardHeader>
                   <CardTitle className="text-slate-100 flex items-center gap-2">
-                    <Award className="w-5 h-5 text-amber-400" />
+                    <Award className="w-5 h-5 text-bronze" />
                     Skills by Category
                   </CardTitle>
                 </CardHeader>
@@ -267,10 +267,10 @@ export function Dashboard() {
             </TabsContent>
 
             <TabsContent value="evolution">
-              <Card className="bg-slate-900/50 border-slate-800">
+              <Card className="bg-ebony/50 border-ebony">
                 <CardHeader>
                   <CardTitle className="text-slate-100 flex items-center gap-2">
-                    <Calendar className="w-5 h-5 text-amber-400" />
+                    <Calendar className="w-5 h-5 text-bronze" />
                     Week 1 Learning Plan
                   </CardTitle>
                 </CardHeader>
@@ -282,13 +282,13 @@ export function Dashboard() {
                         className={`flex items-center gap-4 p-4 rounded-lg border ${
                           day.completed 
                             ? 'bg-green-500/5 border-green-500/20' 
-                            : 'bg-slate-800/30 border-slate-800'
+                            : 'bg-ebony/30 border-ebony'
                         }`}
                       >
                         <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
                           day.completed 
                             ? 'bg-green-500/20 text-green-400' 
-                            : 'bg-slate-800 text-slate-500'
+                            : 'bg-ebony text-slate-500'
                         }`}>
                           {day.completed ? (
                             <Award className="w-5 h-5" />

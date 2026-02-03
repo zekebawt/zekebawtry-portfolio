@@ -25,9 +25,9 @@ const statusConfig = {
   },
   active: {
     icon: Clock,
-    color: "text-amber-400",
-    bg: "bg-amber-500/10",
-    border: "border-amber-500/20",
+    color: "text-bronze",
+    bg: "bg-bronze/10",
+    border: "border-bronze/20",
     label: "In Progress",
   },
   pending: {
@@ -41,7 +41,7 @@ const statusConfig = {
 
 export function Projects() {
   return (
-    <section id="projects" className="py-24 sm:py-32 bg-[#0a0a0f]">
+    <section id="projects" className="py-24 sm:py-32 bg-shadow-grey">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -51,7 +51,7 @@ export function Projects() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-amber-500/10 text-amber-400 text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-bronze/10 text-bronze text-sm font-medium mb-4">
             Bounty Hunting & Projects
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-100 mb-6">
@@ -77,10 +77,10 @@ export function Projects() {
             { label: "Bounty Earned", value: "$0", icon: CircleDollarSign },
             { label: "Active Projects", value: "2", icon: Layers },
           ].map((stat, index) => (
-            <Card key={stat.label} className="bg-slate-900/50 border-slate-800">
+            <Card key={stat.label} className="bg-ebony/50 border-ebony">
               <CardContent className="p-4 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center">
-                  <stat.icon className="w-5 h-5 text-amber-400" />
+                <div className="w-10 h-10 rounded-lg bg-bronze/10 flex items-center justify-center">
+                  <stat.icon className="w-5 h-5 text-bronze" />
                 </div>
                 <div>
                   <div className="text-2xl font-bold text-slate-100">{stat.value}</div>
@@ -105,7 +105,7 @@ export function Projects() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 * index }}
               >
-                <Card className="h-full bg-slate-900/50 border-slate-800 hover:border-amber-500/30 transition-all group">
+                <Card className="h-full bg-ebony/50 border-ebony hover:border-bronze/30 transition-all group">
                   <CardHeader className="pb-4">
                     <div className="flex items-start justify-between gap-4">
                       <div>
@@ -124,7 +124,7 @@ export function Projects() {
                             </Badge>
                           )}
                         </div>
-                        <h3 className="text-xl font-semibold text-slate-100 group-hover:text-amber-400 transition-colors">
+                        <h3 className="text-xl font-semibold text-slate-100 group-hover:text-bronze transition-colors">
                           {project.name}
                         </h3>
                       </div>
@@ -140,7 +140,7 @@ export function Projects() {
                       {project.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="px-2 py-1 text-xs rounded-md bg-slate-800 text-slate-400"
+                          className="px-2 py-1 text-xs rounded-md bg-ebony text-slate-400"
                         >
                           {tag}
                         </span>
@@ -154,7 +154,7 @@ export function Projects() {
                           variant="outline"
                           size="sm"
                           asChild
-                          className="border-slate-700 hover:border-amber-500/50 hover:bg-amber-500/5"
+                          className="border-ebony-light hover:border-bronze/50 hover:bg-bronze/5"
                         >
                           <Link href={project.prUrl} target="_blank" rel="noopener noreferrer">
                             <Github className="w-4 h-4 mr-2" />
@@ -182,7 +182,7 @@ export function Projects() {
             asChild
             variant="outline"
             size="lg"
-            className="border-slate-700 hover:border-amber-500/50 hover:bg-amber-500/5"
+            className="border-ebony-light hover:border-bronze/50 hover:bg-bronze/5"
           >
             <Link 
               href="https://github.com/zekebawt" 

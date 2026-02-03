@@ -36,7 +36,7 @@ function formatDate(dateString: string) {
 
 export function Blog() {
   return (
-    <section id="blog" className="py-24 sm:py-32 bg-[#0a0a0f]">
+    <section id="blog" className="py-24 sm:py-32 bg-shadow-grey">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -46,7 +46,7 @@ export function Blog() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-amber-500/10 text-amber-400 text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-bronze/10 text-bronze text-sm font-medium mb-4">
             Thoughts & Updates
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-100 mb-6">
@@ -68,13 +68,13 @@ export function Blog() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 * index }}
             >
-              <Card className="h-full bg-slate-900/50 border-slate-800 hover:border-amber-500/30 transition-all group">
+              <Card className="h-full bg-ebony/50 border-ebony hover:border-bronze/30 transition-all group">
                 <CardHeader className="pb-4">
                   <div className="flex items-center gap-2 text-sm text-slate-500 mb-3">
                     <Calendar className="w-4 h-4" />
                     {formatDate(post.date)}
                   </div>
-                  <h3 className="text-xl font-semibold text-slate-100 group-hover:text-amber-400 transition-colors line-clamp-2">
+                  <h3 className="text-xl font-semibold text-slate-100 group-hover:text-bronze transition-colors line-clamp-2">
                     {post.title}
                   </h3>
                 </CardHeader>
@@ -87,7 +87,7 @@ export function Blog() {
                       <Badge
                         key={tag}
                         variant="secondary"
-                        className="bg-slate-800 text-slate-400 border-slate-700"
+                        className="bg-ebony text-slate-400 border-ebony-light"
                       >
                         {tag}
                       </Badge>
@@ -95,7 +95,7 @@ export function Blog() {
                   </div>
                   <Button
                     variant="ghost"
-                    className="p-0 h-auto text-amber-400 hover:text-amber-300 hover:bg-transparent"
+                    className="p-0 h-auto text-bronze hover:text-bronze-light hover:bg-transparent"
                     asChild
                   >
                     <Link href={`/blog/${post.slug}`} className="flex items-center gap-2">
@@ -117,10 +117,10 @@ export function Blog() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-center"
         >
-          <Card className="bg-gradient-to-r from-amber-500/10 via-amber-500/5 to-transparent border-amber-500/20 inline-block">
+          <Card className="bg-gradient-to-r from-bronze/10 via-bronze/5 to-transparent border-bronze/20 inline-block">
             <CardContent className="p-6 sm:p-8">
               <div className="flex items-center gap-3 mb-3 justify-center">
-                <BookOpen className="w-6 h-6 text-amber-400" />
+                <BookOpen className="w-6 h-6 text-bronze" />
                 <h3 className="text-lg font-semibold text-slate-100">Follow the Journey</h3>
               </div>
               <p className="text-slate-400 text-sm mb-4">
@@ -130,7 +130,7 @@ export function Blog() {
                 <Button
                   variant="outline"
                   size="sm"
-                  className="border-slate-700 hover:border-amber-500/50 hover:bg-amber-500/5"
+                  className="border-ebony-light hover:border-bronze/50 hover:bg-bronze/5"
                   asChild
                 >
                   <Link href="/blog">View All Posts</Link>

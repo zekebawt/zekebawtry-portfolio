@@ -9,9 +9,9 @@ export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-[#0a0a0f]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-500/10 via-transparent to-transparent" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-amber-600/5 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-shadow-grey">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-bronze/10 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-bronze-dark/5 via-transparent to-transparent" />
         
         {/* Grid Pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20" />
@@ -24,10 +24,10 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/20 mb-8"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-bronze/10 border border-bronze/20 mb-8"
         >
-          <Zap className="w-4 h-4 text-amber-400" />
-          <span className="text-sm text-amber-200 font-medium">Full-Stack Developer</span>
+          <Zap className="w-4 h-4 text-bronze" />
+          <span className="text-sm text-bronze-light font-medium">Full-Stack Developer</span>
         </motion.div>
 
         {/* Name */}
@@ -81,7 +81,7 @@ export function Hero() {
           <Button
             asChild
             size="lg"
-            className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-semibold px-8 py-6 text-lg glow-gold-soft"
+            className="bg-bronze hover:bg-bronze-light text-shadow-grey font-semibold px-8 py-6 text-lg glow-bronze-soft"
           >
             <Link href="#dashboard">View Dashboard</Link>
           </Button>
@@ -106,17 +106,17 @@ export function Hero() {
             href="https://github.com/zekebawt"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 rounded-full bg-slate-800/50 border border-slate-700 hover:border-amber-500/50 hover:bg-amber-500/10 transition-all"
+            className="p-3 rounded-full bg-ebony/50 border border-ebony-light hover:border-bronze/50 hover:bg-bronze/10 transition-all"
           >
-            <Github className="w-5 h-5 text-slate-400 hover:text-amber-400" />
+            <Github className="w-5 h-5 text-slate-400 hover:text-bronze" />
           </Link>
           <Link
             href="https://twitter.com/zekebawtry"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 rounded-full bg-slate-800/50 border border-slate-700 hover:border-amber-500/50 hover:bg-amber-500/10 transition-all"
+            className="p-3 rounded-full bg-ebony/50 border border-ebony-light hover:border-bronze/50 hover:bg-bronze/10 transition-all"
           >
-            <Twitter className="w-5 h-5 text-slate-400 hover:text-amber-400" />
+            <Twitter className="w-5 h-5 text-slate-400 hover:text-bronze" />
           </Link>
         </motion.div>
       </div>
