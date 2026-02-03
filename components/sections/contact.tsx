@@ -50,7 +50,7 @@ const contactLinks = [
 
 export function Contact() {
   return (
-    <section id="contact" className="py-24 sm:py-32 bg-slate-950/50">
+    <section id="contact" className="py-24 sm:py-32 bg-shadow-grey/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -60,7 +60,7 @@ export function Contact() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-amber-500/10 text-amber-400 text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-bronze/10 text-bronze text-sm font-medium mb-4">
             Get In Touch
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-100 mb-6">
@@ -88,7 +88,7 @@ export function Contact() {
                 rel="noopener noreferrer"
                 className="block group"
               >
-                <Card className="h-full bg-slate-900/50 border-slate-800 hover:border-amber-500/30 transition-all overflow-hidden">
+                <Card className="h-full bg-ebony/50 border-ebony hover:border-bronze/30 transition-all overflow-hidden">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
                       <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${link.color} flex items-center justify-center flex-shrink-0`}>
@@ -96,12 +96,12 @@ export function Contact() {
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 mb-1">
-                          <h3 className="text-lg font-semibold text-slate-100 group-hover:text-amber-400 transition-colors">
+                          <h3 className="text-lg font-semibold text-slate-100 group-hover:text-bronze transition-colors">
                             {link.name}
                           </h3>
                           <ExternalLink className="w-4 h-4 text-slate-600 opacity-0 group-hover:opacity-100 transition-opacity" />
                         </div>
-                        <p className="text-amber-400 font-medium text-sm mb-2">{link.handle}</p>
+                        <p className="text-bronze font-medium text-sm mb-2">{link.handle}</p>
                         <p className="text-slate-400 text-sm">{link.description}</p>
                       </div>
                     </div>
@@ -120,11 +120,11 @@ export function Contact() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-center"
         >
-          <Card className="bg-gradient-to-r from-amber-500/10 via-amber-500/5 to-transparent border-amber-500/20 max-w-2xl mx-auto">
+          <Card className="bg-gradient-to-r from-bronze/10 via-bronze/5 to-transparent border-bronze/20 max-w-2xl mx-auto">
             <CardContent className="p-8">
               <div className="flex items-center justify-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center">
-                  <Mail className="w-6 h-6 text-amber-400" />
+                <div className="w-12 h-12 rounded-full bg-bronze/20 flex items-center justify-center">
+                  <Mail className="w-6 h-6 text-bronze" />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-slate-100 mb-2">Email Me</h3>
@@ -133,7 +133,7 @@ export function Contact() {
               </p>
               <Button
                 asChild
-                className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-semibold"
+                className="bg-bronze hover:bg-bronze-light text-shadow-grey font-semibold"
               >
                 <Link href="mailto:zekebawt@gmail.com">
                   zekebawt@gmail.com
@@ -149,10 +149,10 @@ export function Contact() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="mt-24 pt-8 border-t border-slate-800 text-center"
+          className="mt-24 pt-8 border-t border-ebony text-center"
         >
           <div className="flex items-center justify-center gap-2 mb-4">
-            <Zap className="w-5 h-5 text-amber-400" />
+            <Zap className="w-5 h-5 text-bronze" />
             <span className="text-slate-200 font-semibold">Zeke Bawtry</span>
           </div>
           <p className="text-slate-500 text-sm mb-2">

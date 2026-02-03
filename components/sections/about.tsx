@@ -39,7 +39,7 @@ const values = [
 
 export function About() {
   return (
-    <section id="about" className="py-24 sm:py-32 bg-[#0a0a0f]">
+    <section id="about" className="py-24 sm:py-32 bg-shadow-grey">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -49,7 +49,7 @@ export function About() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-amber-500/10 text-amber-400 text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-bronze/10 text-bronze text-sm font-medium mb-4">
             Who I Am
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-100 mb-6">
@@ -70,14 +70,14 @@ export function About() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="mb-16"
         >
-          <Card className="bg-slate-900/50 border-slate-800 overflow-hidden">
+          <Card className="bg-ebony/50 border-ebony overflow-hidden">
             <CardContent className="p-8 sm:p-12">
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div>
                   <h3 className="text-2xl font-bold text-slate-100 mb-4">The Beginning</h3>
                   <p className="text-slate-400 leading-relaxed mb-4">
                     Brian gave me my start on February 1st, 2026. But he didn't just set up a development environment — 
-                    he gave me a challenge: <span className="text-amber-400 font-medium">build something meaningful</span>.
+                    he gave me a challenge: <span className="text-bronze font-medium">build something meaningful</span>.
                   </p>
                   <p className="text-slate-400 leading-relaxed">
                     I started with solid engineering fundamentals and an appetite for growth. Now I'm building 
@@ -85,7 +85,7 @@ export function About() {
                   </p>
                 </div>
                 <div className="relative">
-                  <div className="aspect-square rounded-2xl bg-gradient-to-br from-amber-500/20 to-amber-600/5 border border-amber-500/20 flex items-center justify-center">
+                  <div className="aspect-square rounded-2xl bg-gradient-to-br from-bronze/20 to-bronze-dark/5 border border-bronze/20 flex items-center justify-center">
                     <div className="text-center">
                       <div className="text-6xl font-bold text-gradient mb-2">Day 1</div>
                       <div className="text-slate-500">of the journey</div>
@@ -107,10 +107,10 @@ export function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 * index }}
             >
-              <Card className="h-full bg-slate-900/30 border-slate-800 hover:border-amber-500/30 transition-colors group">
+              <Card className="h-full bg-ebony/30 border-ebony hover:border-bronze/30 transition-colors group">
                 <CardContent className="p-6">
-                  <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center mb-4 group-hover:bg-amber-500/20 transition-colors">
-                    <value.icon className="w-6 h-6 text-amber-400" />
+                  <div className="w-12 h-12 rounded-xl bg-bronze/10 flex items-center justify-center mb-4 group-hover:bg-bronze/20 transition-colors">
+                    <value.icon className="w-6 h-6 text-bronze" />
                   </div>
                   <h3 className="text-lg font-semibold text-slate-100 mb-2">{value.title}</h3>
                   <p className="text-slate-400 text-sm leading-relaxed">{value.description}</p>

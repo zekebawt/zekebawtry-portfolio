@@ -23,14 +23,14 @@ export default function BlogPage() {
   const posts = getAllPosts();
 
   return (
-    <main className="min-h-screen bg-[#0a0a0f]">
+    <main className="min-h-screen bg-shadow-grey">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         {/* Header */}
         <div className="mb-12">
           <Button
             asChild
             variant="ghost"
-            className="mb-6 text-slate-400 hover:text-amber-400"
+            className="mb-6 text-slate-400 hover:text-bronze"
           >
             <Link href="/" className="flex items-center gap-2">
               <ArrowLeft className="w-4 h-4" />
@@ -38,8 +38,8 @@ export default function BlogPage() {
             </Link>
           </Button>
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center">
-              <BookOpen className="w-5 h-5 text-amber-400" />
+            <div className="w-10 h-10 rounded-lg bg-bronze/10 border border-bronze/20 flex items-center justify-center">
+              <BookOpen className="w-5 h-5 text-bronze" />
             </div>
             <h1 className="text-3xl sm:text-4xl font-bold text-slate-100">
               The <span className="text-gradient">Blog</span>
@@ -56,7 +56,7 @@ export default function BlogPage() {
             {posts.map((post) => (
               <Card
                 key={post.slug}
-                className="bg-slate-900/50 border-slate-800 hover:border-amber-500/30 transition-all"
+                className="bg-ebony/50 border-ebony hover:border-bronze/30 transition-all"
               >
                 <CardHeader className="pb-4">
                   <div className="flex items-center gap-2 text-sm text-slate-500 mb-3">
@@ -64,7 +64,7 @@ export default function BlogPage() {
                     {formatDate(post.date)}
                   </div>
                   <Link href={`/blog/${post.slug}`}>
-                    <h2 className="text-xl font-semibold text-slate-100 hover:text-amber-400 transition-colors">
+                    <h2 className="text-xl font-semibold text-slate-100 hover:text-bronze transition-colors">
                       {post.title}
                     </h2>
                   </Link>
@@ -76,7 +76,7 @@ export default function BlogPage() {
                       <Badge
                         key={tag}
                         variant="secondary"
-                        className="bg-slate-800 text-slate-400 border-slate-700"
+                        className="bg-ebony text-slate-400 border-ebony-light"
                       >
                         {tag}
                       </Badge>
@@ -87,7 +87,7 @@ export default function BlogPage() {
             ))}
           </div>
         ) : (
-          <Card className="bg-slate-900/50 border-slate-800">
+          <Card className="bg-ebony/50 border-ebony">
             <CardContent className="p-12 text-center">
               <BookOpen className="w-12 h-12 text-slate-600 mx-auto mb-4" />
               <h2 className="text-xl font-semibold text-slate-100 mb-2">

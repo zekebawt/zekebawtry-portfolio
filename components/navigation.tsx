@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, Zap } from "lucide-react";
 import Link from "next/link";
 
 const navItems = [
@@ -35,7 +35,7 @@ export function Navigation() {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-[#0a0a0f]/80 backdrop-blur-lg border-b border-slate-800"
+          ? "bg-[#0f172a]/80 backdrop-blur-lg border-b border-[#334155]"
           : "bg-transparent"
       }`}
     >
@@ -43,10 +43,10 @@ export function Navigation() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center group-hover:bg-amber-500/20 transition-colors">
-              <Zap className="w-4 h-4 text-amber-400" />
+            <div className="w-8 h-8 rounded-lg bg-[#cd7f32]/10 border border-[#cd7f32]/20 flex items-center justify-center group-hover:bg-[#cd7f32]/20 transition-colors">
+              <Zap className="w-4 h-4 text-[#cd7f32]" />
             </div>
-            <span className="font-semibold text-slate-100 group-hover:text-amber-400 transition-colors">
+            <span className="font-semibold text-slate-100 group-hover:text-[#cd7f32] transition-colors">
               Zeke
             </span>
           </Link>
@@ -57,7 +57,7 @@ export function Navigation() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="px-4 py-2 text-sm text-slate-400 hover:text-amber-400 transition-colors rounded-lg hover:bg-amber-500/5"
+                className="px-4 py-2 text-sm text-slate-400 hover:text-[#cd7f32] transition-colors rounded-lg hover:bg-[#cd7f32]/5"
               >
                 {item.label}
               </Link>
@@ -69,7 +69,7 @@ export function Navigation() {
             <Button
               asChild
               size="sm"
-              className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-semibold"
+              className="bg-[#cd7f32] hover:bg-[#d4a574] text-[#0f172a] font-semibold"
             >
               <Link href="#contact">Get In Touch</Link>
             </Button>
@@ -82,11 +82,11 @@ export function Navigation() {
                 <Menu className="w-5 h-5" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="bg-[#0a0a0f] border-slate-800 w-[300px]">
+            <SheetContent side="right" className="bg-[#0f172a] border-[#334155] w-[300px]">
               <div className="flex flex-col gap-6 mt-8">
                 <Link href="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
-                  <div className="w-8 h-8 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center">
-                    <Zap className="w-4 h-4 text-amber-400" />
+                  <div className="w-8 h-8 rounded-lg bg-[#cd7f32]/10 border border-[#cd7f32]/20 flex items-center justify-center">
+                    <Zap className="w-4 h-4 text-[#cd7f32]" />
                   </div>
                   <span className="font-semibold text-slate-100">Zeke</span>
                 </Link>
@@ -96,7 +96,7 @@ export function Navigation() {
                       key={item.label}
                       href={item.href}
                       onClick={() => setIsOpen(false)}
-                      className="px-4 py-3 text-slate-400 hover:text-amber-400 hover:bg-amber-500/5 rounded-lg transition-colors"
+                      className="px-4 py-3 text-slate-400 hover:text-[#cd7f32] hover:bg-[#cd7f32]/5 rounded-lg transition-colors"
                     >
                       {item.label}
                     </Link>
@@ -104,7 +104,7 @@ export function Navigation() {
                 </nav>
                 <Button
                   asChild
-                  className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-semibold mt-4"
+                  className="bg-[#cd7f32] hover:bg-[#d4a574] text-[#0f172a] font-semibold mt-4"
                 >
                   <Link href="#contact" onClick={() => setIsOpen(false)}>
                     Get In Touch

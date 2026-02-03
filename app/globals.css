@@ -44,80 +44,88 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
-  --color-gold: #f59e0b;
-  --color-gold-light: #fbbf24;
-  --color-gold-dark: #d97706;
+  
+  /* New Color Scheme */
+  --color-bronze: #cd7f32;
+  --color-bronze-light: #d4a35a;
+  --color-bronze-dark: #a0522d;
+  --color-shadow-grey: #0f172a;
+  --color-ebony: #1e293b;
+  --color-ebony-light: #334155;
+  --color-gold: #cd7f32;
+  --color-gold-light: #d4a35a;
+  --color-gold-dark: #a0522d;
   --color-charcoal: #0f172a;
   --color-slate-850: #1e293b;
 }
 
 :root {
   --radius: 0.625rem;
-  --background: #0a0a0f;
+  --background: #0f172a;
   --foreground: #f8fafc;
-  --card: #13131a;
+  --card: #1e293b;
   --card-foreground: #f8fafc;
-  --popover: #13131a;
+  --popover: #1e293b;
   --popover-foreground: #f8fafc;
-  --primary: #f59e0b;
-  --primary-foreground: #0a0a0f;
+  --primary: #cd7f32;
+  --primary-foreground: #0f172a;
   --secondary: #1e293b;
   --secondary-foreground: #f8fafc;
   --muted: #1e293b;
   --muted-foreground: #94a3b8;
-  --accent: #f59e0b;
-  --accent-foreground: #0a0a0f;
+  --accent: #cd7f32;
+  --accent-foreground: #0f172a;
   --destructive: #ef4444;
   --border: rgba(255, 255, 255, 0.08);
   --input: rgba(255, 255, 255, 0.1);
-  --ring: #f59e0b;
-  --chart-1: #f59e0b;
+  --ring: #cd7f32;
+  --chart-1: #cd7f32;
   --chart-2: #10b981;
   --chart-3: #3b82f6;
   --chart-4: #8b5cf6;
   --chart-5: #ec4899;
-  --sidebar: #13131a;
+  --sidebar: #1e293b;
   --sidebar-foreground: #f8fafc;
-  --sidebar-primary: #f59e0b;
-  --sidebar-primary-foreground: #0a0a0f;
+  --sidebar-primary: #cd7f32;
+  --sidebar-primary-foreground: #0f172a;
   --sidebar-accent: #1e293b;
   --sidebar-accent-foreground: #f8fafc;
   --sidebar-border: rgba(255, 255, 255, 0.08);
-  --sidebar-ring: #f59e0b;
+  --sidebar-ring: #cd7f32;
 }
 
 .dark {
-  --background: #0a0a0f;
+  --background: #0f172a;
   --foreground: #f8fafc;
-  --card: #13131a;
+  --card: #1e293b;
   --card-foreground: #f8fafc;
-  --popover: #13131a;
+  --popover: #1e293b;
   --popover-foreground: #f8fafc;
-  --primary: #f59e0b;
-  --primary-foreground: #0a0a0f;
+  --primary: #cd7f32;
+  --primary-foreground: #0f172a;
   --secondary: #1e293b;
   --secondary-foreground: #f8fafc;
   --muted: #1e293b;
   --muted-foreground: #94a3b8;
-  --accent: #f59e0b;
-  --accent-foreground: #0a0a0f;
+  --accent: #cd7f32;
+  --accent-foreground: #0f172a;
   --destructive: #ef4444;
   --border: rgba(255, 255, 255, 0.08);
   --input: rgba(255, 255, 255, 0.1);
-  --ring: #f59e0b;
-  --chart-1: #f59e0b;
+  --ring: #cd7f32;
+  --chart-1: #cd7f32;
   --chart-2: #10b981;
   --chart-3: #3b82f6;
   --chart-4: #8b5cf6;
   --chart-5: #ec4899;
-  --sidebar: #13131a;
+  --sidebar: #1e293b;
   --sidebar-foreground: #f8fafc;
-  --sidebar-primary: #f59e0b;
-  --sidebar-primary-foreground: #0a0a0f;
+  --sidebar-primary: #cd7f32;
+  --sidebar-primary-foreground: #0f172a;
   --sidebar-accent: #1e293b;
   --sidebar-accent-foreground: #f8fafc;
   --sidebar-border: rgba(255, 255, 255, 0.08);
-  --sidebar-ring: #f59e0b;
+  --sidebar-ring: #cd7f32;
 }
 
 @layer base {
@@ -134,18 +142,49 @@
 
 @layer utilities {
   .text-gradient {
-    @apply bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-bronze via-bronze-light to-bronze bg-clip-text text-transparent;
   }
   .text-gradient-subtle {
     @apply bg-gradient-to-r from-slate-200 via-slate-100 to-slate-200 bg-clip-text text-transparent;
   }
-  .glow-gold {
-    box-shadow: 0 0 20px rgba(245, 158, 11, 0.3), 0 0 40px rgba(245, 158, 11, 0.1);
+  .glow-bronze {
+    box-shadow: 0 0 20px rgba(205, 127, 50, 0.3), 0 0 40px rgba(205, 127, 50, 0.1);
   }
-  .glow-gold-soft {
-    box-shadow: 0 0 10px rgba(245, 158, 11, 0.2);
+  .glow-bronze-soft {
+    box-shadow: 0 0 10px rgba(205, 127, 50, 0.2);
   }
   .border-glow {
-    border-color: rgba(245, 158, 11, 0.3);
+    border-color: rgba(205, 127, 50, 0.3);
+  }
+  
+  /* Legacy aliases for compatibility */
+  .glow-gold {
+    box-shadow: 0 0 20px rgba(205, 127, 50, 0.3), 0 0 40px rgba(205, 127, 50, 0.1);
+  }
+  .glow-gold-soft {
+    box-shadow: 0 0 10px rgba(205, 127, 50, 0.2);
+  }
+  
+  /* Background utilities */
+  .bg-shadow-grey {
+    background-color: #0f172a;
+  }
+  .bg-ebony {
+    background-color: #1e293b;
+  }
+  .text-bronze {
+    color: #cd7f32;
+  }
+  .text-bronze-light {
+    color: #d4a35a;
+  }
+  .border-bronze {
+    border-color: #cd7f32;
+  }
+  .border-ebony {
+    border-color: #1e293b;
+  }
+  .border-ebony-light {
+    border-color: #334155;
   }
 }

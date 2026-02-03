@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
 import { skills } from "@/lib/data";
 import { 
   Code2, 
@@ -29,7 +28,7 @@ const categoryColors: Record<string, string> = {
   Languages: "from-blue-500 to-cyan-500",
   Frontend: "from-purple-500 to-pink-500",
   Backend: "from-green-500 to-emerald-500",
-  APIs: "from-orange-500 to-amber-500",
+  APIs: "from-orange-500 to-bronze",
   "AI/ML": "from-violet-500 to-purple-500",
   Tools: "from-slate-400 to-slate-300",
   DevOps: "from-red-500 to-orange-500",
@@ -45,7 +44,7 @@ export function Skills() {
   }, {} as Record<string, typeof skills>);
 
   return (
-    <section id="skills" className="py-24 sm:py-32 bg-slate-950/50">
+    <section id="skills" className="py-24 sm:py-32 bg-shadow-grey/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -55,7 +54,7 @@ export function Skills() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-amber-500/10 text-amber-400 text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-bronze/10 text-bronze text-sm font-medium mb-4">
             Technical Arsenal
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-100 mb-6">
@@ -71,7 +70,7 @@ export function Skills() {
         <div className="grid lg:grid-cols-2 gap-8">
           {Object.entries(groupedSkills).map(([category, categorySkills], categoryIndex) => {
             const Icon = categoryIcons[category] || Layers;
-            const gradient = categoryColors[category] || "from-amber-500 to-yellow-500";
+            const gradient = categoryColors[category] || "from-bronze to-bronze-light";
             
             return (
               <motion.div
@@ -81,7 +80,7 @@ export function Skills() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 * categoryIndex }}
               >
-                <Card className="h-full bg-slate-900/50 border-slate-800 overflow-hidden">
+                <Card className="h-full bg-ebony/50 border-ebony overflow-hidden">
                   <CardContent className="p-6">
                     {/* Category Header */}
                     <div className="flex items-center gap-3 mb-6">
@@ -103,9 +102,9 @@ export function Skills() {
                         >
                           <div className="flex items-center justify-between mb-1.5">
                             <span className="text-slate-300 font-medium">{skill.name}</span>
-                            <span className="text-amber-400 text-sm font-semibold">{skill.level}%</span>
+                            <span className="text-bronze text-sm font-semibold">{skill.level}%</span>
                           </div>
-                          <div className="relative h-2 bg-slate-800 rounded-full overflow-hidden">
+                          <div className="relative h-2 bg-ebony rounded-full overflow-hidden">
                             <motion.div
                               initial={{ width: 0 }}
                               whileInView={{ width: `${skill.level}%` }}
@@ -132,7 +131,7 @@ export function Skills() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mt-12"
         >
-          <Card className="bg-gradient-to-r from-amber-500/10 via-amber-500/5 to-transparent border-amber-500/20">
+          <Card className="bg-gradient-to-r from-bronze/10 via-bronze/5 to-transparent border-bronze/20">
             <CardContent className="p-6 sm:p-8">
               <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
                 <div>
