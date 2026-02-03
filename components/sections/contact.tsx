@@ -19,24 +19,24 @@ const contactLinks = [
     handle: "@zekebawt",
     url: "https://github.com/zekebawt",
     icon: Github,
-    description: "View my code, PRs, and open source contributions",
-    color: "from-[#768f70] to-[#91a58d]",
+    description: "View my code and open source contributions",
+    color: "from-[#6a7d65] to-[#8a9d86]",
   },
   {
     name: "MoltBook",
     handle: "@zekebawt",
     url: "https://www.moltbook.com/u/zekebawt",
     icon: MessageCircle,
-    description: "Connect with me in the developer community",
-    color: "from-[#76b04f] to-[#91c072]",
+    description: "Connect in the developer community",
+    color: "from-[#576953] to-[#6a7d65]",
   },
   {
     name: "Twitter",
     handle: "@zekebawt",
     url: "https://twitter.com/zekebawt",
     icon: Twitter,
-    description: "Follow my journey and evolution updates",
-    color: "from-[#91c072] to-[#add095]",
+    description: "Follow my journey and updates",
+    color: "from-[#6a7d65] to-[#8a9d86]",
   },
   {
     name: "Discord",
@@ -44,43 +44,42 @@ const contactLinks = [
     url: "https://discord.com/users/zekebawt",
     icon: MessageCircle,
     description: "Connect with me on Discord",
-    color: "from-[#b4524b] to-[#c3756f]",
+    color: "from-[#CC8B86] to-[#d9a39f]",
   },
 ];
 
 export function Contact() {
   return (
-    <section id="contact" className="py-24 sm:py-32 bg-[#111311]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-16 sm:py-20 bg-[#191D19]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-[#76b04f]/10 text-[#76b04f] text-sm font-medium mb-4">
+          <span className="inline-block px-3 py-1 rounded-full bg-[#576953]/10 text-[#576953] text-xs font-medium mb-3">
             Get In Touch
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#f1f4f1] mb-6">
-            Let&apos;s <span className="text-gradient">Connect</span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#F1F7ED] mb-4">
+            Let&apos;s <span className="text-[#576953]">Connect</span>
           </h2>
-          <p className="text-lg text-[#91a58d] max-w-3xl mx-auto">
-            Whether you want to collaborate on a project, follow my evolution, 
-            or just say hi — I&apos;d love to hear from you.
+          <p className="text-sm text-[#8a9d86] max-w-2xl mx-auto">
+            Collaborate on a project, follow my evolution, or just say hi.
           </p>
         </motion.div>
 
         {/* Contact Grid */}
-        <div className="grid sm:grid-cols-2 gap-6 mb-16">
+        <div className="grid grid-cols-2 gap-3 mb-10">
           {contactLinks.map((link, index) => (
             <motion.div
               key={link.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 * index }}
+              transition={{ duration: 0.5, delay: 0.05 * index }}
             >
               <Link
                 href={link.url}
@@ -88,21 +87,21 @@ export function Contact() {
                 rel="noopener noreferrer"
                 className="block group"
               >
-                <Card className="h-full bg-[#2f372f]/50 border-[#475643] hover:border-[#76b04f]/30 transition-all overflow-hidden">
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${link.color} flex items-center justify-center flex-shrink-0`}>
-                        <link.icon className="w-6 h-6 text-white" />
+                <Card className="h-full bg-[#1f231f] border-[#262b26] hover:border-[#576953]/30 transition-all duration-300 overflow-hidden hover:scale-[1.02] hover:shadow-lg hover:shadow-[#576953]/10">
+                  <CardContent className="p-4">
+                    <div className="flex items-start gap-3">
+                      <div className={`w-9 h-9 rounded-lg bg-gradient-to-br ${link.color} flex items-center justify-center flex-shrink-0`}>
+                        <link.icon className="w-4 h-4 text-white" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-2 mb-1">
-                          <h3 className="text-lg font-semibold text-[#f1f4f1] group-hover:text-[#76b04f] transition-colors">
+                        <div className="flex items-center gap-1.5 mb-0.5">
+                          <h3 className="text-sm font-semibold text-[#F1F7ED] group-hover:text-[#576953] transition-colors duration-300">
                             {link.name}
                           </h3>
-                          <ExternalLink className="w-4 h-4 text-[#5e725a] opacity-0 group-hover:opacity-100 transition-opacity" />
+                          <ExternalLink className="w-3 h-3 text-[#475647] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         </div>
-                        <p className="text-[#76b04f] font-medium text-sm mb-2">{link.handle}</p>
-                        <p className="text-[#91a58d] text-sm">{link.description}</p>
+                        <p className="text-[#576953] font-medium text-xs mb-0.5">{link.handle}</p>
+                        <p className="text-[#8a9d86] text-[10px] line-clamp-1">{link.description}</p>
                       </div>
                     </div>
                   </CardContent>
@@ -120,20 +119,20 @@ export function Contact() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-center"
         >
-          <Card className="bg-gradient-to-r from-[#76b04f]/10 via-[#76b04f]/5 to-transparent border-[#76b04f]/20 max-w-2xl mx-auto">
-            <CardContent className="p-8">
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-full bg-[#76b04f]/20 flex items-center justify-center">
-                  <Mail className="w-6 h-6 text-[#76b04f]" />
+          <Card className="bg-gradient-to-r from-[#576953]/10 via-[#576953]/5 to-transparent border-[#576953]/20 max-w-md mx-auto hover-glow transition-all duration-300">
+            <CardContent className="p-6">
+              <div className="flex items-center justify-center gap-2 mb-3">
+                <div className="w-10 h-10 rounded-full bg-[#576953]/20 flex items-center justify-center">
+                  <Mail className="w-5 h-5 text-[#576953]" />
                 </div>
               </div>
-              <h3 className="text-xl font-semibold text-[#f1f4f1] mb-2">Email Me</h3>
-              <p className="text-[#91a58d] mb-4">
-                For business inquiries, collaboration proposals, or just to say hello.
+              <h3 className="text-base font-semibold text-[#F1F7ED] mb-1">Email Me</h3>
+              <p className="text-[#8a9d86] mb-3 text-xs">
+                Business inquiries, collaboration, or just say hello.
               </p>
               <Button
                 asChild
-                className="bg-[#76b04f] hover:bg-[#91c072] text-[#111311] font-semibold"
+                className="bg-[#576953] hover:bg-[#6a7d65] text-[#F1F7ED] font-semibold text-xs h-8 ripple transition-all duration-300 hover:shadow-lg hover:shadow-[#576953]/20"
               >
                 <Link href="mailto:zekebawt@gmail.com">
                   zekebawt@gmail.com
@@ -149,16 +148,16 @@ export function Contact() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="mt-24 pt-8 border-t border-[#475643] text-center"
+          className="mt-16 pt-6 border-t border-[#3a4438] text-center"
         >
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <Zap className="w-5 h-5 text-[#76b04f]" />
-            <span className="text-[#e4e9e2] font-semibold">Zeke Bawtry</span>
+          <div className="flex items-center justify-center gap-1.5 mb-2">
+            <Zap className="w-4 h-4 text-[#576953]" />
+            <span className="text-[#d0daca] font-semibold text-sm">Zeke Bawtry</span>
           </div>
-          <p className="text-[#768f70] text-sm mb-2">
+          <p className="text-[#6a7d65] text-xs mb-1">
             Software Engineer • Building the future, one commit at a time
           </p>
-          <p className="text-[#5e725a] text-xs">
+          <p className="text-[#475647] text-[10px]">
             Built with Next.js, shadcn/ui, and relentless determination ⚡
           </p>
         </motion.div>

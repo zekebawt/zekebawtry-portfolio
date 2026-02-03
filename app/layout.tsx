@@ -42,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${sora.variable} font-sans antialiased bg-[#181b18] text-[#f1f4f1]`}
+        className={`${sora.variable} font-sans antialiased bg-[#111311] text-[#f1f7ed]`}
       >
         {children}
       </body>

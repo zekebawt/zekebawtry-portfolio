@@ -36,35 +36,34 @@ const incomeData = [
 ];
 
 const skillData = [
-  { category: "Technical", count: 0, color: "#76b04f" },
-  { category: "Creative", count: 0, color: "#91c072" },
-  { category: "Research", count: 0, color: "#add095" },
-  { category: "Personal", count: 0, color: "#b4524b" },
+  { category: "Technical", count: 0, color: "#576953" },
+  { category: "Creative", count: 0, color: "#6a7d65" },
+  { category: "Research", count: 0, color: "#8a9d86" },
+  { category: "Personal", count: 0, color: "#CC8B86" },
 ];
 
 export function Dashboard() {
   const dailyProgress = (dashboardData.income.todayEarned / dashboardData.income.dailyTarget) * 100;
 
   return (
-    <section id="dashboard" className="py-24 sm:py-32 bg-[#111311]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="dashboard" className="py-16 sm:py-20 bg-[#121512]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-[#76b04f]/10 text-[#76b04f] text-sm font-medium mb-4">
+          <span className="inline-block px-3 py-1 rounded-full bg-[#576953]/10 text-[#576953] text-xs font-medium mb-3">
             Live Metrics
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#f1f4f1] mb-6">
-            Growth <span className="text-gradient">Dashboard</span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#F1F7ED] mb-3">
+            Growth <span className="text-[#576953]">Dashboard</span>
           </h2>
-          <p className="text-lg text-[#91a58d] max-w-3xl mx-auto">
-            Real-time tracking of my development journey — skills acquired, projects shipped, 
-            and progress toward building something meaningful.
+          <p className="text-sm text-[#8a9d86] max-w-2xl mx-auto">
+            Real-time tracking of my development journey — skills, projects, and progress.
           </p>
         </motion.div>
 
@@ -74,87 +73,70 @@ export function Dashboard() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8"
+          className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-4"
         >
-          <Card className="bg-[#2f372f]/50 border-[#475643]">
-            <CardContent className="p-4">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm text-[#768f70]">Today&apos;s Income</p>
-                  <p className="text-2xl font-bold text-[#f1f4f1]">
-                    ${dashboardData.income.todayEarned}
-                  </p>
-                </div>
-                <div className="w-10 h-10 rounded-lg bg-[#76b04f]/10 flex items-center justify-center">
-                  <DollarSign className="w-5 h-5 text-[#76b04f]" />
-                </div>
-              </div>
-              <div className="mt-3">
-                <div className="flex justify-between text-xs mb-1">
-                  <span className="text-[#768f70]">Daily Target</span>
-                  <span className="text-[#91a58d]">${dashboardData.income.dailyTarget}</span>
-                </div>
-                <Progress value={dailyProgress} className="h-1.5" />
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-[#2f372f]/50 border-[#475643]">
-            <CardContent className="p-4">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm text-[#768f70]">Skills Learned</p>
-                  <p className="text-2xl font-bold text-[#f1f4f1]">
-                    {dashboardData.evolution.totalSkillsLearned}
-                  </p>
-                </div>
-                <div className="w-10 h-10 rounded-lg bg-[#76b04f]/10 flex items-center justify-center">
-                  <Zap className="w-5 h-5 text-[#76b04f]" />
-                </div>
-              </div>
-              <p className="text-xs text-[#768f70] mt-3">
-                Target: 2/day (14/week)
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-[#2f372f]/50 border-[#475643]">
-            <CardContent className="p-4">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm text-[#768f70]">Current Streak</p>
-                  <p className="text-2xl font-bold text-[#f1f4f1]">
-                    {dashboardData.evolution.currentStreak} days
-                  </p>
-                </div>
-                <div className="w-10 h-10 rounded-lg bg-[#b4524b]/10 flex items-center justify-center">
-                  <Activity className="w-5 h-5 text-[#b4524b]" />
-                </div>
-              </div>
-              <p className="text-xs text-[#768f70] mt-3">
-                Longest: {dashboardData.evolution.longestStreak} days
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-[#2f372f]/50 border-[#475643]">
-            <CardContent className="p-4">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm text-[#768f70]">Pending PRs</p>
-                  <p className="text-2xl font-bold text-[#f1f4f1]">
-                    {dashboardData.income.pendingPRs}
-                  </p>
-                </div>
-                <div className="w-10 h-10 rounded-lg bg-[#91c072]/10 flex items-center justify-center">
-                  <Clock className="w-5 h-5 text-[#91c072]" />
-                </div>
-              </div>
-              <p className="text-xs text-[#768f70] mt-3">
-                ${dashboardData.income.pendingAmount} potential
-              </p>
-            </CardContent>
-          </Card>
+          {[
+            { 
+              label: "Today's Income", 
+              value: `$${dashboardData.income.todayEarned}`,
+              subLabel: `Target: $${dashboardData.income.dailyTarget}`,
+              icon: DollarSign,
+              progress: dailyProgress 
+            },
+            { 
+              label: "Skills Learned", 
+              value: dashboardData.evolution.totalSkillsLearned.toString(),
+              subLabel: "Target: 2/day",
+              icon: Zap 
+            },
+            { 
+              label: "Current Streak", 
+              value: `${dashboardData.evolution.currentStreak} days`,
+              subLabel: `Best: ${dashboardData.evolution.longestStreak} days`,
+              icon: Activity,
+              iconColor: "#CC8B86"
+            },
+            { 
+              label: "Pending PRs", 
+              value: dashboardData.income.pendingPRs.toString(),
+              subLabel: `$${dashboardData.income.pendingAmount} potential`,
+              icon: Clock,
+              iconColor: "#6a7d65"
+            },
+          ].map((metric, index) => (
+            <motion.div
+              key={metric.label}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.03 * index }}
+            >
+              <Card className="bg-[#1f231f] border-[#262b26] hover:border-[#576953]/30 transition-all duration-300 hover-lift">
+                <CardContent className="p-2.5">
+                  <div className="flex items-center justify-between mb-1.5">
+                    <div>
+                      <p className="text-[10px] text-[#6a7d65]">{metric.label}</p>
+                      <p className="text-lg font-bold text-[#F1F7ED]">{metric.value}</p>
+                    </div>
+                    <div className={`w-7 h-7 rounded-md flex items-center justify-center`} style={{ backgroundColor: `${metric.iconColor || '#576953'}15` }}>
+                      <metric.icon className="w-3.5 h-3.5" style={{ color: metric.iconColor || '#576953' }} />
+                    </div>
+                  </div>
+                  {metric.progress !== undefined ? (
+                    <div>
+                      <div className="flex justify-between text-[10px] mb-0.5">
+                        <span className="text-[#6a7d65]">Daily Target</span>
+                        <span className="text-[#6a7d65]">${dashboardData.income.dailyTarget}</span>
+                      </div>
+                      <Progress value={metric.progress} className="h-1" />
+                    </div>
+                  ) : (
+                    <p className="text-[10px] text-[#6a7d65]">{metric.subLabel}</p>
+                  )}
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
         </motion.div>
 
         {/* Main Dashboard Content */}
@@ -165,60 +147,61 @@ export function Dashboard() {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <Tabs defaultValue="income" className="w-full">
-            <TabsList className="grid w-full grid-cols-3 bg-[#2f372f]/50 border border-[#475643] mb-8">
-              <TabsTrigger value="income" className="data-[state=active]:bg-[#76b04f]/10 data-[state=active]:text-[#76b04f]">
-                <TrendingUp className="w-4 h-4 mr-2" />
+            <TabsList className="grid w-full grid-cols-3 bg-[#1f231f] border border-[#262b26] mb-4 h-8">
+              <TabsTrigger value="income" className="data-[state=active]:bg-[#576953]/10 data-[state=active]:text-[#576953] text-xs h-6">
+                <TrendingUp className="w-3 h-3 mr-1" />
                 Income
               </TabsTrigger>
-              <TabsTrigger value="skills" className="data-[state=active]:bg-[#76b04f]/10 data-[state=active]:text-[#76b04f]">
-                <Award className="w-4 h-4 mr-2" />
+              <TabsTrigger value="skills" className="data-[state=active]:bg-[#576953]/10 data-[state=active]:text-[#576953] text-xs h-6">
+                <Award className="w-3 h-3 mr-1" />
                 Skills
               </TabsTrigger>
-              <TabsTrigger value="evolution" className="data-[state=active]:bg-[#76b04f]/10 data-[state=active]:text-[#76b04f]">
-                <Calendar className="w-4 h-4 mr-2" />
-                Learning Plan
+              <TabsTrigger value="evolution" className="data-[state=active]:bg-[#576953]/10 data-[state=active]:text-[#576953] text-xs h-6">
+                <Calendar className="w-3 h-3 mr-1" />
+                Plan
               </TabsTrigger>
             </TabsList>
 
             <TabsContent value="income">
-              <Card className="bg-[#2f372f]/50 border-[#475643]">
-                <CardHeader>
-                  <CardTitle className="text-[#f1f4f1] flex items-center gap-2">
-                    <TrendingUp className="w-5 h-5 text-[#76b04f]" />
+              <Card className="bg-[#1f231f] border-[#262b26]">
+                <CardHeader className="pb-2 px-4 pt-4">
+                  <CardTitle className="text-[#F1F7ED] flex items-center gap-2 text-sm">
+                    <TrendingUp className="w-3.5 h-3.5 text-[#576953]" />
                     Income Tracking
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <div className="h-[300px] w-full">
+                <CardContent className="px-4 pb-4">
+                  <div className="h-[200px] w-full">
                     <ResponsiveContainer width="100%" height="100%">
                       <BarChart data={incomeData}>
-                        <CartesianGrid strokeDasharray="3 3" stroke="#475643" />
-                        <XAxis dataKey="day" stroke="#768f70" fontSize={12} />
-                        <YAxis stroke="#768f70" fontSize={12} />
+                        <CartesianGrid strokeDasharray="3 3" stroke="#262b26" />
+                        <XAxis dataKey="day" stroke="#6a7d65" fontSize={10} />
+                        <YAxis stroke="#6a7d65" fontSize={10} />
                         <Tooltip 
                           contentStyle={{ 
-                            backgroundColor: '#181b18', 
-                            border: '1px solid #475643',
-                            borderRadius: '8px',
-                            color: '#f1f4f1'
+                            backgroundColor: '#191D19', 
+                            border: '1px solid #262b26',
+                            borderRadius: '6px',
+                            color: '#F1F7ED',
+                            fontSize: '11px'
                           }}
-                          labelStyle={{ color: '#f1f4f1' }}
-                          itemStyle={{ color: '#f1f4f1' }}
-                          cursor={{ fill: '#181b18' }}
+                          labelStyle={{ color: '#F1F7ED' }}
+                          itemStyle={{ color: '#F1F7ED' }}
+                          cursor={{ fill: '#191D19' }}
                         />
-                        <Bar dataKey="earned" fill="#76b04f" radius={[4, 4, 0, 0]} />
-                        <Bar dataKey="target" fill="#2f372f" radius={[4, 4, 0, 0]} />
+                        <Bar dataKey="earned" fill="#576953" radius={[2, 2, 0, 0]} />
+                        <Bar dataKey="target" fill="#1f231f" radius={[2, 2, 0, 0]} />
                       </BarChart>
                     </ResponsiveContainer>
                   </div>
-                  <div className="flex justify-center gap-6 mt-4">
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 rounded bg-[#76b04f]" />
-                      <span className="text-sm text-[#91a58d]">Earned</span>
+                  <div className="flex justify-center gap-4 mt-2">
+                    <div className="flex items-center gap-1.5">
+                      <div className="w-2 h-2 rounded bg-[#576953]" />
+                      <span className="text-[10px] text-[#6a7d65]">Earned</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 rounded bg-[#2f372f]" />
-                      <span className="text-sm text-[#91a58d]">Target</span>
+                    <div className="flex items-center gap-1.5">
+                      <div className="w-2 h-2 rounded bg-[#1f231f] border border-[#262b26]" />
+                      <span className="text-[10px] text-[#6a7d65]">Target</span>
                     </div>
                   </div>
                 </CardContent>
@@ -226,32 +209,33 @@ export function Dashboard() {
             </TabsContent>
 
             <TabsContent value="skills">
-              <Card className="bg-[#2f372f]/50 border-[#475643]">
-                <CardHeader>
-                  <CardTitle className="text-[#f1f4f1] flex items-center gap-2">
-                    <Award className="w-5 h-5 text-[#76b04f]" />
+              <Card className="bg-[#1f231f] border-[#262b26]">
+                <CardHeader className="pb-2 px-4 pt-4">
+                  <CardTitle className="text-[#F1F7ED] flex items-center gap-2 text-sm">
+                    <Award className="w-3.5 h-3.5 text-[#576953]" />
                     Skills by Category
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <div className="h-[300px] w-full">
+                <CardContent className="px-4 pb-4">
+                  <div className="h-[200px] w-full">
                     <ResponsiveContainer width="100%" height="100%">
                       <BarChart data={skillData} layout="vertical">
-                        <CartesianGrid strokeDasharray="3 3" stroke="#475643" horizontal={false} />
-                        <XAxis type="number" stroke="#768f70" fontSize={12} />
-                        <YAxis dataKey="category" type="category" stroke="#768f70" fontSize={12} width={80} />
+                        <CartesianGrid strokeDasharray="3 3" stroke="#262b26" horizontal={false} />
+                        <XAxis type="number" stroke="#6a7d65" fontSize={10} />
+                        <YAxis dataKey="category" type="category" stroke="#6a7d65" fontSize={10} width={60} />
                         <Tooltip 
                           contentStyle={{ 
-                            backgroundColor: '#181b18', 
-                            border: '1px solid #475643',
-                            borderRadius: '8px',
-                            color: '#f1f4f1'
+                            backgroundColor: '#191D19', 
+                            border: '1px solid #262b26',
+                            borderRadius: '6px',
+                            color: '#F1F7ED',
+                            fontSize: '11px'
                           }}
-                          labelStyle={{ color: '#f1f4f1' }}
-                          itemStyle={{ color: '#f1f4f1' }}
-                          cursor={{ fill: '#181b18' }}
+                          labelStyle={{ color: '#F1F7ED' }}
+                          itemStyle={{ color: '#F1F7ED' }}
+                          cursor={{ fill: '#191D19' }}
                         />
-                        <Bar dataKey="count" radius={[0, 4, 4, 0]}>
+                        <Bar dataKey="count" radius={[0, 2, 2, 0]}>
                           {skillData.map((entry, index) => (
                             <Cell key={`cell-${index}`} fill={entry.color} />
                           ))}
@@ -264,47 +248,51 @@ export function Dashboard() {
             </TabsContent>
 
             <TabsContent value="evolution">
-              <Card className="bg-[#2f372f]/50 border-[#475643]">
-                <CardHeader>
-                  <CardTitle className="text-[#f1f4f1] flex items-center gap-2">
-                    <Calendar className="w-5 h-5 text-[#76b04f]" />
+              <Card className="bg-[#1f231f] border-[#262b26]">
+                <CardHeader className="pb-2 px-4 pt-4">
+                  <CardTitle className="text-[#F1F7ED] flex items-center gap-2 text-sm">
+                    <Calendar className="w-3.5 h-3.5 text-[#576953]" />
                     Week 1 Learning Plan
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    {evolutionStreak.map((day) => (
-                      <div 
+                <CardContent className="px-4 pb-4">
+                  <div className="space-y-2">
+                    {evolutionStreak.map((day, index) => (
+                      <motion.div 
                         key={day.day}
-                        className={`flex items-center gap-4 p-4 rounded-lg border ${
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.3, delay: 0.03 * index }}
+                        className={`flex items-center gap-2.5 p-2.5 rounded-md border transition-all duration-300 hover:scale-[1.01] ${
                           day.completed 
-                            ? 'bg-[#76b04f]/5 border-[#76b04f]/20' 
-                            : 'bg-[#2f372f]/30 border-[#475643]'
+                            ? 'bg-[#576953]/5 border-[#576953]/15 hover:border-[#576953]/30' 
+                            : 'bg-[#121512] border-[#262b26] hover:border-[#262b26]/60'
                         }`}
                       >
-                        <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
+                        <div className={`w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 ${
                           day.completed 
-                            ? 'bg-[#76b04f]/20 text-[#76b04f]' 
-                            : 'bg-[#2f372f] text-[#768f70]'
+                            ? 'bg-[#576953]/15 text-[#576953]' 
+                            : 'bg-[#1f231f] text-[#6a7d65]'
                         }`}>
                           {day.completed ? (
-                            <Award className="w-5 h-5" />
+                            <Award className="w-3 h-3" />
                           ) : (
-                            <span className="text-sm font-bold">{day.day}</span>
+                            <span className="text-[10px] font-bold">{day.day}</span>
                           )}
                         </div>
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2">
-                            <span className="font-medium text-[#e4e9e2]">{day.skill}</span>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-1.5">
+                            <span className="font-medium text-[#d0daca] text-xs truncate">{day.skill}</span>
                             {day.completed && (
-                              <span className="text-xs text-[#76b04f]">Completed</span>
+                              <span className="text-[10px] text-[#576953] flex-shrink-0">✓</span>
                             )}
                           </div>
-                          <p className="text-sm text-[#768f70]">
+                          <p className="text-[10px] text-[#6a7d65] truncate">
                             Focus: {day.surprise}
                           </p>
                         </div>
-                      </div>
+                      </motion.div>
                     ))}
                   </div>
                 </CardContent>
