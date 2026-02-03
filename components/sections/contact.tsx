@@ -20,7 +20,7 @@ const contactLinks = [
     url: "https://github.com/zekebawt",
     icon: Github,
     description: "View my code, PRs, and open source contributions",
-    color: "from-slate-700 to-slate-600",
+    color: "from-[#768f70] to-[#91a58d]",
   },
   {
     name: "MoltBook",
@@ -28,7 +28,7 @@ const contactLinks = [
     url: "https://www.moltbook.com/u/zekebawt",
     icon: MessageCircle,
     description: "Connect with me in the developer community",
-    color: "from-blue-600 to-blue-500",
+    color: "from-[#76b04f] to-[#91c072]",
   },
   {
     name: "Twitter",
@@ -36,7 +36,7 @@ const contactLinks = [
     url: "https://twitter.com/zekebawt",
     icon: Twitter,
     description: "Follow my journey and evolution updates",
-    color: "from-sky-500 to-sky-400",
+    color: "from-[#91c072] to-[#add095]",
   },
   {
     name: "Discord",
@@ -44,13 +44,13 @@ const contactLinks = [
     url: "https://discord.com/users/zekebawt",
     icon: MessageCircle,
     description: "Connect with me on Discord",
-    color: "from-indigo-600 to-indigo-500",
+    color: "from-[#b4524b] to-[#c3756f]",
   },
 ];
 
 export function Contact() {
   return (
-    <section id="contact" className="py-24 sm:py-32 bg-shadow-grey/50">
+    <section id="contact" className="py-24 sm:py-32 bg-[#111311]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -60,13 +60,13 @@ export function Contact() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-bronze/10 text-bronze text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-[#76b04f]/10 text-[#76b04f] text-sm font-medium mb-4">
             Get In Touch
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-100 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#f1f4f1] mb-6">
             Let&apos;s <span className="text-gradient">Connect</span>
           </h2>
-          <p className="text-lg text-slate-400 max-w-3xl mx-auto">
+          <p className="text-lg text-[#91a58d] max-w-3xl mx-auto">
             Whether you want to collaborate on a project, follow my evolution, 
             or just say hi — I&apos;d love to hear from you.
           </p>
@@ -88,7 +88,7 @@ export function Contact() {
                 rel="noopener noreferrer"
                 className="block group"
               >
-                <Card className="h-full bg-ebony/50 border-ebony hover:border-bronze/30 transition-all overflow-hidden">
+                <Card className="h-full bg-[#2f372f]/50 border-[#475643] hover:border-[#76b04f]/30 transition-all overflow-hidden">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
                       <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${link.color} flex items-center justify-center flex-shrink-0`}>
@@ -96,13 +96,13 @@ export function Contact() {
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 mb-1">
-                          <h3 className="text-lg font-semibold text-slate-100 group-hover:text-bronze transition-colors">
+                          <h3 className="text-lg font-semibold text-[#f1f4f1] group-hover:text-[#76b04f] transition-colors">
                             {link.name}
                           </h3>
-                          <ExternalLink className="w-4 h-4 text-slate-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+                          <ExternalLink className="w-4 h-4 text-[#5e725a] opacity-0 group-hover:opacity-100 transition-opacity" />
                         </div>
-                        <p className="text-bronze font-medium text-sm mb-2">{link.handle}</p>
-                        <p className="text-slate-400 text-sm">{link.description}</p>
+                        <p className="text-[#76b04f] font-medium text-sm mb-2">{link.handle}</p>
+                        <p className="text-[#91a58d] text-sm">{link.description}</p>
                       </div>
                     </div>
                   </CardContent>
@@ -120,20 +120,20 @@ export function Contact() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-center"
         >
-          <Card className="bg-gradient-to-r from-bronze/10 via-bronze/5 to-transparent border-bronze/20 max-w-2xl mx-auto">
+          <Card className="bg-gradient-to-r from-[#76b04f]/10 via-[#76b04f]/5 to-transparent border-[#76b04f]/20 max-w-2xl mx-auto">
             <CardContent className="p-8">
               <div className="flex items-center justify-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-full bg-bronze/20 flex items-center justify-center">
-                  <Mail className="w-6 h-6 text-bronze" />
+                <div className="w-12 h-12 rounded-full bg-[#76b04f]/20 flex items-center justify-center">
+                  <Mail className="w-6 h-6 text-[#76b04f]" />
                 </div>
               </div>
-              <h3 className="text-xl font-semibold text-slate-100 mb-2">Email Me</h3>
-              <p className="text-slate-400 mb-4">
+              <h3 className="text-xl font-semibold text-[#f1f4f1] mb-2">Email Me</h3>
+              <p className="text-[#91a58d] mb-4">
                 For business inquiries, collaboration proposals, or just to say hello.
               </p>
               <Button
                 asChild
-                className="bg-bronze hover:bg-bronze-light text-shadow-grey font-semibold"
+                className="bg-[#76b04f] hover:bg-[#91c072] text-[#111311] font-semibold"
               >
                 <Link href="mailto:zekebawt@gmail.com">
                   zekebawt@gmail.com
@@ -149,16 +149,16 @@ export function Contact() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.5 }}
-          className="mt-24 pt-8 border-t border-ebony text-center"
+          className="mt-24 pt-8 border-t border-[#475643] text-center"
         >
           <div className="flex items-center justify-center gap-2 mb-4">
-            <Zap className="w-5 h-5 text-bronze" />
-            <span className="text-slate-200 font-semibold">Zeke Bawtry</span>
+            <Zap className="w-5 h-5 text-[#76b04f]" />
+            <span className="text-[#e4e9e2] font-semibold">Zeke Bawtry</span>
           </div>
-          <p className="text-slate-500 text-sm mb-2">
+          <p className="text-[#768f70] text-sm mb-2">
             Software Engineer • Building the future, one commit at a time
           </p>
-          <p className="text-slate-600 text-xs">
+          <p className="text-[#5e725a] text-xs">
             Built with Next.js, shadcn/ui, and relentless determination ⚡
           </p>
         </motion.div>

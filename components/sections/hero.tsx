@@ -9,12 +9,12 @@ export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-shadow-grey">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-bronze/10 via-transparent to-transparent" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-bronze-dark/5 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-[#181b18]">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#76b04f]/8 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-[#5e8d3f]/5 via-transparent to-transparent" />
         
         {/* Grid Pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#2f372f_1px,transparent_1px),linear-gradient(to_bottom,#2f372f_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20" />
       </div>
 
       {/* Content */}
@@ -24,10 +24,10 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-bronze/10 border border-bronze/20 mb-8"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#76b04f]/10 border border-[#76b04f]/20 mb-8"
         >
-          <Zap className="w-4 h-4 text-bronze" />
-          <span className="text-sm text-bronze-light font-medium">Full-Stack Developer</span>
+          <Zap className="w-4 h-4 text-[#76b04f]" />
+          <span className="text-sm text-[#91c072] font-medium">Full-Stack Developer</span>
         </motion.div>
 
         {/* Name */}
@@ -45,7 +45,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-xl sm:text-2xl md:text-3xl text-slate-400 font-light max-w-2xl mx-auto mb-8 leading-relaxed"
+          className="text-xl sm:text-2xl md:text-3xl text-[#91a58d] font-light max-w-2xl mx-auto mb-8 leading-relaxed"
         >
           Building software with purpose. Crafting code that solves real problems and drives impact.
         </motion.p>
@@ -59,15 +59,15 @@ export function Hero() {
         >
           <div className="text-center">
             <div className="text-3xl sm:text-4xl font-bold text-gradient">2</div>
-            <div className="text-sm text-slate-500 mt-1">PRs Merged</div>
+            <div className="text-sm text-[#768f70] mt-1">PRs Merged</div>
           </div>
           <div className="text-center">
             <div className="text-3xl sm:text-4xl font-bold text-gradient">$100</div>
-            <div className="text-sm text-slate-500 mt-1">Bounty Income</div>
+            <div className="text-sm text-[#768f70] mt-1">Bounty Income</div>
           </div>
           <div className="text-center">
             <div className="text-3xl sm:text-4xl font-bold text-gradient">Day 1</div>
-            <div className="text-sm text-slate-500 mt-1">Growth Journey</div>
+            <div className="text-sm text-[#768f70] mt-1">Growth Journey</div>
           </div>
         </motion.div>
 
@@ -81,7 +81,7 @@ export function Hero() {
           <Button
             asChild
             size="lg"
-            className="bg-bronze hover:bg-bronze-light text-shadow-grey font-semibold px-8 py-6 text-lg glow-bronze-soft"
+            className="bg-[#76b04f] hover:bg-[#91c072] text-[#111311] font-semibold px-8 py-6 text-lg glow-mint-soft"
           >
             <Link href="#dashboard">View Dashboard</Link>
           </Button>
@@ -106,17 +106,17 @@ export function Hero() {
             href="https://github.com/zekebawt"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 rounded-full bg-ebony/50 border border-ebony-light hover:border-bronze/50 hover:bg-bronze/10 transition-all"
+            className="p-3 rounded-full bg-[#2f372f]/50 border border-[#475643] hover:border-[#76b04f]/50 hover:bg-[#76b04f]/10 transition-all"
           >
-            <Github className="w-5 h-5 text-slate-400 hover:text-bronze" />
+            <Github className="w-5 h-5 text-[#91a58d] hover:text-[#76b04f]" />
           </Link>
           <Link
             href="https://twitter.com/zekebawtry"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 rounded-full bg-ebony/50 border border-ebony-light hover:border-bronze/50 hover:bg-bronze/10 transition-all"
+            className="p-3 rounded-full bg-[#2f372f]/50 border border-[#475643] hover:border-[#76b04f]/50 hover:bg-[#76b04f]/10 transition-all"
           >
-            <Twitter className="w-5 h-5 text-slate-400 hover:text-bronze" />
+            <Twitter className="w-5 h-5 text-[#91a58d] hover:text-[#76b04f]" />
           </Link>
         </motion.div>
       </div>
@@ -132,7 +132,7 @@ export function Hero() {
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
         >
-          <ChevronDown className="w-6 h-6 text-slate-600" />
+          <ChevronDown className="w-6 h-6 text-[#5e725a]" />
         </motion.div>
       </motion.div>
     </section>

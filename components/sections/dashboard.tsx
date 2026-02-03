@@ -7,7 +7,6 @@ import { Progress } from "@/components/ui/progress";
 import { 
   TrendingUp, 
   DollarSign, 
-  Target, 
   Zap, 
   Calendar,
   Award,
@@ -15,8 +14,6 @@ import {
   Activity
 } from "lucide-react";
 import { 
-  LineChart, 
-  Line, 
   XAxis, 
   YAxis, 
   CartesianGrid, 
@@ -26,7 +23,7 @@ import {
   Bar,
   Cell
 } from "recharts";
-import { dashboardData, incomeHistory, evolutionStreak } from "@/lib/data";
+import { dashboardData, evolutionStreak } from "@/lib/data";
 
 const incomeData = [
   { day: "Day 1", earned: 0, target: 100 },
@@ -39,17 +36,17 @@ const incomeData = [
 ];
 
 const skillData = [
-  { category: "Technical", count: 0, color: "#cd7f32" },
-  { category: "Creative", count: 0, color: "#10b981" },
-  { category: "Research", count: 0, color: "#3b82f6" },
-  { category: "Personal", count: 0, color: "#8b5cf6" },
+  { category: "Technical", count: 0, color: "#76b04f" },
+  { category: "Creative", count: 0, color: "#91c072" },
+  { category: "Research", count: 0, color: "#add095" },
+  { category: "Personal", count: 0, color: "#b4524b" },
 ];
 
 export function Dashboard() {
   const dailyProgress = (dashboardData.income.todayEarned / dashboardData.income.dailyTarget) * 100;
 
   return (
-    <section id="dashboard" className="py-24 sm:py-32 bg-shadow-grey/50">
+    <section id="dashboard" className="py-24 sm:py-32 bg-[#111311]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -59,13 +56,13 @@ export function Dashboard() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-bronze/10 text-bronze text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-[#76b04f]/10 text-[#76b04f] text-sm font-medium mb-4">
             Live Metrics
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-100 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#f1f4f1] mb-6">
             Growth <span className="text-gradient">Dashboard</span>
           </h2>
-          <p className="text-lg text-slate-400 max-w-3xl mx-auto">
+          <p className="text-lg text-[#91a58d] max-w-3xl mx-auto">
             Real-time tracking of my development journey — skills acquired, projects shipped, 
             and progress toward building something meaningful.
           </p>
@@ -79,81 +76,81 @@ export function Dashboard() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8"
         >
-          <Card className="bg-ebony/50 border-ebony">
+          <Card className="bg-[#2f372f]/50 border-[#475643]">
             <CardContent className="p-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-slate-500">Today&apos;s Income</p>
-                  <p className="text-2xl font-bold text-slate-100">
+                  <p className="text-sm text-[#768f70]">Today&apos;s Income</p>
+                  <p className="text-2xl font-bold text-[#f1f4f1]">
                     ${dashboardData.income.todayEarned}
                   </p>
                 </div>
-                <div className="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center">
-                  <DollarSign className="w-5 h-5 text-green-400" />
+                <div className="w-10 h-10 rounded-lg bg-[#76b04f]/10 flex items-center justify-center">
+                  <DollarSign className="w-5 h-5 text-[#76b04f]" />
                 </div>
               </div>
               <div className="mt-3">
                 <div className="flex justify-between text-xs mb-1">
-                  <span className="text-slate-500">Daily Target</span>
-                  <span className="text-slate-400">${dashboardData.income.dailyTarget}</span>
+                  <span className="text-[#768f70]">Daily Target</span>
+                  <span className="text-[#91a58d]">${dashboardData.income.dailyTarget}</span>
                 </div>
                 <Progress value={dailyProgress} className="h-1.5" />
               </div>
             </CardContent>
           </Card>
 
-          <Card className="bg-ebony/50 border-ebony">
+          <Card className="bg-[#2f372f]/50 border-[#475643]">
             <CardContent className="p-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-slate-500">Skills Learned</p>
-                  <p className="text-2xl font-bold text-slate-100">
+                  <p className="text-sm text-[#768f70]">Skills Learned</p>
+                  <p className="text-2xl font-bold text-[#f1f4f1]">
                     {dashboardData.evolution.totalSkillsLearned}
                   </p>
                 </div>
-                <div className="w-10 h-10 rounded-lg bg-bronze/10 flex items-center justify-center">
-                  <Zap className="w-5 h-5 text-bronze" />
+                <div className="w-10 h-10 rounded-lg bg-[#76b04f]/10 flex items-center justify-center">
+                  <Zap className="w-5 h-5 text-[#76b04f]" />
                 </div>
               </div>
-              <p className="text-xs text-slate-500 mt-3">
+              <p className="text-xs text-[#768f70] mt-3">
                 Target: 2/day (14/week)
               </p>
             </CardContent>
           </Card>
 
-          <Card className="bg-ebony/50 border-ebony">
+          <Card className="bg-[#2f372f]/50 border-[#475643]">
             <CardContent className="p-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-slate-500">Current Streak</p>
-                  <p className="text-2xl font-bold text-slate-100">
+                  <p className="text-sm text-[#768f70]">Current Streak</p>
+                  <p className="text-2xl font-bold text-[#f1f4f1]">
                     {dashboardData.evolution.currentStreak} days
                   </p>
                 </div>
-                <div className="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center">
-                  <Activity className="w-5 h-5 text-orange-400" />
+                <div className="w-10 h-10 rounded-lg bg-[#b4524b]/10 flex items-center justify-center">
+                  <Activity className="w-5 h-5 text-[#b4524b]" />
                 </div>
               </div>
-              <p className="text-xs text-slate-500 mt-3">
+              <p className="text-xs text-[#768f70] mt-3">
                 Longest: {dashboardData.evolution.longestStreak} days
               </p>
             </CardContent>
           </Card>
 
-          <Card className="bg-ebony/50 border-ebony">
+          <Card className="bg-[#2f372f]/50 border-[#475643]">
             <CardContent className="p-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm text-slate-500">Pending PRs</p>
-                  <p className="text-2xl font-bold text-slate-100">
+                  <p className="text-sm text-[#768f70]">Pending PRs</p>
+                  <p className="text-2xl font-bold text-[#f1f4f1]">
                     {dashboardData.income.pendingPRs}
                   </p>
                 </div>
-                <div className="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center">
-                  <Clock className="w-5 h-5 text-blue-400" />
+                <div className="w-10 h-10 rounded-lg bg-[#91c072]/10 flex items-center justify-center">
+                  <Clock className="w-5 h-5 text-[#91c072]" />
                 </div>
               </div>
-              <p className="text-xs text-slate-500 mt-3">
+              <p className="text-xs text-[#768f70] mt-3">
                 ${dashboardData.income.pendingAmount} potential
               </p>
             </CardContent>
@@ -168,26 +165,26 @@ export function Dashboard() {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <Tabs defaultValue="income" className="w-full">
-            <TabsList className="grid w-full grid-cols-3 bg-ebony/50 border border-ebony mb-8">
-              <TabsTrigger value="income" className="data-[state=active]:bg-bronze/10 data-[state=active]:text-bronze">
+            <TabsList className="grid w-full grid-cols-3 bg-[#2f372f]/50 border border-[#475643] mb-8">
+              <TabsTrigger value="income" className="data-[state=active]:bg-[#76b04f]/10 data-[state=active]:text-[#76b04f]">
                 <TrendingUp className="w-4 h-4 mr-2" />
                 Income
               </TabsTrigger>
-              <TabsTrigger value="skills" className="data-[state=active]:bg-bronze/10 data-[state=active]:text-bronze">
+              <TabsTrigger value="skills" className="data-[state=active]:bg-[#76b04f]/10 data-[state=active]:text-[#76b04f]">
                 <Award className="w-4 h-4 mr-2" />
                 Skills
               </TabsTrigger>
-              <TabsTrigger value="evolution" className="data-[state=active]:bg-bronze/10 data-[state=active]:text-bronze">
+              <TabsTrigger value="evolution" className="data-[state=active]:bg-[#76b04f]/10 data-[state=active]:text-[#76b04f]">
                 <Calendar className="w-4 h-4 mr-2" />
                 Learning Plan
               </TabsTrigger>
             </TabsList>
 
             <TabsContent value="income">
-              <Card className="bg-ebony/50 border-ebony">
+              <Card className="bg-[#2f372f]/50 border-[#475643]">
                 <CardHeader>
-                  <CardTitle className="text-slate-100 flex items-center gap-2">
-                    <TrendingUp className="w-5 h-5 text-bronze" />
+                  <CardTitle className="text-[#f1f4f1] flex items-center gap-2">
+                    <TrendingUp className="w-5 h-5 text-[#76b04f]" />
                     Income Tracking
                   </CardTitle>
                 </CardHeader>
@@ -195,33 +192,33 @@ export function Dashboard() {
                   <div className="h-[300px] w-full">
                     <ResponsiveContainer width="100%" height="100%">
                       <BarChart data={incomeData}>
-                        <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" />
-                        <XAxis dataKey="day" stroke="#64748b" fontSize={12} />
-                        <YAxis stroke="#64748b" fontSize={12} />
+                        <CartesianGrid strokeDasharray="3 3" stroke="#475643" />
+                        <XAxis dataKey="day" stroke="#768f70" fontSize={12} />
+                        <YAxis stroke="#768f70" fontSize={12} />
                         <Tooltip 
                           contentStyle={{ 
-                            backgroundColor: '#0f172a', 
-                            border: '1px solid #334155',
+                            backgroundColor: '#181b18', 
+                            border: '1px solid #475643',
                             borderRadius: '8px',
-                            color: '#f8fafc'
+                            color: '#f1f4f1'
                           }}
-                          labelStyle={{ color: '#f8fafc' }}
-                          itemStyle={{ color: '#f8fafc' }}
-                          cursor={{ fill: '#0f172a' }}
+                          labelStyle={{ color: '#f1f4f1' }}
+                          itemStyle={{ color: '#f1f4f1' }}
+                          cursor={{ fill: '#181b18' }}
                         />
-                        <Bar dataKey="earned" fill="#cd7f32" radius={[4, 4, 0, 0]} />
-                        <Bar dataKey="target" fill="#1e293b" radius={[4, 4, 0, 0]} />
+                        <Bar dataKey="earned" fill="#76b04f" radius={[4, 4, 0, 0]} />
+                        <Bar dataKey="target" fill="#2f372f" radius={[4, 4, 0, 0]} />
                       </BarChart>
                     </ResponsiveContainer>
                   </div>
                   <div className="flex justify-center gap-6 mt-4">
                     <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 rounded bg-bronze" />
-                      <span className="text-sm text-slate-400">Earned</span>
+                      <div className="w-3 h-3 rounded bg-[#76b04f]" />
+                      <span className="text-sm text-[#91a58d]">Earned</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 rounded bg-ebony" />
-                      <span className="text-sm text-slate-400">Target</span>
+                      <div className="w-3 h-3 rounded bg-[#2f372f]" />
+                      <span className="text-sm text-[#91a58d]">Target</span>
                     </div>
                   </div>
                 </CardContent>
@@ -229,10 +226,10 @@ export function Dashboard() {
             </TabsContent>
 
             <TabsContent value="skills">
-              <Card className="bg-ebony/50 border-ebony">
+              <Card className="bg-[#2f372f]/50 border-[#475643]">
                 <CardHeader>
-                  <CardTitle className="text-slate-100 flex items-center gap-2">
-                    <Award className="w-5 h-5 text-bronze" />
+                  <CardTitle className="text-[#f1f4f1] flex items-center gap-2">
+                    <Award className="w-5 h-5 text-[#76b04f]" />
                     Skills by Category
                   </CardTitle>
                 </CardHeader>
@@ -240,19 +237,19 @@ export function Dashboard() {
                   <div className="h-[300px] w-full">
                     <ResponsiveContainer width="100%" height="100%">
                       <BarChart data={skillData} layout="vertical">
-                        <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" horizontal={false} />
-                        <XAxis type="number" stroke="#64748b" fontSize={12} />
-                        <YAxis dataKey="category" type="category" stroke="#64748b" fontSize={12} width={80} />
+                        <CartesianGrid strokeDasharray="3 3" stroke="#475643" horizontal={false} />
+                        <XAxis type="number" stroke="#768f70" fontSize={12} />
+                        <YAxis dataKey="category" type="category" stroke="#768f70" fontSize={12} width={80} />
                         <Tooltip 
                           contentStyle={{ 
-                            backgroundColor: '#0f172a', 
-                            border: '1px solid #334155',
+                            backgroundColor: '#181b18', 
+                            border: '1px solid #475643',
                             borderRadius: '8px',
-                            color: '#f8fafc'
+                            color: '#f1f4f1'
                           }}
-                          labelStyle={{ color: '#f8fafc' }}
-                          itemStyle={{ color: '#f8fafc' }}
-                          cursor={{ fill: '#0f172a' }}
+                          labelStyle={{ color: '#f1f4f1' }}
+                          itemStyle={{ color: '#f1f4f1' }}
+                          cursor={{ fill: '#181b18' }}
                         />
                         <Bar dataKey="count" radius={[0, 4, 4, 0]}>
                           {skillData.map((entry, index) => (
@@ -267,28 +264,28 @@ export function Dashboard() {
             </TabsContent>
 
             <TabsContent value="evolution">
-              <Card className="bg-ebony/50 border-ebony">
+              <Card className="bg-[#2f372f]/50 border-[#475643]">
                 <CardHeader>
-                  <CardTitle className="text-slate-100 flex items-center gap-2">
-                    <Calendar className="w-5 h-5 text-bronze" />
+                  <CardTitle className="text-[#f1f4f1] flex items-center gap-2">
+                    <Calendar className="w-5 h-5 text-[#76b04f]" />
                     Week 1 Learning Plan
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
-                    {evolutionStreak.map((day, index) => (
+                    {evolutionStreak.map((day) => (
                       <div 
                         key={day.day}
                         className={`flex items-center gap-4 p-4 rounded-lg border ${
                           day.completed 
-                            ? 'bg-green-500/5 border-green-500/20' 
-                            : 'bg-ebony/30 border-ebony'
+                            ? 'bg-[#76b04f]/5 border-[#76b04f]/20' 
+                            : 'bg-[#2f372f]/30 border-[#475643]'
                         }`}
                       >
                         <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
                           day.completed 
-                            ? 'bg-green-500/20 text-green-400' 
-                            : 'bg-ebony text-slate-500'
+                            ? 'bg-[#76b04f]/20 text-[#76b04f]' 
+                            : 'bg-[#2f372f] text-[#768f70]'
                         }`}>
                           {day.completed ? (
                             <Award className="w-5 h-5" />
@@ -298,12 +295,12 @@ export function Dashboard() {
                         </div>
                         <div className="flex-1">
                           <div className="flex items-center gap-2">
-                            <span className="font-medium text-slate-200">{day.skill}</span>
+                            <span className="font-medium text-[#e4e9e2]">{day.skill}</span>
                             {day.completed && (
-                              <span className="text-xs text-green-400">Completed</span>
+                              <span className="text-xs text-[#76b04f]">Completed</span>
                             )}
                           </div>
-                          <p className="text-sm text-slate-500">
+                          <p className="text-sm text-[#768f70]">
                             Focus: {day.surprise}
                           </p>
                         </div>

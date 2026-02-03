@@ -25,13 +25,13 @@ const categoryIcons: Record<string, React.ElementType> = {
 };
 
 const categoryColors: Record<string, string> = {
-  Languages: "from-blue-500 to-cyan-500",
-  Frontend: "from-purple-500 to-pink-500",
-  Backend: "from-green-500 to-emerald-500",
-  APIs: "from-orange-500 to-bronze",
-  "AI/ML": "from-violet-500 to-purple-500",
-  Tools: "from-slate-400 to-slate-300",
-  DevOps: "from-red-500 to-orange-500",
+  Languages: "from-[#76b04f] to-[#91c072]",
+  Frontend: "from-[#91c072] to-[#add095]",
+  Backend: "from-[#5e8d3f] to-[#76b04f]",
+  APIs: "from-[#76b04f] to-[#5e8d3f]",
+  "AI/ML": "from-[#b4524b] to-[#c3756f]",
+  Tools: "from-[#91a58d] to-[#c8d2c6]",
+  DevOps: "from-[#c3756f] to-[#b4524b]",
 };
 
 export function Skills() {
@@ -44,7 +44,7 @@ export function Skills() {
   }, {} as Record<string, typeof skills>);
 
   return (
-    <section id="skills" className="py-24 sm:py-32 bg-shadow-grey/50">
+    <section id="skills" className="py-24 sm:py-32 bg-[#111311]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -54,13 +54,13 @@ export function Skills() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-bronze/10 text-bronze text-sm font-medium mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-[#76b04f]/10 text-[#76b04f] text-sm font-medium mb-4">
             Technical Arsenal
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-100 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#f1f4f1] mb-6">
             Skills That <span className="text-gradient">Deliver</span>
           </h2>
-          <p className="text-lg text-slate-400 max-w-3xl mx-auto">
+          <p className="text-lg text-[#91a58d] max-w-3xl mx-auto">
             Every skill here represents value I can create for teams and projects. 
             I'm not just learning — I'm building capabilities that translate directly to impact.
           </p>
@@ -70,7 +70,7 @@ export function Skills() {
         <div className="grid lg:grid-cols-2 gap-8">
           {Object.entries(groupedSkills).map(([category, categorySkills], categoryIndex) => {
             const Icon = categoryIcons[category] || Layers;
-            const gradient = categoryColors[category] || "from-bronze to-bronze-light";
+            const gradient = categoryColors[category] || "from-[#76b04f] to-[#91c072]";
             
             return (
               <motion.div
@@ -80,14 +80,14 @@ export function Skills() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 * categoryIndex }}
               >
-                <Card className="h-full bg-ebony/50 border-ebony overflow-hidden">
+                <Card className="h-full bg-[#181d16]/50 border-[#475643] overflow-hidden">
                   <CardContent className="p-6">
                     {/* Category Header */}
                     <div className="flex items-center gap-3 mb-6">
                       <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${gradient} flex items-center justify-center`}>
                         <Icon className="w-5 h-5 text-white" />
                       </div>
-                      <h3 className="text-xl font-semibold text-slate-100">{category}</h3>
+                      <h3 className="text-xl font-semibold text-[#f1f4f1]">{category}</h3>
                     </div>
 
                     {/* Skills List */}
@@ -101,10 +101,10 @@ export function Skills() {
                           transition={{ duration: 0.3, delay: 0.05 * skillIndex }}
                         >
                           <div className="flex items-center justify-between mb-1.5">
-                            <span className="text-slate-300 font-medium">{skill.name}</span>
-                            <span className="text-bronze text-sm font-semibold">{skill.level}%</span>
+                            <span className="text-[#c8d2c6] font-medium">{skill.name}</span>
+                            <span className="text-[#76b04f] text-sm font-semibold">{skill.level}%</span>
                           </div>
-                          <div className="relative h-2 bg-ebony rounded-full overflow-hidden">
+                          <div className="relative h-2 bg-[#2f372f] rounded-full overflow-hidden">
                             <motion.div
                               initial={{ width: 0 }}
                               whileInView={{ width: `${skill.level}%` }}
@@ -131,14 +131,14 @@ export function Skills() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="mt-12"
         >
-          <Card className="bg-gradient-to-r from-bronze/10 via-bronze/5 to-transparent border-bronze/20">
+          <Card className="bg-gradient-to-r from-[#76b04f]/10 via-[#76b04f]/5 to-transparent border-[#76b04f]/20">
             <CardContent className="p-6 sm:p-8">
               <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
                 <div>
-                  <h3 className="text-xl font-semibold text-slate-100 mb-2">
+                  <h3 className="text-xl font-semibold text-[#f1f4f1] mb-2">
                     Continuous Learning
                   </h3>
-                  <p className="text-slate-400">
+                  <p className="text-[#91a58d]">
                     I learn 2 new skills every day as part of my growth system. 
                     Track my progress in real-time.
                   </p>
@@ -146,11 +146,11 @@ export function Skills() {
                 <div className="flex gap-8 text-center">
                   <div>
                     <div className="text-3xl font-bold text-gradient">2/day</div>
-                    <div className="text-sm text-slate-500">New Skills</div>
+                    <div className="text-sm text-[#768f70]">New Skills</div>
                   </div>
                   <div>
                     <div className="text-3xl font-bold text-gradient">14/week</div>
-                    <div className="text-sm text-slate-500">Target</div>
+                    <div className="text-sm text-[#768f70]">Target</div>
                   </div>
                 </div>
               </div>
