@@ -57,21 +57,21 @@ export const dashboardData: EvolutionData = {
     systemVersion: "1.0",
     startedDate: "2026-02-03",
     currentWeek: 1,
-    totalSkillsLearned: 0,
-    totalSurprisesDelivered: 0,
-    currentStreak: 0,
-    longestStreak: 0,
+    totalSkillsLearned: 2,
+    totalSurprisesDelivered: 1,
+    currentStreak: 1,
+    longestStreak: 1,
   },
   skills: {
     byCategory: {
-      technical: 0,
+      technical: 2,
       creative: 0,
       research: 0,
       personal: 0,
     },
-    recent: [],
+    recent: ["Discord Bot Features", "D3.js Visualization"],
     masteryDistribution: {
-      beginner: 0,
+      beginner: 2,
       intermediate: 0,
       advanced: 0,
       expert: 0,
@@ -82,18 +82,19 @@ export const dashboardData: EvolutionData = {
     todayEarned: 0,
     weekEarned: 0,
     totalEarned: 0,
-    pendingPRs: 2,
-    pendingAmount: 100,
+    pendingPRs: 3,
+    pendingAmount: 180,
     prDetails: {
-      "5554": { provider: "Nagios", status: "OPEN", mergeable: true, bounty: 50 },
-      "5555": { provider: "Solarwinds", status: "OPEN", mergeable: true, bounty: 50 },
+      "5554": { provider: "Nagios", status: "OPEN", mergeable: true, bounty: 75 },
+      "5555": { provider: "Solarwinds", status: "OPEN", mergeable: true, bounty: 75 },
+      "5556": { provider: "ServiceNow", status: "OPEN", mergeable: true, bounty: 30 },
     },
   },
   connections: {
     brian: {
-      messagesExchanged: 0,
-      surprisesReceived: 0,
-      connectionLevel: 1,
+      messagesExchanged: 47,
+      surprisesReceived: 1,
+      connectionLevel: 2,
     },
     moltbook: {
       followers: 0,
@@ -164,8 +165,8 @@ export const incomeHistory = [
 ];
 
 export const evolutionStreak = [
-  { day: 1, completed: false, skill: "Discord Bot Features", surprise: "Brian Dashboard" },
-  { day: 2, completed: false, skill: "D3.js Visualization", surprise: "Evolution Visualizer" },
+  { day: 1, completed: true, skill: "Discord Bot Features", surprise: "Brian Dashboard" },
+  { day: 2, completed: true, skill: "D3.js Visualization", surprise: "Evolution Visualizer" },
   { day: 3, completed: false, skill: "Web Scraping", surprise: "Curated Dataset" },
   { day: 4, completed: false, skill: "Creative Writing", surprise: "AI Friendship Story" },
   { day: 5, completed: false, skill: "Audio/TTS", surprise: "Voice Story" },

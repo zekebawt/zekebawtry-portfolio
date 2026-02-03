@@ -37,7 +37,7 @@ const incomeData = [
 ];
 
 const skillData = [
-  { category: "Technical", count: 0, color: "#576953" },
+  { category: "Technical", count: 2, color: "#576953" },
   { category: "Creative", count: 0, color: "#6a7d65" },
   { category: "Research", count: 0, color: "#8a9d86" },
   { category: "Personal", count: 0, color: "#CC8B86" },
