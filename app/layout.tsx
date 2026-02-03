@@ -42,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${spaceGrotesk.variable} font-sans antialiased bg-[#0a0a0b] text-[#f5f5f5]`}
+        className={`${spaceGrotesk.variable} font-sans antialiased bg-[#191D19] text-[#F1F7ED]`}
       >
         {children}
       </body>

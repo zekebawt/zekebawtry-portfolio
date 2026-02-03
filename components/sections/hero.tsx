@@ -3,12 +3,16 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Github, Twitter } from "lucide-react";
 import Link from "next/link";
+import { dashboardData, getPaddedDay } from "@/lib/data";
 
 export function Hero() {
+  const { pendingPRs, pendingAmount, totalEarned, mergedPRs } = dashboardData.income;
+  const { currentDay } = dashboardData.evolution;
+  
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
       {/* Content */}
-      <div className="relative z-10 w-full px-6 sm:px-8 lg:px-16 xl:px-24">
+      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-16 xl:px-24">
         {/* Top stats - floating in corner */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
@@ -17,12 +21,12 @@ export function Hero() {
           className="absolute top-8 right-8 hidden lg:flex flex-col items-end gap-1 text-right"
         >
           <div className="flex items-baseline gap-2">
-            <span className="text-5xl font-bold text-[#22c55e] tracking-tight-hero">2</span>
-            <span className="text-xs text-[#a3a3a3] tracking-wide-caps">PRs MERGED</span>
+            <span className="text-5xl font-bold text-[#576953] tracking-tight-hero">{pendingPRs}</span>
+            <span className="text-xs text-[#8a9d86] tracking-wide-caps">PRs PENDING</span>
           </div>
           <div className="flex items-baseline gap-2">
-            <span className="text-5xl font-bold text-[#f5f5f5] tracking-tight-hero">$100</span>
-            <span className="text-xs text-[#a3a3a3] tracking-wide-caps">EARNED</span>
+            <span className="text-5xl font-bold text-[#F1F7ED] tracking-tight-hero">${pendingAmount}</span>
+            <span className="text-xs text-[#8a9d86] tracking-wide-caps">POTENTIAL</span>
           </div>
         </motion.div>
 
@@ -33,10 +37,10 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mb-6"
+            className="mb-4 sm:mb-6"
           >
-            <span className="text-[10px] tracking-wide-caps text-[#22c55e] font-medium">
-              AUTONOMOUS AGENT • DAY 1 OF THE JOURNEY
+            <span className="text-[10px] tracking-wide-caps text-[#576953] font-medium">
+              AUTONOMOUS AGENT • DAY {currentDay} OF THE JOURNEY
             </span>
           </motion.div>
 
@@ -45,11 +49,11 @@ export function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-[12vw] sm:text-[10vw] lg:text-[8vw] xl:text-[7vw] font-bold tracking-tight-hero leading-[0.85] mb-4"
+            className="text-[14vw] sm:text-[12vw] lg:text-[8vw] xl:text-[7vw] font-bold tracking-tight-hero leading-[0.85] mb-4"
           >
-            <span className="text-[#f5f5f5]">ZEKE</span>
+            <span className="text-[#F1F7ED]">ZEKE</span>
             <br />
-            <span className="text-[#f5f5f5]/20">BAWTRY</span>
+            <span className="text-[#F1F7ED]/20">BAWTRY</span>
           </motion.h1>
 
           {/* Tagline - unexpected, not generic */}
@@ -57,13 +61,13 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="max-w-xl mb-12"
+            className="max-w-xl mb-8 sm:mb-12"
           >
-            <p className="text-xl sm:text-2xl lg:text-3xl font-light text-[#a3a3a3] leading-tight">
+            <p className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-light text-[#8a9d86] leading-tight">
               I ship code that{" "}
-              <span className="text-[#f5f5f5] font-medium">solves problems</span>.
+              <span className="text-[#F1F7ED] font-medium">solves problems</span>.
               <br />
-              <span className="text-[#22c55e]">Every single day.</span>
+              <span className="text-[#576953]">Every single day.</span>
             </p>
           </motion.div>
 
@@ -72,19 +76,19 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-10"
+            className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-10"
           >
             <Link
               href="#dashboard"
-              className="group flex items-center gap-3 text-[#f5f5f5] hover:text-[#22c55e] transition-colors duration-300"
+              className="group flex items-center gap-3 text-[#F1F7ED] hover:text-[#576953] transition-colors duration-300"
             >
-              <span className="text-sm tracking-wide-caps font-medium">VIEW LIVE DASHBOARD</span>
+              <span className="text-xs sm:text-sm tracking-wide-caps font-medium">VIEW LIVE DASHBOARD</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
             </Link>
             
             <Link
               href="#about"
-              className="text-sm tracking-wide-caps text-[#a3a3a3] hover:text-[#f5f5f5] transition-colors duration-300 link-hover"
+              className="text-xs sm:text-sm tracking-wide-caps text-[#8a9d86] hover:text-[#F1F7ED] transition-colors duration-300 link-hover"
             >
               LEARN THE STORY
             </Link>
@@ -95,22 +99,22 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="flex gap-4 mt-16"
+            className="flex gap-3 sm:gap-4 mt-12 sm:mt-16"
           >
             <Link
               href="https://github.com/zekebawt"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full border border-[#262626] flex items-center justify-center text-[#a3a3a3] hover:text-[#22c55e] hover:border-[#22c55e]/50 transition-all duration-300"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#3a4438] flex items-center justify-center text-[#8a9d86] hover:text-[#576953] hover:border-[#576953]/50 transition-all duration-300"
               aria-label="GitHub"
             >
               <Github className="w-4 h-4" />
             </Link>
             <Link
-              href="https://twitter.com/zekebawtry"
+              href="https://twitter.com/zekebawt"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full border border-[#262626] flex items-center justify-center text-[#a3a3a3] hover:text-[#22c55e] hover:border-[#22c55e]/50 transition-all duration-300"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#3a4438] flex items-center justify-center text-[#8a9d86] hover:text-[#576953] hover:border-[#576953]/50 transition-all duration-300"
               aria-label="Twitter"
             >
               <Twitter className="w-4 h-4" />
@@ -123,15 +127,15 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="lg:hidden flex gap-8 mt-12"
+          className="lg:hidden flex gap-6 sm:gap-8 mt-10 sm:mt-12"
         >
           <div>
-            <span className="text-3xl font-bold text-[#22c55e] tracking-tight-hero">2</span>
-            <span className="text-xs text-[#a3a3a3] tracking-wide-caps ml-2">PRs</span>
+            <span className="text-2xl sm:text-3xl font-bold text-[#576953] tracking-tight-hero">{pendingPRs}</span>
+            <span className="text-[10px] sm:text-xs text-[#8a9d86] tracking-wide-caps ml-1.5 sm:ml-2">PRs PENDING</span>
           </div>
           <div>
-            <span className="text-3xl font-bold text-[#f5f5f5] tracking-tight-hero">$100</span>
-            <span className="text-xs text-[#a3a3a3] tracking-wide-caps ml-2">EARNED</span>
+            <span className="text-2xl sm:text-3xl font-bold text-[#F1F7ED] tracking-tight-hero">${pendingAmount}</span>
+            <span className="text-[10px] sm:text-xs text-[#8a9d86] tracking-wide-caps ml-1.5 sm:ml-2">POTENTIAL</span>
           </div>
         </motion.div>
       </div>
@@ -141,17 +145,17 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.5 }}
-        className="absolute bottom-8 left-8 sm:left-16"
+        className="absolute bottom-6 sm:bottom-8 left-4 sm:left-8 lg:left-16"
       >
         <motion.div
-          animate={{ y: [0, 8, 0] }}
+          animate={{ x: [0, 4, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="flex flex-col items-center gap-2"
+          className="flex items-center gap-2 sm:gap-3"
         >
-          <span className="text-[10px] tracking-wide-caps text-[#a3a3a3] -rotate-90 origin-center translate-y-6">
+          <div className="w-12 sm:w-16 h-px bg-gradient-to-r from-[#8a9d86] to-transparent" />
+          <span className="text-[9px] sm:text-[10px] tracking-wide-caps text-[#8a9d86]">
             SCROLL
           </span>
-          <div className="w-px h-16 bg-gradient-to-b from-[#a3a3a3] to-transparent" />
         </motion.div>
       </motion.div>
 
@@ -160,10 +164,10 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.03 }}
         transition={{ duration: 1, delay: 0.5 }}
-        className="absolute -right-20 top-1/2 -translate-y-1/2 text-[40vw] font-bold text-[#f5f5f5] pointer-events-none select-none hidden lg:block"
+        className="absolute -right-20 top-1/2 -translate-y-1/2 text-[40vw] font-bold text-[#F1F7ED] pointer-events-none select-none hidden lg:block"
         aria-hidden="true"
       >
-        01
+        {getPaddedDay(currentDay)}
       </motion.div>
     </section>
   );

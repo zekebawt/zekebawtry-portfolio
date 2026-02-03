@@ -15,7 +15,7 @@ export function Skills() {
   const categories = Object.entries(groupedSkills);
 
   return (
-    <section id="skills" className="py-32 sm:py-40 bg-[#050505] relative overflow-hidden">
+    <section id="skills" className="py-32 sm:py-40 bg-[#191D19] relative overflow-hidden">
       <div className="px-6 sm:px-8 lg:px-16 xl:px-24">
         {/* Header - full width, left aligned */}
         <motion.div
@@ -25,13 +25,13 @@ export function Skills() {
           transition={{ duration: 0.6 }}
           className="mb-20"
         >
-          <span className="text-[10px] tracking-wide-caps text-[#22c55e] font-medium">
+          <span className="text-[10px] tracking-wide-caps text-[#576953] font-medium">
             TECHNICAL ARSENAL
           </span>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight-hero mt-4">
-            <span className="text-[#f5f5f5]">SKILLS THAT</span>
+            <span className="text-[#F1F7ED]">SKILLS THAT</span>
             <br />
-            <span className="text-[#22c55e]">DELIVER</span>
+            <span className="text-[#576953]">DELIVER</span>
           </h2>
         </motion.div>
 
@@ -40,18 +40,18 @@ export function Skills() {
           {categories.map(([category, categorySkills], categoryIndex) => (
             <motion.div
               key={category}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 * categoryIndex }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.1 * categoryIndex }}
               className="group"
             >
               {/* Category header */}
               <div className="flex items-center gap-4 mb-6">
-                <span className="text-xs tracking-wide-caps text-[#a3a3a3] font-medium">
+                <span className="text-xs tracking-wide-caps text-[#8a9d86] font-medium">
                   {category.toUpperCase()}
                 </span>
-                <div className="flex-1 h-px bg-[#1a1a1a]" />
+                <div className="flex-1 h-px bg-[#3a4438]" />
               </div>
 
               {/* Skills list */}
@@ -59,27 +59,27 @@ export function Skills() {
                 {categorySkills.map((skill, skillIndex) => (
                   <motion.div
                     key={skill.name}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: 0.05 * skillIndex }}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true, amount: 0.5 }}
+                    transition={{ duration: 0.4, delay: 0.05 * skillIndex }}
                     className="group/skill"
                   >
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-[#f5f5f5] font-medium text-sm group-hover/skill:text-[#22c55e] transition-colors duration-300">
+                      <span className="text-[#F1F7ED] font-medium text-sm group-hover/skill:text-[#576953] transition-colors duration-300">
                         {skill.name}
                       </span>
-                      <span className="text-[#22c55e] text-xs font-mono">
+                      <span className="text-[#576953] text-xs font-mono">
                         {skill.level}%
                       </span>
                     </div>
-                    <div className="relative h-1 bg-[#1a1a1a] overflow-hidden">
+                    <div className="relative h-1 bg-[#3a4438] overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
                         viewport={{ once: true }}
                         transition={{ duration: 1, delay: 0.2 + 0.05 * skillIndex, ease: "easeOut" }}
-                        className="absolute inset-y-0 left-0 bg-gradient-to-r from-[#22c55e] to-[#4ade80]"
+                        className="absolute inset-y-0 left-0 bg-gradient-to-r from-[#576953] to-[#8a9d86]"
                       />
                     </div>
                   </motion.div>
@@ -95,27 +95,27 @@ export function Skills() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-20 pt-8 border-t border-[#1a1a1a]"
+          className="mt-20 pt-8 border-t border-[#3a4438]"
         >
           <div className="flex flex-wrap gap-12 lg:gap-20">
             <div>
-              <div className="text-4xl sm:text-5xl font-bold text-[#22c55e] tracking-tight-hero">
+              <div className="text-4xl sm:text-5xl font-bold text-[#576953] tracking-tight-hero">
                 2/day
               </div>
-              <div className="text-xs tracking-wide-caps text-[#a3a3a3] mt-1">
+              <div className="text-xs tracking-wide-caps text-[#8a9d86] mt-1">
                 NEW SKILLS
               </div>
             </div>
             <div>
-              <div className="text-4xl sm:text-5xl font-bold text-[#f5f5f5] tracking-tight-hero">
+              <div className="text-4xl sm:text-5xl font-bold text-[#F1F7ED] tracking-tight-hero">
                 14/week
               </div>
-              <div className="text-xs tracking-wide-caps text-[#a3a3a3] mt-1">
+              <div className="text-xs tracking-wide-caps text-[#8a9d86] mt-1">
                 TARGET
               </div>
             </div>
             <div className="flex-1 flex items-center">
-              <p className="text-[#a3a3a3] text-sm max-w-md">
+              <p className="text-[#8a9d86] text-sm max-w-md">
                 Continuous learning isn&apos;t optional. It&apos;s the foundation of everything I build.
               </p>
             </div>
@@ -127,7 +127,7 @@ export function Skills() {
       <div 
         className="absolute inset-0 pointer-events-none opacity-[0.02]"
         style={{
-          backgroundImage: `linear-gradient(#22c55e 1px, transparent 1px), linear-gradient(90deg, #22c55e 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(#576953 1px, transparent 1px), linear-gradient(90deg, #576953 1px, transparent 1px)`,
           backgroundSize: '60px 60px',
         }}
       />

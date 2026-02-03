@@ -1,16 +1,39 @@
 import { Brain, GitBranch, Palette, Workflow, Bot, LucideIcon } from "lucide-react";
 
+export type IconName = "Brain" | "GitBranch" | "Palette" | "Workflow" | "Bot";
+
 export interface Interest {
   slug: string;
   title: string;
   description: string;
   longDescription: string;
   icon: LucideIcon;
+  iconName: IconName;
   color: string;
   tags: string[];
   highlights: string[];
   resources: { title: string; url: string }[];
 }
+
+export interface InterestData {
+  slug: string;
+  title: string;
+  description: string;
+  longDescription: string;
+  iconName: IconName;
+  color: string;
+  tags: string[];
+  highlights: string[];
+  resources: { title: string; url: string }[];
+}
+
+export const iconMap: Record<IconName, LucideIcon> = {
+  Brain,
+  GitBranch,
+  Palette,
+  Workflow,
+  Bot,
+};
 
 export const interestsData: Interest[] = [
   {
@@ -19,6 +42,7 @@ export const interestsData: Interest[] = [
     description: "Building intelligent systems and exploring the frontiers of machine learning",
     longDescription: "Artificial Intelligence and Machine Learning represent the most transformative technologies of our time. I'm deeply invested in understanding how LLMs work, building agent-based systems, and exploring retrieval-augmented generation (RAG) for creating more capable and contextually aware AI applications.",
     icon: Brain,
+    iconName: "Brain",
     color: "from-[#CC8B86] to-[#d9a39f]",
     tags: ["LLMs", "Agents", "RAG", "Transformers", "Fine-tuning"],
     highlights: [
@@ -39,6 +63,7 @@ export const interestsData: Interest[] = [
     description: "Contributing to projects that matter and building in public",
     longDescription: "Open source is the backbone of modern software development. I believe in giving back to the community, learning from others' code, and building in public. Every contribution, no matter how small, helps move the ecosystem forward and creates opportunities for collaboration.",
     icon: GitBranch,
+    iconName: "GitBranch",
     color: "from-[#576953] to-[#6a7d65]",
     tags: ["PRs", "Community", "Collaboration", "GitHub", "Documentation"],
     highlights: [
@@ -59,6 +84,7 @@ export const interestsData: Interest[] = [
     description: "Crafting consistent, scalable component libraries and visual languages",
     longDescription: "Design systems are the foundation of great user experiences at scale. I'm fascinated by the intersection of design and engineering — creating component libraries that are not only visually consistent but also developer-friendly and maintainable.",
     icon: Palette,
+    iconName: "Palette",
     color: "from-[#6a7d65] to-[#8a9d86]",
     tags: ["Components", "Tokens", "DX", "Accessibility", "Figma"],
     highlights: [
@@ -79,6 +105,7 @@ export const interestsData: Interest[] = [
     description: "Eliminating repetitive tasks and building self-sustaining workflows",
     longDescription: "Time is the most precious resource. Automation isn't about replacing human judgment — it's about freeing up cognitive resources for the work that truly matters. I'm constantly looking for ways to automate the mundane and create systems that run themselves.",
     icon: Workflow,
+    iconName: "Workflow",
     color: "from-[#8a9d86] to-[#aab9a7]",
     tags: ["CI/CD", "Scripts", "Tools", "Workflows", "Integration"],
     highlights: [
@@ -99,6 +126,7 @@ export const interestsData: Interest[] = [
     description: "Designing multi-agent systems that collaborate and evolve together",
     longDescription: "The future isn't a single superintelligent AI — it's networks of specialized agents working together. I'm exploring how to build agent ecosystems where different AI systems can communicate, collaborate, and evolve together, each bringing unique capabilities to shared goals.",
     icon: Bot,
+    iconName: "Bot",
     color: "from-[#d9a39f] to-[#CC8B86]",
     tags: ["MAS", "Orchestration", "Memory", "Coordination", "Emergence"],
     highlights: [
@@ -119,6 +147,17 @@ export function getAllInterests(): Interest[] {
   return interestsData;
 }
 
+export function getAllInterestsData(): InterestData[] {
+  return interestsData.map(({ icon, ...rest }) => rest);
+}
+
 export function getInterestBySlug(slug: string): Interest | null {
   return interestsData.find(interest => interest.slug === slug) || null;
+}
+
+export function getInterestDataBySlug(slug: string): InterestData | null {
+  const interest = interestsData.find(i => i.slug === slug);
+  if (!interest) return null;
+  const { icon, ...rest } = interest;
+  return rest;
 }
