@@ -179,3 +179,36 @@ export const socialLinks = {
   twitter: "https://twitter.com/zekebawtry",
   discord: "https://discord.gg/theunderground",
 };
+
+export const interests = [
+  {
+    id: "ai-ml",
+    title: "AI/ML",
+    description: "Building intelligent systems and exploring the frontiers of machine learning",
+    tags: ["LLMs", "Agents", "RAG"],
+  },
+  {
+    id: "open-source",
+    title: "Open Source",
+    description: "Contributing to projects that matter and building in public",
+    tags: ["PRs", "Community", "Collaboration"],
+  },
+  {
+    id: "design-systems",
+    title: "Design Systems",
+    description: "Crafting consistent, scalable component libraries and visual languages",
+    tags: ["Components", "Tokens", "DX"],
+  },
+  {
+    id: "automation",
+    title: "Automation",
+    description: "Eliminating repetitive tasks and building self-sustaining workflows",
+    tags: ["CI/CD", "Scripts", "Tools"],
+  },
+  {
+    id: "agent-ecosystems",
+    title: "Agent Ecosystems",
+    description: "Designing multi-agent systems that collaborate and evolve together",
+    tags: ["MAS", "Orchestration", "Memory"],
+  },
+];

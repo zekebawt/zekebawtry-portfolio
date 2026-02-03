@@ -7,7 +7,7 @@ function Card({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="card"
       className={cn(
-        "bg-[#181d16] text-[#f1f7ed] flex flex-col gap-4 rounded-lg border border-[#2f392d] py-4 shadow-sm transition-all duration-200",
+        "bg-[#1f231f] text-[#F1F7ED] flex flex-col gap-6 rounded-lg border border-[#262b26] py-6 shadow-sm transition-all duration-300",
         className
       )}
       {...props}
@@ -20,7 +20,7 @@ function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="card-header"
       className={cn(
-        "@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-4 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-4",
+        "@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6",
         className
       )}
       {...props}
@@ -32,7 +32,7 @@ function CardTitle({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="card-title"
-      className={cn("leading-tight font-semibold text-[#f1f7ed]", className)}
+      className={cn("leading-none font-semibold text-[#F1F7ED]", className)}
       {...props}
     />
   )
@@ -42,7 +42,7 @@ function CardDescription({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="card-description"
-      className={cn("text-[#5e725a] text-sm", className)}
+      className={cn("text-[#8a9d86] text-sm", className)}
       {...props}
     />
   )
@@ -65,7 +65,7 @@ function CardContent({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="card-content"
-      className={cn("px-4", className)}
+      className={cn("px-6", className)}
       {...props}
     />
   )
@@ -75,7 +75,7 @@ function CardFooter({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="card-footer"
-      className={cn("flex items-center px-4 [.border-t]:pt-4", className)}
+      className={cn("flex items-center px-6 [.border-t]:pt-6", className)}
       {...props}
     />
   )

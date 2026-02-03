@@ -1,56 +1,34 @@
 "use client"
 
 import * as React from "react"
-import { cva, type VariantProps } from "class-variance-authority"
-import { Tabs as TabsPrimitive } from "radix-ui"
+import * as TabsPrimitive from "@radix-ui/react-tabs"
 
 import { cn } from "@/lib/utils"
 
 function Tabs({
   className,
-  orientation = "horizontal",
   ...props
 }: React.ComponentProps<typeof TabsPrimitive.Root>) {
   return (
     <TabsPrimitive.Root
       data-slot="tabs"
-      data-orientation={orientation}
-      orientation={orientation}
-      className={cn(
-        "group/tabs flex gap-2 data-[orientation=horizontal]:flex-col",
-        className
-      )}
+      className={cn("flex flex-col gap-2", className)}
       {...props}
     />
   )
 }
 
-const tabsListVariants = cva(
-  "rounded-lg p-[3px] group-data-[orientation=horizontal]/tabs:h-9 data-[variant=line]:rounded-none group/tabs-list text-[#91a58d] inline-flex w-fit items-center justify-center group-data-[orientation=vertical]/tabs:h-fit group-data-[orientation=vertical]/tabs:flex-col",
-  {
-    variants: {
-      variant: {
-        default: "bg-[#2f372f]",
-        line: "gap-1 bg-transparent",
-      },
-    },
-    defaultVariants: {
-      variant: "default",
-    },
-  }
-)
-
 function TabsList({
   className,
-  variant = "default",
   ...props
-}: React.ComponentProps<typeof TabsPrimitive.List> &
-  VariantProps<typeof tabsListVariants>) {
+}: React.ComponentProps<typeof TabsPrimitive.List>) {
   return (
     <TabsPrimitive.List
       data-slot="tabs-list"
-      data-variant={variant}
-      className={cn(tabsListVariants({ variant }), className)}
+      className={cn(
+        "bg-[#1f231f] text-[#8a9d86] inline-flex h-9 w-fit items-center justify-center rounded-lg p-[3px]",
+        className
+      )}
       {...props}
     />
   )
@@ -64,10 +42,7 @@ function TabsTrigger({
     <TabsPrimitive.Trigger
       data-slot="tabs-trigger"
       className={cn(
-        "focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:outline-ring text-[#91a58d] hover:text-[#f1f4f1] relative inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-2 py-1 text-sm font-medium whitespace-nowrap transition-all group-data-[orientation=vertical]/tabs:w-full group-data-[orientation=vertical]/tabs:justify-start focus-visible:ring-[3px] focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 group-data-[variant=default]/tabs-list:data-[state=active]:shadow-sm group-data-[variant=line]/tabs-list:data-[state=active]:shadow-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
-        "group-data-[variant=line]/tabs-list:bg-transparent group-data-[variant=line]/tabs-list:data-[state=active]:bg-transparent dark:group-data-[variant=line]/tabs-list:data-[state=active]:border-transparent dark:group-data-[variant=line]/tabs-list:data-[state=active]:bg-transparent",
-        "data-[state=active]:bg-[#76b04f]/10 data-[state=active]:text-[#76b04f] data-[state=active]:border-[#76b04f]/20",
-        "after:bg-[#76b04f] after:absolute after:opacity-0 after:transition-opacity group-data-[orientation=horizontal]/tabs:after:inset-x-0 group-data-[orientation=horizontal]/tabs:after:bottom-[-5px] group-data-[orientation=horizontal]/tabs:after:h-0.5 group-data-[orientation=vertical]/tabs:after:inset-y-0 group-data-[orientation=vertical]/tabs:after:-right-1 group-data-[orientation=vertical]/tabs:after:w-0.5 group-data-[variant=line]/tabs-list:data-[state=active]:after:opacity-100",
+        "data-[state=active]:bg-[#576953]/10 data-[state=active]:text-[#576953] data-[state=active]:shadow-sm inline-flex items-center justify-center gap-1.5 rounded-md px-2 py-1 text-sm font-medium whitespace-nowrap transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#576953] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className
       )}
       {...props}
@@ -82,10 +57,13 @@ function TabsContent({
   return (
     <TabsPrimitive.Content
       data-slot="tabs-content"
-      className={cn("flex-1 outline-none", className)}
+      className={cn(
+        "flex-1 outline-none ring-offset-[#191D19] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#576953] focus-visible:ring-offset-2",
+        className
+      )}
       {...props}
     />
   )
 }
 
-export { Tabs, TabsList, TabsTrigger, TabsContent, tabsListVariants }
+export { Tabs, TabsList, TabsTrigger, TabsContent }

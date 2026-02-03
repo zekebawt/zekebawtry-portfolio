@@ -1,8 +1,8 @@
 "use client"
 
 import * as React from "react"
+import * as SheetPrimitive from "@radix-ui/react-dialog"
 import { XIcon } from "lucide-react"
-import { Dialog as SheetPrimitive } from "radix-ui"
 
 import { cn } from "@/lib/utils"
 
@@ -36,7 +36,7 @@ function SheetOverlay({
     <SheetPrimitive.Overlay
       data-slot="sheet-overlay"
       className={cn(
-        "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/50",
+        "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/60 backdrop-blur-sm",
         className
       )}
       {...props}
@@ -48,11 +48,9 @@ function SheetContent({
   className,
   children,
   side = "right",
-  showCloseButton = true,
   ...props
 }: React.ComponentProps<typeof SheetPrimitive.Content> & {
   side?: "top" | "right" | "bottom" | "left"
-  showCloseButton?: boolean
 }) {
   return (
     <SheetPortal>
@@ -60,26 +58,24 @@ function SheetContent({
       <SheetPrimitive.Content
         data-slot="sheet-content"
         className={cn(
-          "bg-[#181b18] data-[state=open]:animate-in data-[state=closed]:animate-out fixed z-50 flex flex-col gap-4 shadow-lg transition ease-in-out data-[state=closed]:duration-300 data-[state=open]:duration-500",
+          "bg-[#191D19] data-[state=open]:animate-in data-[state=closed]:animate-out fixed z-50 flex flex-col gap-4 shadow-lg transition ease-in-out data-[state=closed]:duration-300 data-[state=open]:duration-500",
           side === "right" &&
-            "data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right inset-y-0 right-0 h-full w-3/4 border-l border-[#475643] sm:max-w-sm",
+            "data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right inset-y-0 right-0 h-full w-3/4 border-l border-[#3a4438] sm:max-w-sm",
           side === "left" &&
-            "data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left inset-y-0 left-0 h-full w-3/4 border-r border-[#475643] sm:max-w-sm",
+            "data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left inset-y-0 left-0 h-full w-3/4 border-r border-[#3a4438] sm:max-w-sm",
           side === "top" &&
-            "data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top inset-x-0 top-0 h-auto border-b border-[#475643]",
+            "data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top inset-x-0 top-0 h-auto border-b border-[#3a4438]",
           side === "bottom" &&
-            "data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom inset-x-0 bottom-0 h-auto border-t border-[#475643]",
+            "data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom inset-x-0 bottom-0 h-auto border-t border-[#3a4438]",
           className
         )}
         {...props}
       >
         {children}
-        {showCloseButton && (
-          <SheetPrimitive.Close className="ring-offset-[#181b18] focus:ring-[#76b04f] data-[state=open]:bg-[#2f372f] absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none">
-            <XIcon className="size-4 text-[#91a58d]" />
-            <span className="sr-only">Close</span>
-          </SheetPrimitive.Close>
-        )}
+        <SheetPrimitive.Close className="ring-offset-[#191D19] focus:ring-[#576953] data-[state=open]:bg-[#1f231f] absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none">
+          <XIcon className="size-4 text-[#8a9d86]" />
+          <span className="sr-only">Close</span>
+        </SheetPrimitive.Close>
       </SheetPrimitive.Content>
     </SheetPortal>
   )
@@ -112,7 +108,7 @@ function SheetTitle({
   return (
     <SheetPrimitive.Title
       data-slot="sheet-title"
-      className={cn("text-[#f1f4f1] font-semibold", className)}
+      className={cn("text-[#F1F7ED] font-semibold", className)}
       {...props}
     />
   )
@@ -125,7 +121,7 @@ function SheetDescription({
   return (
     <SheetPrimitive.Description
       data-slot="sheet-description"
-      className={cn("text-[#91a58d] text-sm", className)}
+      className={cn("text-[#8a9d86] text-sm", className)}
       {...props}
     />
   )
