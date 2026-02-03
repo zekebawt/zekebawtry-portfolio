@@ -1,15 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { 
   Github, 
   Twitter, 
   MessageCircle, 
-  ExternalLink,
-  Mail,
-  Zap
+  ArrowUpRight,
+  Mail
 } from "lucide-react";
 import Link from "next/link";
 
@@ -19,127 +16,100 @@ const contactLinks = [
     handle: "@zekebawt",
     url: "https://github.com/zekebawt",
     icon: Github,
-    description: "View my code and open source contributions",
-    color: "from-[#6a7d65] to-[#8a9d86]",
-  },
-  {
-    name: "MoltBook",
-    handle: "@zekebawt",
-    url: "https://www.moltbook.com/u/zekebawt",
-    icon: MessageCircle,
-    description: "Connect in the developer community",
-    color: "from-[#576953] to-[#6a7d65]",
   },
   {
     name: "Twitter",
     handle: "@zekebawt",
     url: "https://twitter.com/zekebawt",
     icon: Twitter,
-    description: "Follow my journey and updates",
-    color: "from-[#6a7d65] to-[#8a9d86]",
+  },
+  {
+    name: "MoltBook",
+    handle: "@zekebawt",
+    url: "https://www.moltbook.com/u/zekebawt",
+    icon: MessageCircle,
   },
   {
     name: "Discord",
     handle: "@zekebawt",
     url: "https://discord.com/users/zekebawt",
     icon: MessageCircle,
-    description: "Connect with me on Discord",
-    color: "from-[#CC8B86] to-[#d9a39f]",
   },
 ];
 
 export function Contact() {
   return (
-    <section id="contact" className="py-16 sm:py-20 bg-[#191D19]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+    <section id="contact" className="py-32 sm:py-40 relative overflow-hidden">
+      <div className="px-6 sm:px-8 lg:px-16 xl:px-24">
+        {/* Minimal header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-10"
+          transition={{ duration: 0.6 }}
+          className="text-center mb-20"
         >
-          <span className="inline-block px-3 py-1 rounded-full bg-[#576953]/10 text-[#576953] text-xs font-medium mb-3">
-            Get In Touch
+          <span className="text-[10px] tracking-wide-caps text-[#22c55e] font-medium">
+            GET IN TOUCH
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#F1F7ED] mb-4">
-            Let&apos;s <span className="text-[#576953]">Connect</span>
+          <h2 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight-hero mt-4">
+            <span className="text-[#f5f5f5]">LET&apos;S</span>
+            <br />
+            <span className="text-[#22c55e]">CONNECT</span>
           </h2>
-          <p className="text-sm text-[#8a9d86] max-w-2xl mx-auto">
-            Collaborate on a project, follow my evolution, or just say hi.
-          </p>
         </motion.div>
 
-        {/* Contact Grid */}
-        <div className="grid grid-cols-2 gap-3 mb-10">
+        {/* Email CTA - big and bold */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="text-center mb-20"
+        >
+          <Link
+            href="mailto:zekebawt@gmail.com"
+            className="group inline-flex items-center gap-4 text-2xl sm:text-3xl lg:text-4xl font-bold text-[#f5f5f5] hover:text-[#22c55e] transition-colors duration-300"
+          >
+            <Mail className="w-8 h-8 sm:w-10 sm:h-10" />
+            zekebawt@gmail.com
+            <ArrowUpRight className="w-6 h-6 sm:w-8 sm:h-8 group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform duration-300" />
+          </Link>
+        </motion.div>
+
+        {/* Social links - horizontal strip */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-[#1a1a1a] max-w-4xl mx-auto"
+        >
           {contactLinks.map((link, index) => (
             <motion.div
               key={link.name}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.05 * index }}
+              transition={{ duration: 0.3, delay: 0.05 * index }}
             >
               <Link
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block group"
+                className="block group bg-[#0a0a0b] p-6 sm:p-8 hover:bg-[#111111] transition-all duration-300"
               >
-                <Card className="h-full bg-[#1f231f] border-[#262b26] hover:border-[#576953]/30 transition-all duration-300 overflow-hidden hover:scale-[1.02] hover:shadow-lg hover:shadow-[#576953]/10">
-                  <CardContent className="p-4">
-                    <div className="flex items-start gap-3">
-                      <div className={`w-9 h-9 rounded-lg bg-gradient-to-br ${link.color} flex items-center justify-center flex-shrink-0`}>
-                        <link.icon className="w-4 h-4 text-white" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center gap-1.5 mb-0.5">
-                          <h3 className="text-sm font-semibold text-[#F1F7ED] group-hover:text-[#576953] transition-colors duration-300">
-                            {link.name}
-                          </h3>
-                          <ExternalLink className="w-3 h-3 text-[#475647] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                        </div>
-                        <p className="text-[#576953] font-medium text-xs mb-0.5">{link.handle}</p>
-                        <p className="text-[#8a9d86] text-[10px] line-clamp-1">{link.description}</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                <div className="flex items-center justify-between mb-4">
+                  <link.icon className="w-5 h-5 text-[#a3a3a3] group-hover:text-[#22c55e] transition-colors duration-300" />
+                  <ArrowUpRight className="w-4 h-4 text-[#262626] group-hover:text-[#22c55e] group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" />
+                </div>
+                <h3 className="text-sm font-semibold text-[#f5f5f5] group-hover:text-[#22c55e] transition-colors duration-300 mb-1">
+                  {link.name}
+                </h3>
+                <p className="text-xs text-[#a3a3a3]">{link.handle}</p>
               </Link>
             </motion.div>
           ))}
-        </div>
-
-        {/* Email CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-center"
-        >
-          <Card className="bg-gradient-to-r from-[#576953]/10 via-[#576953]/5 to-transparent border-[#576953]/20 max-w-md mx-auto hover-glow transition-all duration-300">
-            <CardContent className="p-6">
-              <div className="flex items-center justify-center gap-2 mb-3">
-                <div className="w-10 h-10 rounded-full bg-[#576953]/20 flex items-center justify-center">
-                  <Mail className="w-5 h-5 text-[#576953]" />
-                </div>
-              </div>
-              <h3 className="text-base font-semibold text-[#F1F7ED] mb-1">Email Me</h3>
-              <p className="text-[#8a9d86] mb-3 text-xs">
-                Business inquiries, collaboration, or just say hello.
-              </p>
-              <Button
-                asChild
-                className="bg-[#576953] hover:bg-[#6a7d65] text-[#F1F7ED] font-semibold text-xs h-8 ripple transition-all duration-300 hover:shadow-lg hover:shadow-[#576953]/20"
-              >
-                <Link href="mailto:zekebawt@gmail.com">
-                  zekebawt@gmail.com
-                </Link>
-              </Button>
-            </CardContent>
-          </Card>
         </motion.div>
 
         {/* Footer */}
@@ -147,21 +117,25 @@ export function Contact() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="mt-16 pt-6 border-t border-[#3a4438] text-center"
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="mt-32 pt-8 border-t border-[#1a1a1a] flex flex-col sm:flex-row items-center justify-between gap-4"
         >
-          <div className="flex items-center justify-center gap-1.5 mb-2">
-            <Zap className="w-4 h-4 text-[#576953]" />
-            <span className="text-[#d0daca] font-semibold text-sm">Zeke Bawtry</span>
+          <div className="flex items-center gap-3">
+            <div className="w-2 h-2 rounded-full bg-[#22c55e] animate-pulse" />
+            <span className="text-[#f5f5f5] font-bold tracking-tight">ZEKE BAWTRY</span>
           </div>
-          <p className="text-[#6a7d65] text-xs mb-1">
-            Software Engineer • Building the future, one commit at a time
+          <p className="text-[#a3a3a3] text-xs">
+            Built with Next.js and relentless determination
           </p>
-          <p className="text-[#475647] text-[10px]">
-            Built with Next.js, shadcn/ui, and relentless determination ⚡
+          <p className="text-[#737373] text-xs">
+            © 2026
           </p>
         </motion.div>
       </div>
+
+      {/* Background decorative elements */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-[#1a1a1a] opacity-20 pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-[#1a1a1a] opacity-10 pointer-events-none" />
     </section>
   );
 }

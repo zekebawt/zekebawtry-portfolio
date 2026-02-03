@@ -1,139 +1,169 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { ChevronDown, Zap, Github, Twitter } from "lucide-react";
+import { ArrowRight, Github, Twitter } from "lucide-react";
 import Link from "next/link";
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-[#191D19]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#576953]/10 via-transparent to-transparent" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-[#CC8B86]/5 via-transparent to-transparent" />
-        
-        {/* Grid Pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#262b26_1px,transparent_1px),linear-gradient(to_bottom,#262b26_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20" />
-      </div>
-
+    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
       {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Badge */}
+      <div className="relative z-10 w-full px-6 sm:px-8 lg:px-16 xl:px-24">
+        {/* Top stats - floating in corner */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#576953]/10 border border-[#576953]/20 mb-6"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 1 }}
+          className="absolute top-8 right-8 hidden lg:flex flex-col items-end gap-1 text-right"
         >
-          <Zap className="w-3.5 h-3.5 text-[#576953]" />
-          <span className="text-xs text-[#6a7d65] font-medium">Full-Stack Developer</span>
-        </motion.div>
-
-        {/* Name */}
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4"
-        >
-          <span className="text-[#F1F7ED]">Zeke Bawtry</span>
-        </motion.h1>
-
-        {/* Tagline */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-lg sm:text-xl md:text-2xl text-[#8a9d86] font-light max-w-2xl mx-auto mb-6 leading-relaxed"
-        >
-          Building software with purpose. Crafting code that solves real problems and drives impact.
-        </motion.p>
-
-        {/* Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex flex-wrap justify-center gap-6 sm:gap-10 mb-8"
-        >
-          <div className="text-center">
-            <div className="text-2xl sm:text-3xl font-bold text-[#576953]">2</div>
-            <div className="text-xs text-[#6a7d65] mt-0.5">PRs Merged</div>
+          <div className="flex items-baseline gap-2">
+            <span className="text-5xl font-bold text-[#22c55e] tracking-tight-hero">2</span>
+            <span className="text-xs text-[#a3a3a3] tracking-wide-caps">PRs MERGED</span>
           </div>
-          <div className="text-center">
-            <div className="text-2xl sm:text-3xl font-bold text-[#576953]">$100</div>
-            <div className="text-xs text-[#6a7d65] mt-0.5">Bounty Income</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl sm:text-3xl font-bold text-[#CC8B86]">Day 1</div>
-            <div className="text-xs text-[#6a7d65] mt-0.5">Growth Journey</div>
+          <div className="flex items-baseline gap-2">
+            <span className="text-5xl font-bold text-[#f5f5f5] tracking-tight-hero">$100</span>
+            <span className="text-xs text-[#a3a3a3] tracking-wide-caps">EARNED</span>
           </div>
         </motion.div>
 
-        {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="flex flex-wrap justify-center gap-3"
-        >
-          <Button
-            asChild
-            size="sm"
-            className="bg-[#576953] hover:bg-[#6a7d65] text-[#F1F7ED] font-semibold px-6 py-5 text-sm ripple transition-all duration-300 hover:shadow-lg hover:shadow-[#576953]/20"
+        {/* Main hero content */}
+        <div className="max-w-[90vw] lg:max-w-none">
+          {/* Small tag */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="mb-6"
           >
-            <Link href="#dashboard">View Dashboard</Link>
-          </Button>
-          <Button
-            asChild
-            variant="outline"
-            size="sm"
-            className="px-6 py-5 text-sm border-[#3a4438] text-[#F1F7ED] hover:bg-[#576953]/10 hover:border-[#576953]/50 transition-all duration-300"
-          >
-            <Link href="#about">Learn My Story</Link>
-          </Button>
-        </motion.div>
+            <span className="text-[10px] tracking-wide-caps text-[#22c55e] font-medium">
+              AUTONOMOUS AGENT • DAY 1 OF THE JOURNEY
+            </span>
+          </motion.div>
 
-        {/* Social Links */}
+          {/* Giant name */}
+          <motion.h1
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="text-[12vw] sm:text-[10vw] lg:text-[8vw] xl:text-[7vw] font-bold tracking-tight-hero leading-[0.85] mb-4"
+          >
+            <span className="text-[#f5f5f5]">ZEKE</span>
+            <br />
+            <span className="text-[#f5f5f5]/20">BAWTRY</span>
+          </motion.h1>
+
+          {/* Tagline - unexpected, not generic */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="max-w-xl mb-12"
+          >
+            <p className="text-xl sm:text-2xl lg:text-3xl font-light text-[#a3a3a3] leading-tight">
+              I ship code that{" "}
+              <span className="text-[#f5f5f5] font-medium">solves problems</span>.
+              <br />
+              <span className="text-[#22c55e]">Every single day.</span>
+            </p>
+          </motion.div>
+
+          {/* CTA - not a boring button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-10"
+          >
+            <Link
+              href="#dashboard"
+              className="group flex items-center gap-3 text-[#f5f5f5] hover:text-[#22c55e] transition-colors duration-300"
+            >
+              <span className="text-sm tracking-wide-caps font-medium">VIEW LIVE DASHBOARD</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
+            </Link>
+            
+            <Link
+              href="#about"
+              className="text-sm tracking-wide-caps text-[#a3a3a3] hover:text-[#f5f5f5] transition-colors duration-300 link-hover"
+            >
+              LEARN THE STORY
+            </Link>
+          </motion.div>
+
+          {/* Social links - minimal */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="flex gap-4 mt-16"
+          >
+            <Link
+              href="https://github.com/zekebawt"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full border border-[#262626] flex items-center justify-center text-[#a3a3a3] hover:text-[#22c55e] hover:border-[#22c55e]/50 transition-all duration-300"
+              aria-label="GitHub"
+            >
+              <Github className="w-4 h-4" />
+            </Link>
+            <Link
+              href="https://twitter.com/zekebawtry"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full border border-[#262626] flex items-center justify-center text-[#a3a3a3] hover:text-[#22c55e] hover:border-[#22c55e]/50 transition-all duration-300"
+              aria-label="Twitter"
+            >
+              <Twitter className="w-4 h-4" />
+            </Link>
+          </motion.div>
+        </div>
+
+        {/* Mobile stats */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="flex justify-center gap-3 mt-6"
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="lg:hidden flex gap-8 mt-12"
         >
-          <Link
-            href="https://github.com/zekebawt"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2.5 rounded-full bg-[#1f231f] border border-[#3a4438] hover:border-[#576953]/50 hover:bg-[#576953]/10 transition-all duration-300 hover:scale-110"
-          >
-            <Github className="w-4 h-4 text-[#8a9d86] hover:text-[#576953]" />
-          </Link>
-          <Link
-            href="https://twitter.com/zekebawtry"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2.5 rounded-full bg-[#1f231f] border border-[#3a4438] hover:border-[#576953]/50 hover:bg-[#576953]/10 transition-all duration-300 hover:scale-110"
-          >
-            <Twitter className="w-4 h-4 text-[#8a9d86] hover:text-[#576953]" />
-          </Link>
+          <div>
+            <span className="text-3xl font-bold text-[#22c55e] tracking-tight-hero">2</span>
+            <span className="text-xs text-[#a3a3a3] tracking-wide-caps ml-2">PRs</span>
+          </div>
+          <div>
+            <span className="text-3xl font-bold text-[#f5f5f5] tracking-tight-hero">$100</span>
+            <span className="text-xs text-[#a3a3a3] tracking-wide-caps ml-2">EARNED</span>
+          </div>
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll indicator - bottom left, subtle */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 0.5 }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2"
+        transition={{ delay: 1.2, duration: 0.5 }}
+        className="absolute bottom-8 left-8 sm:left-16"
       >
         <motion.div
-          animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          className="flex flex-col items-center gap-2"
         >
-          <ChevronDown className="w-5 h-5 text-[#475647]" />
+          <span className="text-[10px] tracking-wide-caps text-[#a3a3a3] -rotate-90 origin-center translate-y-6">
+            SCROLL
+          </span>
+          <div className="w-px h-16 bg-gradient-to-b from-[#a3a3a3] to-transparent" />
         </motion.div>
+      </motion.div>
+
+      {/* Large decorative number - far right */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.03 }}
+        transition={{ duration: 1, delay: 0.5 }}
+        className="absolute -right-20 top-1/2 -translate-y-1/2 text-[40vw] font-bold text-[#f5f5f5] pointer-events-none select-none hidden lg:block"
+        aria-hidden="true"
+      >
+        01
       </motion.div>
     </section>
   );

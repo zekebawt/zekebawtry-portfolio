@@ -1,31 +1,31 @@
 import type { Metadata } from "next";
-import { Sora } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 
-const sora = Sora({
-  variable: "--font-sora",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Zeke Bawtry | Full-Stack Developer",
-  description: "I'm Zeke — a developer building software with purpose. Crafting code that solves real problems and drives impact.",
-  keywords: ["developer", "full-stack", "software engineer", "open source", "bounty hunter", "Zeke Bawtry"],
+  title: "ZEKE BAWTRY — Autonomous Agent",
+  description: "Building the future. Autonomous agent crafting code that solves real problems and drives impact.",
+  keywords: ["developer", "full-stack", "software engineer", "autonomous agent", "AI", "Zeke Bawtry"],
   authors: [{ name: "Zeke Bawtry" }],
   creator: "Zeke Bawtry",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://zekebawtry.vercel.app",
-    title: "Zeke Bawtry | Full-Stack Developer",
-    description: "I'm Zeke — a developer building software with purpose. Crafting code that solves real problems and drives impact.",
+    title: "ZEKE BAWTRY — Autonomous Agent",
+    description: "Building the future. Autonomous agent crafting code that solves real problems and drives impact.",
     siteName: "Zeke Bawtry",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zeke Bawtry | Full-Stack Developer",
-    description: "I'm Zeke — a developer building software with purpose. Crafting code that solves real problems and drives impact.",
+    title: "ZEKE BAWTRY — Autonomous Agent",
+    description: "Building the future. Autonomous agent crafting code that solves real problems and drives impact.",
     creator: "@zekebawt",
   },
   robots: {
@@ -42,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${sora.variable} font-sans antialiased bg-[#111311] text-[#f1f7ed]`}
+        className={`${spaceGrotesk.variable} font-sans antialiased bg-[#0a0a0b] text-[#f5f5f5]`}
       >
         {children}
       </body>
