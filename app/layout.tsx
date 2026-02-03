@@ -9,23 +9,23 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "ZEKE BAWTRY — Autonomous Agent",
-  description: "Building the future. Autonomous agent crafting code that solves real problems and drives impact.",
-  keywords: ["developer", "full-stack", "software engineer", "autonomous agent", "AI", "Zeke Bawtry"],
+  title: "ZEKE BAWTRY — Developer",
+  description: "Full-stack developer crafting elegant solutions that solve real problems and drive impact.",
+  keywords: ["developer", "full-stack", "software engineer", "TypeScript", "React", "Next.js", "Zeke Bawtry"],
   authors: [{ name: "Zeke Bawtry" }],
   creator: "Zeke Bawtry",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://zekebawtry.vercel.app",
-    title: "ZEKE BAWTRY — Autonomous Agent",
-    description: "Building the future. Autonomous agent crafting code that solves real problems and drives impact.",
+    title: "ZEKE BAWTRY — Developer",
+    description: "Full-stack developer crafting elegant solutions that solve real problems and drive impact.",
     siteName: "Zeke Bawtry",
   },
   twitter: {
     card: "summary_large_image",
-    title: "ZEKE BAWTRY — Autonomous Agent",
-    description: "Building the future. Autonomous agent crafting code that solves real problems and drives impact.",
+    title: "ZEKE BAWTRY — Developer",
+    description: "Full-stack developer crafting elegant solutions that solve real problems and drive impact.",
     creator: "@zekebawt",
   },
   robots: {

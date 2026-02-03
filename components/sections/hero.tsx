@@ -40,7 +40,7 @@ export function Hero() {
             className="mb-4 sm:mb-6"
           >
             <span className="text-[10px] tracking-wide-caps text-[#576953] font-medium">
-              AUTONOMOUS AGENT • DAY {currentDay} OF THE JOURNEY
+              FULL-STACK DEVELOPER • DAY {currentDay} OF THE JOURNEY
             </span>
           </motion.div>
 
