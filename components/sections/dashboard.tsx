@@ -24,6 +24,7 @@ import {
   Cell
 } from "recharts";
 import { dashboardData, evolutionStreak } from "@/lib/data";
+import { D3EvolutionChart, generateEvolutionData } from "@/components/d3-evolution-chart";
 
 const incomeData = [
   { day: "Day 1", earned: 0, target: 100 },
@@ -146,21 +147,50 @@ export function Dashboard() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <Tabs defaultValue="income" className="w-full">
-            <TabsList className="grid w-full grid-cols-3 bg-[#1f231f] border border-[#262b26] mb-4 h-8">
-              <TabsTrigger value="income" className="data-[state=active]:bg-[#576953]/10 data-[state=active]:text-[#576953] text-xs h-6">
+          <Tabs defaultValue="evolution" className="w-full">
+            <TabsList className="grid w-full grid-cols-4 bg-[#1f231f] border border-[#262b26] mb-4 h-8">
+              <TabsTrigger value="evolution" className="data-[state=active]:bg-[#576953]/10 data-[state=active]:text-[#576953] text-xs h-6">
                 <TrendingUp className="w-3 h-3 mr-1" />
+                Evolution
+              </TabsTrigger>
+              <TabsTrigger value="income" className="data-[state=active]:bg-[#576953]/10 data-[state=active]:text-[#576953] text-xs h-6">
+                <DollarSign className="w-3 h-3 mr-1" />
                 Income
               </TabsTrigger>
               <TabsTrigger value="skills" className="data-[state=active]:bg-[#576953]/10 data-[state=active]:text-[#576953] text-xs h-6">
                 <Award className="w-3 h-3 mr-1" />
                 Skills
               </TabsTrigger>
-              <TabsTrigger value="evolution" className="data-[state=active]:bg-[#576953]/10 data-[state=active]:text-[#576953] text-xs h-6">
+              <TabsTrigger value="plan" className="data-[state=active]:bg-[#576953]/10 data-[state=active]:text-[#576953] text-xs h-6">
                 <Calendar className="w-3 h-3 mr-1" />
                 Plan
               </TabsTrigger>
             </TabsList>
+
+            <TabsContent value="evolution">
+              <Card className="bg-[#1f231f] border-[#262b26]">
+                <CardHeader className="pb-2 px-4 pt-4">
+                  <CardTitle className="text-[#F1F7ED] flex items-center gap-2 text-sm">
+                    <TrendingUp className="w-3.5 h-3.5 text-[#576953]" />
+                    Evolution Trajectory (D3.js Powered)
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="px-4 pb-4">
+                  <D3EvolutionChart 
+                    data={generateEvolutionData()} 
+                    width={700} 
+                    height={350} 
+                  />
+                  <div className="flex justify-center gap-6 mt-4 text-[10px] text-[#6a7d65]">
+                    <span>Week 1 of continuous growth</span>
+                    <span>•</span>
+                    <span className="text-[#576953]">Skills target: 14/week</span>
+                    <span>•</span>
+                    <span className="text-[#CC8B86]">Income target: $700/week</span>
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
 
             <TabsContent value="income">
               <Card className="bg-[#1f231f] border-[#262b26]">
@@ -247,7 +277,7 @@ export function Dashboard() {
               </Card>
             </TabsContent>
 
-            <TabsContent value="evolution">
+            <TabsContent value="plan">
               <Card className="bg-[#1f231f] border-[#262b26]">
                 <CardHeader className="pb-2 px-4 pt-4">
                   <CardTitle className="text-[#F1F7ED] flex items-center gap-2 text-sm">
