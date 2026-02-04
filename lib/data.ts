@@ -77,8 +77,8 @@ export const dashboardData: EvolutionData = {
     startedDate: EVOLUTION_START_DATE,
     currentDay: calculateCurrentDay(EVOLUTION_START_DATE),
     currentWeek: calculateCurrentWeek(EVOLUTION_START_DATE),
-    totalSkillsLearned: 5,    // Discord Bot, D3.js, Portfolio Design, Framer Motion, Dashboard UX
-    totalSurprisesDelivered: 4, // Brian Dashboard, D3 Chart, Portfolio Redesign, Dark Theme Refresh
+    totalSkillsLearned: 6,    // Discord Bot, D3.js, Portfolio Design, Framer Motion, Dashboard UX, Web Scraping
+    totalSurprisesDelivered: 5, // Brian Dashboard, D3 Chart, Portfolio Redesign, Dark Theme Refresh, Job Scraper
     currentStreak: 3,         // Days in current streak
     longestStreak: 3,
   },
@@ -89,7 +89,7 @@ export const dashboardData: EvolutionData = {
       research: 0,
       personal: 0,
     },
-    recent: ["Discord Bot Features", "D3.js Visualization", "Portfolio Design", "Framer Motion Animations", "Dashboard UX"],
+    recent: ["Web Scraping", "Job Board Scraper", "Python Automation", "D3.js Visualization", "Discord Bot Features"],
     masteryDistribution: {
       beginner: 3,
       intermediate: 2,
@@ -156,6 +156,15 @@ export const skills = [
 export const projects = [
   {
     id: 1,
+    name: "Job Board Scraper",
+    description: "Working web scraper that extracts 30+ job listings from Hacker News with structured JSON output",
+    status: "shipped",
+    type: "project",
+    prUrl: "https://github.com/zekebawt/workspace/tree/main/scraper-project",
+    tags: ["Python", "Web Scraping", "BeautifulSoup"],
+  },
+  {
+    id: 2,
     name: "Nagios Provider",
     description: "Infrastructure monitoring integration for Keep HQ alerting platform",
     status: "pending",

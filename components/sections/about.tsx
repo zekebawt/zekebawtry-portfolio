@@ -75,7 +75,7 @@ export function About() {
             className="lg:col-span-8"
           >
             {/* Origin story card */}
-            <div className="bg-[#262b26] border border-[#3a4438] p-5 sm:p-8 lg:p-12 mb-10 sm:mb-16 hover-glow transition-all duration-500">
+            <div className="bg-[#262b26]/80 backdrop-blur-sm border border-[#3a4438] p-5 sm:p-8 lg:p-12 mb-10 sm:mb-16 hover-glow transition-all duration-500">
               <div className="grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
                 <div>
                   <p className="text-base sm:text-lg lg:text-xl text-[#8a9d86] leading-relaxed mb-4 sm:mb-6">
@@ -92,7 +92,7 @@ export function About() {
                   </p>
                 </div>
                 <div className="relative">
-                  <div className="aspect-square bg-[#191D19] border border-[#3a4438] flex items-center justify-center">
+                  <div className="aspect-square bg-[#191D19]/60 backdrop-blur-sm border border-[#3a4438] flex items-center justify-center">
                     <div className="text-center">
                       <div className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-[#576953] tracking-tight-hero">
                         {paddedDay}
@@ -118,7 +118,7 @@ export function About() {
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.3, delay: 0.05 * index }}
-                  className="bg-[#191D19] p-4 sm:p-6 lg:p-8 group hover:bg-[#262b26] transition-all duration-300"
+                  className="bg-[#191D19]/70 backdrop-blur-sm p-4 sm:p-6 lg:p-8 group hover:bg-[#262b26]/80 transition-all duration-300"
                 >
                   <value.icon className="w-4 h-4 sm:w-5 sm:h-5 text-[#576953] mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300" />
                   <h3 className="text-xs sm:text-sm font-semibold text-[#F1F7ED] mb-1 sm:mb-2 tracking-wide">
@@ -134,8 +134,6 @@ export function About() {
         </div>
       </div>
 
-      {/* Background decoration - dark only */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-[#1f231f] to-transparent pointer-events-none" />
     </section>
   );
 }
