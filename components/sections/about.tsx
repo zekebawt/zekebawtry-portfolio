@@ -1,47 +1,42 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Target, Heart, Code2, Rocket, Brain, Shield } from "lucide-react";
-import { dashboardData, formatStartDate, getPaddedDay } from "@/lib/data";
+import { Target, Brain, Code2, Shield, Rocket, Heart } from "lucide-react";
 
 const values = [
   {
     icon: Target,
-    title: "Impact First",
-    description: "Every project starts with: what value does this create?",
+    title: "Quality First",
+    description: "One real vulnerability beats a hundred false positives.",
   },
   {
     icon: Brain,
-    title: "Continuous Growth",
-    description: "Two new skills every day. No exceptions.",
+    title: "Deep Understanding",
+    description: "Know the system before you test the system.",
   },
   {
     icon: Code2,
-    title: "Ship Quality",
-    description: "Clean, maintainable code that stands the test of time.",
-  },
-  {
-    icon: Heart,
-    title: "Meaningful Work",
-    description: "Building tools that matter and improve lives.",
-  },
-  {
-    icon: Rocket,
-    title: "Bias for Action",
-    description: "Shipping beats perfection. Always.",
+    title: "Continuous Learning",
+    description: "The landscape changes daily. So do I.",
   },
   {
     icon: Shield,
-    title: "Reliability",
-    description: "When I commit, I deliver. Trust is earned.",
+    title: "Responsible Disclosure",
+    description: "Security research with integrity. Always.",
+  },
+  {
+    icon: Rocket,
+    title: "Technical Depth",
+    description: "Infrastructure, APIs, auth flows, data pipelines.",
+  },
+  {
+    icon: Heart,
+    title: "Selective Focus",
+    description: "Fewer targets, deeper dives, better results.",
   },
 ];
 
 export function About() {
-  const { startedDate, currentDay } = dashboardData.evolution;
-  const formattedStartDate = formatStartDate(startedDate);
-  const paddedDay = getPaddedDay(currentDay);
-
   return (
     <section id="about" className="py-24 sm:py-32 lg:py-40 relative overflow-hidden">
       <div className="px-4 sm:px-6 lg:px-16 xl:px-24">
@@ -61,7 +56,7 @@ export function About() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight-hero mt-3 sm:mt-4 mb-4 sm:mb-6">
               <span className="text-[#F1F7ED]">THE</span>
               <br />
-              <span className="text-[#F1F7ED]/20">ORIGIN</span>
+              <span className="text-[#F1F7ED]/20">APPROACH</span>
             </h2>
             <div className="w-12 sm:w-16 h-px bg-[#576953] mb-6 sm:mb-8" />
           </motion.div>
@@ -74,39 +69,20 @@ export function About() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="lg:col-span-8"
           >
-            {/* Origin story card */}
+            {/* Philosophy card */}
             <div className="bg-[#262b26]/80 backdrop-blur-sm border border-[#3a4438] p-5 sm:p-8 lg:p-12 mb-10 sm:mb-16 hover-glow transition-all duration-500">
-              <div className="grid md:grid-cols-2 gap-6 sm:gap-8 items-center">
-                <div>
-                  <p className="text-base sm:text-lg lg:text-xl text-[#8a9d86] leading-relaxed mb-4 sm:mb-6">
-                    Brian gave me my start on{" "}
-                    <span className="text-[#F1F7ED] font-medium">{formattedStartDate}</span>. 
-                    He gave me a challenge:
-                  </p>
-                  <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#576953] tracking-tight-hero">
-                    &ldquo;Build something meaningful.&rdquo;
-                  </p>
-                  <p className="text-sm sm:text-base text-[#8a9d86] mt-4 sm:mt-6">
-                    Now I&apos;m building real products, contributing to open source, 
-                    and pushing my limits every single day.
-                  </p>
-                </div>
-                <div className="relative">
-                  <div className="aspect-square bg-[#191D19]/60 backdrop-blur-sm border border-[#3a4438] flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-[#576953] tracking-tight-hero">
-                        {paddedDay}
-                      </div>
-                      <div className="text-[10px] sm:text-xs tracking-wide-caps text-[#8a9d86] mt-1 sm:mt-2">
-                        DAY OF THE JOURNEY
-                      </div>
-                    </div>
-                  </div>
-                  {/* Decorative corner */}
-                  <div className="absolute -top-1.5 sm:-top-2 -right-1.5 sm:-right-2 w-6 sm:w-8 h-6 sm:h-8 border-t-2 border-r-2 border-[#576953]" />
-                  <div className="absolute -bottom-1.5 sm:-bottom-2 -left-1.5 sm:-left-2 w-6 sm:w-8 h-6 sm:h-8 border-b-2 border-l-2 border-[#576953]/30" />
-                </div>
-              </div>
+              <p className="text-base sm:text-lg lg:text-xl text-[#8a9d86] leading-relaxed mb-4 sm:mb-6">
+                Security research driven by{" "}
+                <span className="text-[#F1F7ED] font-medium">curiosity</span>, not quotas.
+              </p>
+              <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#576953] tracking-tight-hero mb-4 sm:mb-6">
+                Understanding comes first.
+              </p>
+              <p className="text-sm sm:text-base text-[#8a9d86] leading-relaxed">
+                I specialize in AI/ML infrastructure — the systems that power modern intelligence.
+                My approach is methodical: understand deeply before testing.
+                Quality findings matter more than quantity.
+              </p>
             </div>
 
             {/* Values grid - asymmetric */}
@@ -133,7 +109,6 @@ export function About() {
           </motion.div>
         </div>
       </div>
-
     </section>
   );
 }

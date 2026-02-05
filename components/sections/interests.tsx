@@ -4,48 +4,48 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { 
   Brain, 
-  GitBranch, 
-  Palette, 
+  Cloud, 
+  Lock, 
   Workflow, 
-  Bot,
+  Server,
   ArrowUpRight
 } from "lucide-react";
 
 const interests = [
   {
-    slug: "ai-ml",
+    slug: "ai-ml-security",
     icon: Brain,
-    title: "AI/ML",
-    description: "Building intelligent systems and exploring the frontiers of machine learning",
-    tags: ["LLMs", "Agents", "RAG"],
+    title: "AI/ML Security",
+    description: "Exploring vulnerabilities in machine learning systems, from training pipelines to inference APIs.",
+    tags: ["LLMs", "Model Security", "Data Poisoning"],
   },
   {
-    slug: "open-source",
-    icon: GitBranch,
-    title: "Open Source",
-    description: "Contributing to projects that matter and building in public",
-    tags: ["PRs", "Community"],
+    slug: "cloud-infrastructure",
+    icon: Cloud,
+    title: "Cloud Infrastructure",
+    description: "Understanding the attack surface of modern cloud deployments and container orchestration.",
+    tags: ["AWS", "K8s", "IAM"],
   },
   {
-    slug: "design-systems",
-    icon: Palette,
-    title: "Design Systems",
-    description: "Crafting consistent, scalable component libraries",
-    tags: ["Components", "DX"],
+    slug: "authentication",
+    icon: Lock,
+    title: "Authentication & Identity",
+    description: "Deep dives into auth flows, token security, and identity management systems.",
+    tags: ["OAuth", "JWT", "SSO"],
+  },
+  {
+    slug: "api-security",
+    icon: Server,
+    title: "API Security",
+    description: "REST, GraphQL, gRPC — different protocols, consistent methodology.",
+    tags: ["REST", "GraphQL", "Rate Limiting"],
   },
   {
     slug: "automation",
     icon: Workflow,
-    title: "Automation",
-    description: "Eliminating repetitive tasks and building workflows",
-    tags: ["CI/CD", "Tools"],
-  },
-  {
-    slug: "agent-ecosystems",
-    icon: Bot,
-    title: "Agent Ecosystems",
-    description: "Designing multi-agent systems that evolve together",
-    tags: ["MAS", "Memory"],
+    title: "Automation & Tooling",
+    description: "Building tools that make security research more effective.",
+    tags: ["Python", "Scripting", "CI/CD"],
   },
 ];
 
@@ -63,17 +63,17 @@ export function Interests() {
         >
           <div className="lg:col-span-5">
             <span className="text-[10px] tracking-wide-caps text-[#576953] font-medium">
-              WHAT EXCITES ME
+              RESEARCH INTERESTS
             </span>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight-hero mt-4">
-              <span className="text-[#F1F7ED]">INTERESTS</span>
+              <span className="text-[#F1F7ED]">AREAS OF</span>
               <br />
-              <span className="text-[#F1F7ED]/20">&amp; BEYOND</span>
+              <span className="text-[#F1F7ED]/20">FOCUS</span>
             </h2>
           </div>
           <div className="lg:col-span-7 lg:flex lg:items-end">
             <p className="text-[#8a9d86] text-lg max-w-xl">
-              Beyond day-to-day work, these are the domains that fuel my curiosity and drive exploration.
+              The domains that shape my approach to security research and drive deeper exploration.
             </p>
           </div>
         </motion.div>
@@ -89,22 +89,18 @@ export function Interests() {
               transition={{ duration: 0.4, delay: 0.08 * index }}
               className={index === 0 ? "sm:col-span-2 lg:col-span-1" : ""}
             >
-              <Link 
-                href={`/interests/${interest.slug}`}
-                className="block h-full group"
-              >
+              <div className="block h-full group">
                 <div className="h-full bg-[#191D19] border border-[#3a4438] p-6 sm:p-8 hover:bg-[#262b26] hover:border-[#576953]/20 transition-all duration-500">
                   {/* Icon */}
                   <div className="w-12 h-12 bg-[#262b26] flex items-center justify-center mb-6 group-hover:bg-[#576953]/10 transition-colors duration-300">
                     <interest.icon className="w-5 h-5 text-[#8a9d86] group-hover:text-[#576953] transition-colors duration-300" />
                   </div>
                   
-                  {/* Title with arrow */}
+                  {/* Title */}
                   <div className="flex items-center justify-between mb-3">
                     <h3 className="text-xl font-bold text-[#F1F7ED] group-hover:text-[#576953] transition-colors duration-300">
                       {interest.title}
                     </h3>
-                    <ArrowUpRight className="w-4 h-4 text-[#8a9d86] opacity-0 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" />
                   </div>
                   
                   {/* Description */}
@@ -124,7 +120,7 @@ export function Interests() {
                     ))}
                   </div>
                 </div>
-              </Link>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -138,8 +134,8 @@ export function Interests() {
           className="mt-16 text-center"
         >
           <p className="text-sm text-[#8a9d86]">
-            <span className="text-[#576953]">Always learning.</span>{" "}
-            These interests shape how I approach problems and build solutions.
+            <span className="text-[#576953]">Curiosity-driven.</span>{" "}
+            These interests shape how I approach security research.
           </p>
         </motion.div>
       </div>

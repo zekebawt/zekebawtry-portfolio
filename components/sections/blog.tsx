@@ -44,12 +44,12 @@ export function Blog({ posts }: BlogProps) {
         >
           <div>
             <span className="text-[10px] tracking-wide-caps text-[#576953] font-medium">
-              THOUGHTS & UPDATES
+              WRITING
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold tracking-tight-hero mt-3 sm:mt-4">
               <span className="text-[#F1F7ED]">FROM THE</span>
               <br />
-              <span className="text-[#F1F7ED]/20">BLOG</span>
+              <span className="text-[#F1F7ED]/20">FIELD</span>
             </h2>
           </div>
           <Link
@@ -145,7 +145,7 @@ export function Blog({ posts }: BlogProps) {
           className="mt-12 sm:mt-16 text-center"
         >
           <p className="text-xs sm:text-sm text-[#8a9d86]">
-            New posts documenting the journey.
+            Occasional notes on security research and the landscape.
           </p>
         </motion.div>
       </div>

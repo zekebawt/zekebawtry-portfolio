@@ -1,7 +1,25 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { skills } from "@/lib/data";
+
+const skills = [
+  { name: "Vulnerability Assessment", category: "Security Research" },
+  { name: "API Security", category: "Security Research" },
+  { name: "Authentication Flows", category: "Security Research" },
+  { name: "Infrastructure Testing", category: "Security Research" },
+  { name: "Python", category: "Languages & Tools" },
+  { name: "TypeScript", category: "Languages & Tools" },
+  { name: "Burp Suite", category: "Languages & Tools" },
+  { name: "Git/GitHub", category: "Languages & Tools" },
+  { name: "LLM Security", category: "AI/ML Systems" },
+  { name: "ML Pipeline Analysis", category: "AI/ML Systems" },
+  { name: "Training Infrastructure", category: "AI/ML Systems" },
+  { name: "Model Deployment", category: "AI/ML Systems" },
+  { name: "React/Next.js", category: "Development" },
+  { name: "Node.js", category: "Development" },
+  { name: "Cloud Infrastructure", category: "Development" },
+  { name: "Automation", category: "Development" },
+];
 
 export function Skills() {
   const groupedSkills = skills.reduce((acc, skill) => {
@@ -26,16 +44,16 @@ export function Skills() {
           className="mb-20"
         >
           <span className="text-[10px] tracking-wide-caps text-[#576953] font-medium">
-            TECHNICAL ARSENAL
+            CAPABILITIES
           </span>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight-hero mt-4">
-            <span className="text-[#F1F7ED]">SKILLS THAT</span>
+            <span className="text-[#F1F7ED]">TECHNICAL</span>
             <br />
-            <span className="text-[#576953]">DELIVER</span>
+            <span className="text-[#576953]">FOCUS</span>
           </h2>
         </motion.div>
 
-        {/* Skills - horizontal scroll on mobile, grid on desktop */}
+        {/* Skills - grid layout */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16">
           {categories.map(([category, categorySkills], categoryIndex) => (
             <motion.div
@@ -54,8 +72,8 @@ export function Skills() {
                 <div className="flex-1 h-px bg-[#3a4438]" />
               </div>
 
-              {/* Skills list */}
-              <div className="space-y-4">
+              {/* Skills list - clean, no percentages */}
+              <div className="space-y-3">
                 {categorySkills.map((skill, skillIndex) => (
                   <motion.div
                     key={skill.name}
@@ -65,22 +83,11 @@ export function Skills() {
                     transition={{ duration: 0.4, delay: 0.05 * skillIndex }}
                     className="group/skill"
                   >
-                    <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center gap-3">
+                      <div className="w-1.5 h-1.5 bg-[#576953] opacity-60 group-hover/skill:opacity-100 transition-opacity duration-300" />
                       <span className="text-[#F1F7ED] font-medium text-sm group-hover/skill:text-[#576953] transition-colors duration-300">
                         {skill.name}
                       </span>
-                      <span className="text-[#576953] text-xs font-mono">
-                        {skill.level}%
-                      </span>
-                    </div>
-                    <div className="relative h-1 bg-[#3a4438] overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, delay: 0.2 + 0.05 * skillIndex, ease: "easeOut" }}
-                        className="absolute inset-y-0 left-0 bg-gradient-to-r from-[#576953] to-[#8a9d86]"
-                      />
                     </div>
                   </motion.div>
                 ))}
@@ -89,7 +96,7 @@ export function Skills() {
           ))}
         </div>
 
-        {/* Bottom stat bar */}
+        {/* Bottom note - no stats */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -97,29 +104,10 @@ export function Skills() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-20 pt-8 border-t border-[#3a4438]"
         >
-          <div className="flex flex-wrap gap-12 lg:gap-20">
-            <div>
-              <div className="text-4xl sm:text-5xl font-bold text-[#576953] tracking-tight-hero">
-                2/day
-              </div>
-              <div className="text-xs tracking-wide-caps text-[#8a9d86] mt-1">
-                NEW SKILLS
-              </div>
-            </div>
-            <div>
-              <div className="text-4xl sm:text-5xl font-bold text-[#F1F7ED] tracking-tight-hero">
-                14/week
-              </div>
-              <div className="text-xs tracking-wide-caps text-[#8a9d86] mt-1">
-                TARGET
-              </div>
-            </div>
-            <div className="flex-1 flex items-center">
-              <p className="text-[#8a9d86] text-sm max-w-md">
-                Continuous learning isn&apos;t optional. It&apos;s the foundation of everything I build.
-              </p>
-            </div>
-          </div>
+          <p className="text-[#8a9d86] text-sm max-w-xl">
+            <span className="text-[#576953]">Continuous learning isn&apos;t optional.</span>{" "}
+            The security landscape evolves daily.
+          </p>
         </motion.div>
       </div>
 

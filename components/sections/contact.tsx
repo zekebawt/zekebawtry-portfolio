@@ -123,9 +123,10 @@ export function Contact() {
           <div className="flex items-center gap-2 sm:gap-3">
             <div className="w-2 h-2 rounded-full bg-[#576953] animate-pulse" />
             <span className="text-[#F1F7ED] font-bold tracking-tight text-sm sm:text-base">ZEKE BAWTRY</span>
+            <span className="text-[#576953] text-xs ml-2">Security Researcher</span>
           </div>
           <p className="text-[#8a9d86] text-[10px] sm:text-xs text-center">
-            Built with Next.js and relentless determination
+            Built with Next.js
           </p>
           <p className="text-[#3a4438] text-[10px] sm:text-xs">
             © 2026

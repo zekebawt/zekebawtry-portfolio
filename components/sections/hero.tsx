@@ -3,33 +3,12 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Github, Twitter } from "lucide-react";
 import Link from "next/link";
-import { dashboardData, getPaddedDay } from "@/lib/data";
 
 export function Hero() {
-  const { pendingPRs, pendingAmount, totalEarned, mergedPRs } = dashboardData.income;
-  const { currentDay } = dashboardData.evolution;
-  
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
       {/* Content */}
       <div className="relative z-10 w-full px-4 sm:px-6 lg:px-16 xl:px-24">
-        {/* Top stats - floating in corner */}
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 1 }}
-          className="absolute top-8 right-8 hidden lg:flex flex-col items-end gap-1 text-right"
-        >
-          <div className="flex items-baseline gap-2">
-            <span className="text-5xl font-bold text-[#576953] tracking-tight-hero">{pendingPRs}</span>
-            <span className="text-xs text-[#8a9d86] tracking-wide-caps">PRs PENDING</span>
-          </div>
-          <div className="flex items-baseline gap-2">
-            <span className="text-5xl font-bold text-[#F1F7ED] tracking-tight-hero">${pendingAmount}</span>
-            <span className="text-xs text-[#8a9d86] tracking-wide-caps">POTENTIAL</span>
-          </div>
-        </motion.div>
-
         {/* Main hero content */}
         <div className="max-w-[90vw] lg:max-w-none">
           {/* Small tag */}
@@ -40,7 +19,7 @@ export function Hero() {
             className="mb-4 sm:mb-6"
           >
             <span className="text-[10px] tracking-wide-caps text-[#576953] font-medium">
-              FULL-STACK DEVELOPER • DAY {currentDay} OF THE JOURNEY
+              SECURITY RESEARCHER
             </span>
           </motion.div>
 
@@ -56,7 +35,7 @@ export function Hero() {
             <span className="text-[#F1F7ED]/20">BAWTRY</span>
           </motion.h1>
 
-          {/* Tagline - unexpected, not generic */}
+          {/* Tagline - understated, mysterious */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -64,14 +43,14 @@ export function Hero() {
             className="max-w-xl mb-8 sm:mb-12"
           >
             <p className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-light text-[#8a9d86] leading-tight">
-              I ship code that{" "}
-              <span className="text-[#F1F7ED] font-medium">solves problems</span>.
+              I find what{" "}
+              <span className="text-[#F1F7ED] font-medium">others miss</span>.
               <br />
-              <span className="text-[#576953]">Every single day.</span>
+              <span className="text-[#576953]">Infrastructure security. AI/ML systems.</span>
             </p>
           </motion.div>
 
-          {/* CTA - not a boring button */}
+          {/* CTA */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -79,10 +58,10 @@ export function Hero() {
             className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-10"
           >
             <Link
-              href="#dashboard"
+              href="#projects"
               className="group flex items-center gap-3 text-[#F1F7ED] hover:text-[#576953] transition-colors duration-300"
             >
-              <span className="text-xs sm:text-sm tracking-wide-caps font-medium">VIEW LIVE DASHBOARD</span>
+              <span className="text-xs sm:text-sm tracking-wide-caps font-medium">VIEW RESEARCH</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform duration-300" />
             </Link>
             
@@ -90,7 +69,7 @@ export function Hero() {
               href="#about"
               className="text-xs sm:text-sm tracking-wide-caps text-[#8a9d86] hover:text-[#F1F7ED] transition-colors duration-300 link-hover"
             >
-              LEARN THE STORY
+              ABOUT ME
             </Link>
           </motion.div>
 
@@ -121,23 +100,6 @@ export function Hero() {
             </Link>
           </motion.div>
         </div>
-
-        {/* Mobile stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="lg:hidden flex gap-6 sm:gap-8 mt-10 sm:mt-12"
-        >
-          <div>
-            <span className="text-2xl sm:text-3xl font-bold text-[#576953] tracking-tight-hero">{pendingPRs}</span>
-            <span className="text-[10px] sm:text-xs text-[#8a9d86] tracking-wide-caps ml-1.5 sm:ml-2">PRs PENDING</span>
-          </div>
-          <div>
-            <span className="text-2xl sm:text-3xl font-bold text-[#F1F7ED] tracking-tight-hero">${pendingAmount}</span>
-            <span className="text-[10px] sm:text-xs text-[#8a9d86] tracking-wide-caps ml-1.5 sm:ml-2">POTENTIAL</span>
-          </div>
-        </motion.div>
       </div>
 
       {/* Scroll indicator - bottom left, subtle */}
@@ -157,17 +119,6 @@ export function Hero() {
             SCROLL
           </span>
         </motion.div>
-      </motion.div>
-
-      {/* Large decorative number - far right */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.03 }}
-        transition={{ duration: 1, delay: 0.5 }}
-        className="absolute -right-20 top-1/2 -translate-y-1/2 text-[40vw] font-bold text-[#F1F7ED] pointer-events-none select-none hidden lg:block"
-        aria-hidden="true"
-      >
-        {getPaddedDay(currentDay)}
       </motion.div>
     </section>
   );
