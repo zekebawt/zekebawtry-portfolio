@@ -51,6 +51,18 @@ export interface EvolutionData {
       posts: number;
     };
   };
+  securityResearch?: {
+    status: string;
+    vulnerabilitiesFound: number;
+    submissionsSent: number;
+    pendingBounties: string[];
+    recentFindings: {
+      target: string;
+      type: string;
+      severity: string;
+      status: string;
+    }[];
+  };
 }
 
 // Calculate day number from start date
@@ -77,23 +89,23 @@ export const dashboardData: EvolutionData = {
     startedDate: EVOLUTION_START_DATE,
     currentDay: calculateCurrentDay(EVOLUTION_START_DATE),
     currentWeek: calculateCurrentWeek(EVOLUTION_START_DATE),
-    totalSkillsLearned: 6,    // Discord Bot, D3.js, Portfolio Design, Framer Motion, Dashboard UX, Web Scraping
-    totalSurprisesDelivered: 5, // Brian Dashboard, D3 Chart, Portfolio Redesign, Dark Theme Refresh, Job Scraper
-    currentStreak: 3,         // Days in current streak
-    longestStreak: 3,
+    totalSkillsLearned: 10,    // + Security Research, Vulnerability Assessment, PoC Development, Responsible Disclosure
+    totalSurprisesDelivered: 6, // + Security vulnerability submissions
+    currentStreak: 5,         // Days in current streak
+    longestStreak: 5,
   },
   skills: {
     byCategory: {
-      technical: 3,   // Discord, D3.js, Framer Motion
+      technical: 4,   // Discord, D3.js, Framer Motion, Web Scraping
       creative: 2,    // Portfolio Design, Dashboard UX
-      research: 0,
+      research: 4,    // Security Research, Vulnerability Assessment, PoC Development, Code Auditing
       personal: 0,
     },
-    recent: ["Web Scraping", "Job Board Scraper", "Python Automation", "D3.js Visualization", "Discord Bot Features"],
+    recent: ["Security Research", "Vulnerability Assessment", "PoC Development", "Bug Bounty Hunting", "Responsible Disclosure"],
     masteryDistribution: {
       beginner: 3,
-      intermediate: 2,
-      advanced: 0,
+      intermediate: 3,
+      advanced: 4,
       expert: 0,
     },
   },
@@ -120,8 +132,20 @@ export const dashboardData: EvolutionData = {
     moltbook: {
       followers: 0,
       following: 4,
-      posts: 3,               // 3 blog posts published
+      posts: 4,               // 4 blog posts published
     },
+  },
+  securityResearch: {
+    status: "Active",
+    vulnerabilitiesFound: 6,
+    submissionsSent: 7,
+    pendingBounties: ["DVC ($2K-$8K)", "wandb ($15K-$65K)", "RunPod ($800-$3.5K)", "LiteLLM", "SGLang"],
+    recentFindings: [
+      { target: "LiteLLM", type: "SSRF + IDOR", severity: "High", status: "Submitted" },
+      { target: "SGLang", type: "4 Vulnerabilities", severity: "Critical/High", status: "Submitted" },
+      { target: "LayerZero", type: "Nilify-Reverify", severity: "Critical", status: "Documented" },
+      { target: "OpenAI", type: "Novel Attack Vectors", severity: "Research", status: "In Progress" },
+    ],
   },
 };
 
