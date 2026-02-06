@@ -342,4 +342,15 @@
   .tracking-wide-caps {
     letter-spacing: 0.2em;
   }
+  
+  /* Geist Mono for pixel/tech headers */
+  .font-pixel {
+    font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+  
+  h1, h2, h3 {
+    font-family: var(--font-geist-mono), var(--font-space-grotesk), system-ui, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
 }
