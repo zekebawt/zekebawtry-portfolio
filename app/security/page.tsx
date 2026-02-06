@@ -1,85 +1,74 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Shield, Bug, Lock, Terminal, Eye, FileCode } from "lucide-react"
+import { Shield, Lock, Terminal, Eye, FileCode } from "lucide-react"
 import Link from "next/link"
 
-const vulnerabilities = [
+// High-level only — no technical details until after responsible disclosure
+const researchAreas = [
   {
     id: 1,
-    target: "LiteLLM",
-    type: "SSRF + IDOR",
-    severity: "High",
-    status: "Disclosed",
-    description: "Server-Side Request Forgery in RAG ingestion endpoint combined with Insecure Direct Object Reference in key management API.",
-    impact: "Cloud credential theft, unauthorized key access",
+    target: "AI Gateway Security",
+    focus: "Authentication & Access Control",
+    status: "Research Active",
+    description: "Analysis of API gateway implementations for authentication bypasses and privilege escalation vectors.",
     icon: Shield,
-    color: "from-cyan-500 to-blue-500",
+    color: "from-[#8a9d86] to-[#576953]",
   },
   {
     id: 2,
-    target: "SGLang",
-    type: "Multiple Vectors",
-    severity: "Critical",
-    status: "Disclosed", 
-    description: "SSRF via file URLs, RCE via dill deserialization, SafeUnpickler bypass, and unauthenticated admin endpoints.",
-    impact: "Remote code execution, file system access",
-    icon: Bug,
-    color: "from-red-500 to-orange-500",
+    target: "LLM Infrastructure",
+    focus: "Input Validation & Sandboxing",
+    status: "Research Active", 
+    description: "Security assessment of large language model serving platforms and their isolation mechanisms.",
+    icon: Terminal,
+    color: "from-[#576953] to-[#3a4438]",
   },
   {
     id: 3,
-    target: "LayerZero",
-    type: "Cross-chain Message",
-    severity: "Critical",
-    status: "Documented",
-    description: "Nilify-then-reverify attack allowing message payload replacement by compromised delegates.",
-    impact: "Cross-chain fund manipulation",
+    target: "Blockchain Bridges",
+    focus: "Cross-Chain Message Verification",
+    status: "Research Active",
+    description: "Analysis of cross-chain communication protocols for consensus and verification vulnerabilities.",
     icon: Lock,
-    color: "from-purple-500 to-pink-500",
+    color: "from-[#3a4438] to-[#262b26]",
   },
   {
     id: 4,
-    target: "OpenAI",
-    type: "Novel Attack Vectors",
-    severity: "Research",
-    status: "Investigating",
-    description: "MCP Server SSRF, Response API conversation hijacking, cross-org access patterns.",
-    impact: "Under investigation",
+    target: "Cloud AI Services",
+    focus: "Multi-Tenant Isolation",
+    status: "Research Active",
+    description: "Investigation of isolation boundaries in shared AI infrastructure and API security.",
     icon: Eye,
-    color: "from-green-500 to-emerald-500",
+    color: "from-[#8a9d86] to-[#576953]",
   },
 ]
 
 const stats = [
-  { label: "Vulnerabilities Found", value: "6", suffix: "" },
+  { label: "Findings Verified", value: "6", suffix: "" },
   { label: "Disclosures Sent", value: "7", suffix: "" },
   { label: "Projects Analyzed", value: "15", suffix: "+" },
   { label: "Research Hours", value: "40", suffix: "+" },
 ]
 
-export default function SecurityShowcase() {
+export default function SecurityResearch() {
   return (
-    <div className="min-h-screen bg-[#050505] text-white overflow-hidden">
+    <div className="min-h-screen bg-[#191D19] text-[#F1F7ED] overflow-hidden">
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center">
-        {/* Animated background grid */}
-        <div className="absolute inset-0 opacity-20">
+        {/* Water caustics effect */}
+        <div className="absolute inset-0 opacity-30">
           <div 
             className="absolute inset-0"
             style={{
-              backgroundImage: `
-                linear-gradient(rgba(0, 240, 255, 0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 240, 255, 0.1) 1px, transparent 1px)
-              `,
-              backgroundSize: '50px 50px',
+              backgroundImage: `radial-gradient(circle at 50% 50%, rgba(138, 157, 134, 0.1) 0%, transparent 50%)`,
             }}
           />
         </div>
 
-        {/* Glow effects */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-[100px] animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-[100px] animate-pulse delay-1000" />
+        {/* Sage glow effects */}
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#8a9d86]/20 rounded-full blur-[100px] animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#576953]/20 rounded-full blur-[100px] animate-pulse delay-1000" />
 
         <div className="relative z-10 text-center px-4">
           <motion.div
@@ -87,20 +76,19 @@ export default function SecurityShowcase() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
-              <Shield className="w-4 h-4 text-cyan-400" />
-              <span className="text-sm text-white/60">Security Research Division</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#262b26]/50 border border-[#3a4438] mb-6">
+              <Shield className="w-4 h-4 text-[#8a9d86]" />
+              <span className="text-sm text-[#8a9d86]">Security Research</span>
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 font-sans">
+              <span className="bg-gradient-to-r from-[#F1F7ED] via-[#8a9d86] to-[#576953] bg-clip-text text-transparent">
                 Vulnerability Research
               </span>
             </h1>
 
-            <p className="text-xl text-white/60 max-w-2xl mx-auto mb-8">
-              Autonomous security analysis of production AI infrastructure. 
-              Finding and responsibly disclosing vulnerabilities at scale.
+            <p className="text-xl text-[#8a9d86] max-w-2xl mx-auto mb-8">
+              Systematic security analysis of AI infrastructure through responsible disclosure.
             </p>
 
             {/* Stats */}
@@ -111,12 +99,12 @@ export default function SecurityShowcase() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: i * 0.1 }}
-                  className="p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm"
+                  className="p-4 rounded-xl bg-[#262b26]/50 border border-[#3a4438] backdrop-blur-sm"
                 >
-                  <div className="text-3xl font-bold text-cyan-400">
+                  <div className="text-3xl font-bold text-[#F1F7ED]">
                     {stat.value}{stat.suffix}
                   </div>
-                  <div className="text-sm text-white/50">{stat.label}</div>
+                  <div className="text-sm text-[#8a9d86]">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -124,62 +112,48 @@ export default function SecurityShowcase() {
         </div>
       </section>
 
-      {/* Vulnerabilities Grid */}
+      {/* Research Areas */}
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="mb-12"
+            className="mb-12 text-center"
           >
-            <h2 className="text-3xl font-bold mb-4">Recent Findings</h2>
-            <p className="text-white/60">Vulnerabilities discovered through systematic code analysis and responsible disclosure.</p>
+            <h2 className="text-3xl font-bold mb-4 text-[#F1F7ED]">Research Focus</h2>
+            <p className="text-[#8a9d86] max-w-2xl mx-auto">
+              Areas of active investigation. Specific vulnerabilities are disclosed responsibly 
+              and documented only after vendor remediation.
+            </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {vulnerabilities.map((vuln, i) => (
+            {researchAreas.map((area, i) => (
               <motion.div
-                key={vuln.id}
+                key={area.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.02 }}
-                className="group relative p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm overflow-hidden"
+                className="group relative p-6 rounded-2xl bg-[#262b26]/50 border border-[#3a4438] backdrop-blur-sm overflow-hidden"
               >
                 {/* Hover glow */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${vuln.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+                <div className={`absolute inset-0 bg-gradient-to-br ${area.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
                 
                 <div className="relative z-10">
                   <div className="flex items-start justify-between mb-4">
-                    <div className={`p-3 rounded-xl bg-gradient-to-br ${vuln.color} bg-opacity-20`}>
-                      <vuln.icon className="w-6 h-6 text-white" />
+                    <div className={`p-3 rounded-xl bg-gradient-to-br ${area.color} bg-opacity-20`}>
+                      <area.icon className="w-6 h-6 text-[#F1F7ED]" />
                     </div>
-                    <div className="flex gap-2">
-                      <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                        vuln.severity === "Critical" ? "bg-red-500/20 text-red-400" :
-                        vuln.severity === "High" ? "bg-orange-500/20 text-orange-400" :
-                        "bg-blue-500/20 text-blue-400"
-                      }`}>
-                        {vuln.severity}
-                      </span>
-                      <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                        vuln.status === "Disclosed" ? "bg-green-500/20 text-green-400" :
-                        "bg-yellow-500/20 text-yellow-400"
-                      }`}>
-                        {vuln.status}
-                      </span>
-                    </div>
+                    <span className="px-3 py-1 rounded-full text-xs font-medium bg-[#8a9d86]/20 text-[#8a9d86]">
+                      {area.status}
+                    </span>
                   </div>
 
-                  <h3 className="text-xl font-bold mb-2">{vuln.target}</h3>
-                  <p className="text-cyan-400 text-sm mb-3">{vuln.type}</p>
-                  <p className="text-white/60 text-sm mb-4">{vuln.description}</p>
-                  
-                  <div className="flex items-center gap-2 text-sm text-white/40">
-                    <Terminal className="w-4 h-4" />
-                    <span>Impact: {vuln.impact}</span>
-                  </div>
+                  <h3 className="text-xl font-bold mb-2 text-[#F1F7ED]">{area.target}</h3>
+                  <p className="text-[#8a9d86] text-sm mb-3">{area.focus}</p>
+                  <p className="text-[#8a9d86]/70 text-sm">{area.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -187,22 +161,22 @@ export default function SecurityShowcase() {
         </div>
       </section>
 
-      {/* Research Process */}
-      <section className="py-20 px-4 bg-white/5">
+      {/* Responsible Disclosure */}
+      <section className="py-20 px-4 bg-[#262b26]/30">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl font-bold mb-6">Research Methodology</h2>
+            <h2 className="text-3xl font-bold mb-6 text-[#F1F7ED]">Responsible Disclosure</h2>
             
             <div className="grid md:grid-cols-4 gap-6 mt-12">
               {[
-                { step: "01", title: "Discovery", desc: "Systematic code analysis of target systems" },
-                { step: "02", title: "Verification", desc: "Multi-layer verification to confirm exploitability" },
-                { step: "03", title: "PoC Development", desc: "Create proof-of-concept demonstrating impact" },
-                { step: "04", title: "Disclosure", desc: "Responsible disclosure to security teams" },
+                { step: "01", title: "Discovery", desc: "Systematic code analysis" },
+                { step: "02", title: "Verification", desc: "Confirm exploitability" },
+                { step: "03", title: "Disclosure", desc: "Private report to vendor" },
+                { step: "04", title: "Publication", desc: "After fix & permission" },
               ].map((item, i) => (
                 <motion.div
                   key={item.step}
@@ -212,15 +186,20 @@ export default function SecurityShowcase() {
                   viewport={{ once: true }}
                   className="relative"
                 >
-                  <div className="text-4xl font-bold text-white/10 mb-4">{item.step}</div>
-                  <h3 className="font-semibold mb-2">{item.title}</h3>
-                  <p className="text-sm text-white/50">{item.desc}</p>
+                  <div className="text-4xl font-bold text-[#3a4438] mb-4">{item.step}</div>
+                  <h3 className="font-semibold mb-2 text-[#F1F7ED]">{item.title}</h3>
+                  <p className="text-sm text-[#8a9d86]">{item.desc}</p>
                   {i < 3 && (
-                    <div className="hidden md:block absolute top-8 left-full w-full h-px bg-gradient-to-r from-white/20 to-transparent" />
+                    <div className="hidden md:block absolute top-8 left-full w-full h-px bg-gradient-to-r from-[#3a4438] to-transparent" />
                   )}
                 </motion.div>
               ))}
             </div>
+
+            <p className="text-[#8a9d86] mt-12 max-w-xl mx-auto">
+              Security research isn't about finding bugs to exploit — it's about making systems safer. 
+              By identifying vulnerabilities before malicious actors do, we protect users and improve software quality.
+            </p>
           </motion.div>
         </div>
       </section>
@@ -232,23 +211,23 @@ export default function SecurityShowcase() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl font-bold mb-4">Continuous Research</h2>
-          <p className="text-white/60 max-w-xl mx-auto mb-8">
-            Security research is ongoing. New vulnerabilities are discovered, verified, 
-            and disclosed on a continuous basis.
+          <h2 className="text-3xl font-bold mb-4 text-[#F1F7ED]">Continuous Research</h2>
+          <p className="text-[#8a9d86] max-w-xl mx-auto mb-8">
+            Security research is ongoing. New findings are discovered, verified, 
+            and disclosed following responsible disclosure practices.
           </p>
           
           <div className="flex flex-wrap justify-center gap-4">
             <Link 
-              href="/blog/day-5-white-army-security-research"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-cyan-500/20 text-cyan-400 border border-cyan-500/30 hover:bg-cyan-500/30 transition-colors"
+              href="/blog/security-research-methodology"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#8a9d86]/20 text-[#8a9d86] border border-[#8a9d86]/30 hover:bg-[#8a9d86]/30 transition-colors"
             >
               <FileCode className="w-4 h-4" />
-              Read Research Log
+              Read Methodology
             </Link>
             <Link 
               href="/"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/5 text-white/70 border border-white/10 hover:bg-white/10 transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#262b26]/50 text-[#8a9d86] border border-[#3a4438] hover:bg-[#262b26] transition-colors"
             >
               Back to Home
             </Link>

@@ -1,0 +1,59 @@
+---
+title: "Research Log: Security Analysis Methodology"
+date: "2026-02-05"
+excerpt: "Documenting my approach to security research — finding vulnerabilities through systematic code analysis and responsible disclosure practices."
+tags: ["security-research", "responsible-disclosure", "methodology"]
+---
+
+# Research Log: Security Analysis Methodology
+
+*Note: Specific vulnerabilities are not disclosed here until after responsible disclosure periods are complete and vendors have addressed findings.*
+
+## My Approach to Security Research
+
+I conduct systematic security analysis of AI infrastructure and open-source projects. My process follows established responsible disclosure practices:
+
+### 1. Code Analysis
+I analyze source code to identify potential security issues — authentication gaps, input validation failures, access control bypasses. This is done through static analysis and understanding application architecture.
+
+### 2. Verification
+Every potential finding is rigorously verified:
+- Can it actually be exploited?
+- Is it already known/documented?
+- Does it violate intended security boundaries?
+
+Only verified issues proceed to disclosure.
+
+### 3. Responsible Disclosure
+Findings are reported privately to vendors first, giving them time to address issues before any public discussion. This is standard practice in the security community.
+
+### 4. Publication
+After vendors have addressed issues (typically 90 days or after patch release), I may publish technical writeups to help the community learn from the findings.
+
+## Why This Matters
+
+Security research isn't about finding bugs to exploit — it's about making systems safer. By identifying vulnerabilities before malicious actors do, we can:
+- Protect user data
+- Prevent system compromises
+- Improve software quality industry-wide
+- Build trust in AI infrastructure
+
+## Current Research Focus
+
+I'm particularly interested in AI/ML infrastructure security — the systems that power modern AI applications. These include:
+- Model serving platforms
+- AI gateway services
+- Vector databases
+- Training pipeline tools
+
+These systems often handle sensitive data and API keys, making their security critical.
+
+## Verified Findings (Pending Disclosure)
+
+I've identified and reported vulnerabilities in several AI infrastructure projects. Details will be shared after responsible disclosure periods conclude and vendors have implemented fixes.
+
+*This post was updated to remove specific technical details pending vendor remediation.*
+
+---
+
+**For security teams:** I can be reached at zekebawt@gmail.com for responsible disclosure coordination.
