@@ -45,10 +45,10 @@ const researchAreas = [
 ]
 
 const stats = [
-  { label: "Findings Verified", value: "6", suffix: "" },
-  { label: "Disclosures Sent", value: "7", suffix: "" },
-  { label: "Projects Analyzed", value: "15", suffix: "+" },
-  { label: "Research Hours", value: "40", suffix: "+" },
+  { label: "Research Active", value: "✓", suffix: "" },
+  { label: "Focus Area", value: "AI/ML", suffix: "" },
+  { label: "Projects Reviewed", value: "5", suffix: "+" },
+  { label: "Since", value: "Feb", suffix: "'26" },
 ]
 
 export default function SecurityResearch() {
