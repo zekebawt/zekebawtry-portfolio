@@ -6,8 +6,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-space-grotesk);
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-sans: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -343,27 +343,93 @@
     letter-spacing: 0.2em;
   }
   
+  /* ═══════════════════════════════════════════════════════════════════════════
+     GEIST FONT SYSTEM - Pixel-Perfect Typography
+     Using official Vercel Geist font with stylistic sets for sharp rendering
+     ═══════════════════════════════════════════════════════════════════════════ */
+  
+  /* Base Geist Sans - Clean, geometric, modern */
+  .font-geist, body {
+    font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+    font-feature-settings: "ss01" on, "ss02" on, "cv01" on;
+    font-variation-settings: "wght" 400;
+    letter-spacing: -0.011em;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
   /* Geist Mono for pixel/tech headers - Sharp, blocky, retro terminal aesthetic */
-  .font-pixel, h1, h2, h3 {
-    font-family: "Geist Mono", "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
-    font-weight: 700;
+  .font-pixel, .font-mono, h1, h2, h3, code, pre {
+    font-family: var(--font-geist-mono), ui-monospace, "SF Mono", Monaco, "Cascadia Code", monospace;
+    font-feature-settings: "ss01" on, "ss02" on, "ss03" on, "ss04" on;
+    font-variation-settings: "wght" 700;
     letter-spacing: -0.02em;
-    /* Disable font smoothing for pixelated/blocky look */
+    /* Crisp pixel rendering - disable smoothing for that retro look */
     -webkit-font-smoothing: none;
     -moz-osx-font-smoothing: unset;
     font-smooth: never;
-    /* Crisp text rendering */
     text-rendering: optimizeSpeed;
-    /* Subtle terminal glow effect */
+    /* Subtle terminal phosphor glow */
     text-shadow: 0 0 1px currentColor;
   }
   
-  /* Enhanced glow for larger headers */
+  /* Hero headers - Maximum impact */
   h1 {
-    text-shadow: 0 0 2px currentColor, 0 0 8px rgba(87, 105, 83, 0.3);
+    font-variation-settings: "wght" 800;
+    letter-spacing: -0.03em;
+    text-shadow: 0 0 2px currentColor, 0 0 10px rgba(87, 105, 83, 0.4);
   }
   
+  /* Section headers */
   h2 {
-    text-shadow: 0 0 1px currentColor, 0 0 6px rgba(87, 105, 83, 0.2);
+    font-variation-settings: "wght" 700;
+    letter-spacing: -0.025em;
+    text-shadow: 0 0 1px currentColor, 0 0 6px rgba(87, 105, 83, 0.25);
+  }
+  
+  /* Subsection headers */
+  h3 {
+    font-variation-settings: "wght" 600;
+    letter-spacing: -0.02em;
+    text-shadow: 0 0 1px currentColor, 0 0 4px rgba(87, 105, 83, 0.15);
+  }
+  
+  /* Code blocks - Pure terminal aesthetic */
+  code, pre {
+    font-variation-settings: "wght" 500;
+    letter-spacing: 0;
+    text-shadow: 0 0 1px rgba(87, 105, 83, 0.5);
+  }
+  
+  /* Smooth body text - Geist Sans with proper weight scale */
+  p, span, li, a {
+    font-family: var(--font-geist-sans), system-ui, sans-serif;
+    font-feature-settings: "ss01" on, "cv01" on;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Weight utilities using variable font */
+  .font-light { font-variation-settings: "wght" 300; }
+  .font-normal { font-variation-settings: "wght" 400; }
+  .font-medium { font-variation-settings: "wght" 500; }
+  .font-semibold { font-variation-settings: "wght" 600; }
+  .font-bold { font-variation-settings: "wght" 700; }
+  .font-extrabold { font-variation-settings: "wght" 800; }
+  
+  /* Pixel-perfect sharp text utility */
+  .text-sharp {
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: unset;
+    font-smooth: never;
+    text-rendering: optimizeSpeed;
+  }
+  
+  /* Smooth text utility (for smaller text that needs clarity) */
+  .text-smooth {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 }
