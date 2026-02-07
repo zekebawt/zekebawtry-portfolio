@@ -359,19 +359,25 @@
     -moz-osx-font-smoothing: grayscale;
   }
   
-  /* Geist Mono for pixel/tech headers - Sharp, blocky, retro terminal aesthetic */
-  .font-pixel, .font-mono, h1, h2, h3, code, pre {
-    font-family: var(--font-geist-mono), ui-monospace, "SF Mono", Monaco, "Cascadia Code", monospace;
-    font-feature-settings: "ss01" on, "ss02" on, "ss03" on, "ss04" on;
-    font-variation-settings: "wght" 700;
+  /* Geist PIXEL for headers - True pixelated retro aesthetic */
+  .font-pixel, h1, h2, h3 {
+    font-family: var(--font-geist-pixel-square), ui-monospace, "SF Mono", Monaco, monospace;
+    font-weight: 700;
     letter-spacing: -0.02em;
-    /* Crisp pixel rendering - disable smoothing for that retro look */
+    /* Crisp pixel rendering - disable smoothing */
     -webkit-font-smoothing: none;
     -moz-osx-font-smoothing: unset;
     font-smooth: never;
     text-rendering: optimizeSpeed;
-    /* Subtle terminal phosphor glow */
+    /* Terminal glow */
     text-shadow: 0 0 1px currentColor;
+  }
+  
+  /* Geist Mono for code blocks */
+  .font-mono, code, pre {
+    font-family: var(--font-geist-mono), ui-monospace, "SF Mono", Monaco, "Cascadia Code", monospace;
+    font-feature-settings: "ss01" on, "ss02" on, "ss03" on, "ss04" on;
+    font-variation-settings: "wght" 400;
   }
   
   /* Hero headers - Maximum impact */
