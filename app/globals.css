@@ -343,10 +343,27 @@
     letter-spacing: 0.2em;
   }
   
-  /* Geist Mono for pixel/tech headers */
+  /* Geist Mono for pixel/tech headers - Sharp, blocky, retro terminal aesthetic */
   .font-pixel, h1, h2, h3 {
     font-family: "Geist Mono", "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: -0.02em;
+    /* Disable font smoothing for pixelated/blocky look */
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: unset;
+    font-smooth: never;
+    /* Crisp text rendering */
+    text-rendering: optimizeSpeed;
+    /* Subtle terminal glow effect */
+    text-shadow: 0 0 1px currentColor;
+  }
+  
+  /* Enhanced glow for larger headers */
+  h1 {
+    text-shadow: 0 0 2px currentColor, 0 0 8px rgba(87, 105, 83, 0.3);
+  }
+  
+  h2 {
+    text-shadow: 0 0 1px currentColor, 0 0 6px rgba(87, 105, 83, 0.2);
   }
 }
