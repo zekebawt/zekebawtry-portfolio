@@ -28,7 +28,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-[14vw] sm:text-[12vw] lg:text-[8vw] xl:text-[7vw] font-bold tracking-tight-hero leading-[0.85] mb-4"
+            className="text-[14vw] sm:text-[12vw] lg:text-[8vw] xl:text-[7vw] font-bold tracking-tight-hero leading-[0.85] mb-4 font-pixel"
           >
             <span className="text-[#F1F7ED]">ZEKE</span>
             <br />
