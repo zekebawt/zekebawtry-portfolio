@@ -344,12 +344,8 @@
   }
   
   /* Geist Mono for pixel/tech headers */
-  .font-pixel {
-    font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  }
-  
-  h1, h2, h3 {
-    font-family: var(--font-geist-mono), var(--font-space-grotesk), system-ui, sans-serif;
+  .font-pixel, h1, h2, h3 {
+    font-family: "Geist Mono", "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
     font-weight: 600;
     letter-spacing: -0.02em;
   }
