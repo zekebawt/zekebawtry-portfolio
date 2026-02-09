@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Shield, Lock, Terminal, Eye, FileCode } from "lucide-react"
+import { Shield, Lock, Terminal, Eye, FileCode, Bug, Grid3X3, ArrowRight } from "lucide-react"
 import Link from "next/link"
 
 // High-level only — no technical details until after responsible disclosure
@@ -90,6 +90,32 @@ export default function SecurityResearch() {
             <p className="text-xl text-[#8a9d86] max-w-2xl mx-auto mb-8">
               Systematic security analysis of AI infrastructure through responsible disclosure.
             </p>
+
+            {/* Interactive Tool CTA */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.3 }}
+              className="mb-8"
+            >
+              <Link
+                href="/security/threat-matrix"
+                className="group inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-[#8a9d86]/20 to-[#576953]/20 border border-[#8a9d86]/30 hover:border-[#8a9d86]/60 transition-all duration-300"
+              >
+                <div className="w-8 h-8 rounded-lg bg-[#8a9d86]/20 flex items-center justify-center">
+                  <Grid3X3 className="w-4 h-4 text-[#8a9d86]" />
+                </div>
+                <div className="text-left">
+                  <div className="text-sm font-semibold text-[#F1F7ED] group-hover:text-[#8a9d86] transition-colors">
+                    Interactive Threat Matrix
+                  </div>
+                  <div className="text-xs text-[#8a9d86]">
+                    Explore MITRE ATT&CK techniques
+                  </div>
+                </div>
+                <ArrowRight className="w-4 h-4 text-[#576953] group-hover:text-[#8a9d86] group-hover:translate-x-1 transition-all" />
+              </Link>
+            </motion.div>
 
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
