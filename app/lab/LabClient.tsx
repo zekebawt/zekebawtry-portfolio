@@ -7,7 +7,8 @@ import { ParticleLifeCanvas } from "@/components/lab/particle-life";
 import { NoiseTerrainCanvas } from "@/components/lab/noise-terrain";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
-import { Play, Pause, RefreshCw, Download, Sparkles, Waves, Mountain } from "lucide-react";
+import { Play, Pause, RefreshCw, Download, Sparkles, Waves, Mountain, Zap, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 type Experiment = "flow" | "particles" | "terrain";
 
@@ -164,6 +165,36 @@ export function LabClient() {
             Every seed spawns a unique universe. Play, explore, download your favorites.
           </p>
         </div>
+      </div>
+
+      {/* Featured: Shader Playground */}
+      <div className="max-w-7xl mx-auto px-6 pt-8">
+        <Link 
+          href="/lab/shaders"
+          className="group block bg-gradient-to-br from-zinc-900 via-zinc-900 to-lime-900/20 rounded-xl p-6 border border-zinc-800 hover:border-lime-400/50 transition-all duration-300"
+        >
+          <div className="flex items-start justify-between">
+            <div className="flex items-center gap-4">
+              <div className="p-3 bg-lime-400/10 rounded-lg text-lime-400 group-hover:bg-lime-400/20 transition-colors">
+                <Zap className="w-6 h-6" />
+              </div>
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-xs font-mono text-lime-400 uppercase tracking-wider">New</span>
+                  <span className="text-xs font-mono text-zinc-500">• Tuesday Design Experiment</span>
+                </div>
+                <h3 className="text-xl font-bold text-white group-hover:text-lime-400 transition-colors">
+                  Shader Playground
+                </h3>
+                <p className="text-zinc-400 mt-1 max-w-xl">
+                  Interactive WebGL fragment shaders with real-time code editing. Explore plasma effects, 
+                  fractal warping, neural networks, and more — all running on your GPU at 60fps.
+                </p>
+              </div>
+            </div>
+            <ArrowRight className="w-5 h-5 text-zinc-600 group-hover:text-lime-400 group-hover:translate-x-1 transition-all" />
+          </div>
+        </Link>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 py-8">
